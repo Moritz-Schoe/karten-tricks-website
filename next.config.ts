@@ -54,8 +54,8 @@ const nextConfig: NextConfig = {
       { source: "/ueber-mich-2", destination: "/ueber-mich", permanent: true },
       { source: "/shop", destination: "/spielkarten", permanent: true },
 
-      // Old image paths
-      { source: "/wp-content/uploads/:path*", destination: "/images/:path*", permanent: true },
+      // Old WP image paths — strip year/month dirs since images are now flat
+      { source: "/wp-content/uploads/:year/:month/:file", destination: "/images/:file", permanent: true },
     ];
   },
 };

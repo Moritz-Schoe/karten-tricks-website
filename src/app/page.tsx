@@ -31,7 +31,7 @@ export default function HomePage() {
             <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
               <div className="relative aspect-[5/4] min-h-[220px] w-full overflow-hidden rounded-[1.75rem] md:aspect-auto md:min-h-[min(52vh,460px)]">
                 <Image
-                  src="/images/2020/09/cards2.jpg"
+                  src="/images/cards2.jpg"
                   alt="Spielkarten als Flat Lay auf dunklem Untergrund"
                   fill
                   priority

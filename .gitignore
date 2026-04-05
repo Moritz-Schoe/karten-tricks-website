@@ -43,12 +43,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# WordPress / migration backups (large, may contain sensitive data)
-old_metadata/backup_*
+# WordPress migration backups (large, may contain sensitive data)
+docs/wp-migration/backup_*
 
-# Elementor cache from WP export — not used by Next.js; some thumbs break git index
-public/images/elementor/
-uploads/elementor/
-
-# WordPress uploads mirror (duplicate of public/images after sync; some files caused git index errors)
-/uploads/

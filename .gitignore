@@ -20,6 +20,9 @@
 # production
 /build
 
+# Claude Code linked worktrees (nested repos; must not be committed as gitlinks)
+.claude/worktrees/
+
 # misc
 .DS_Store
 *.pem

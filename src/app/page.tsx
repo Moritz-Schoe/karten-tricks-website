@@ -8,7 +8,7 @@ import { getRecentArticles, getFeaturedArticles, getAllArticles } from "@/lib/co
 
 function SectionTitle({ icon, children }: { icon: ReactNode; children: ReactNode }) {
   return (
-    <h2 className="flex items-center gap-2.5 text-[28px] font-medium text-slate-700 font-[family-name:var(--font-inter)]">
+    <h2 className="flex items-center gap-2.5 text-[28px] font-medium text-slate-700">
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-600" aria-hidden>
         {icon}
       </span>
@@ -24,78 +24,98 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#FAFAFA] to-[#F5F3FF] px-6 pt-14 pb-16 md:pt-20 md:pb-24">
-        <div
-          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet-200/40 blur-3xl md:h-96 md:w-96"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-fuchsia-100/50 blur-3xl"
-          aria-hidden
-        />
-        <div className="relative max-w-[1280px] mx-auto grid gap-12 md:grid-cols-2 md:gap-14 md:items-center">
-          <div className="text-center md:text-left">
-            <Image
-              src="/logo.png"
-              alt="Karten-tricks.de"
-              width={260}
-              height={65}
-              className="mx-auto md:mx-0 mb-7 h-auto w-[200px] md:w-[240px]"
-              priority
-            />
-            <h1 className="text-4xl md:text-[46px] font-semibold mb-5 leading-[1.12] text-slate-800 font-[family-name:var(--font-inter)]">
-              Kartentricks lernen.
-              <br />
-              <span className="text-[#7C3AED]">Auf Deutsch. Kostenlos.</span>
-            </h1>
-            <p className="text-lg text-slate-600 mb-9 max-w-xl mx-auto md:mx-0 leading-relaxed">
-              Von der ersten einfachen Karte bis zur Cardistry-Routine – hier findest du
-              alles was du brauchst, um andere zu beeindrucken.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-              <Link
-                href="/kartentricks"
-                className="inline-flex items-center justify-center gap-2 bg-[#7C3AED] text-white font-medium px-8 py-3 rounded-[8px] hover:bg-[#6D28D9] transition-colors text-sm font-[family-name:var(--font-inter)]"
-              >
-                <svg className="w-4 h-4 shrink-0 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
-                </svg>
-                Tricks entdecken
-              </Link>
-              <Link
-                href="/kartentricks/anfaenger-guide"
-                className="inline-flex items-center justify-center gap-2 border-[1.5px] border-[#C4B5FD] bg-white/80 text-[#5B21B6] font-medium px-8 py-3 rounded-[8px] hover:bg-violet-50 transition-colors text-sm font-[family-name:var(--font-inter)]"
-              >
-                <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                </svg>
-                Für Anfänger starten
-              </Link>
+      {/* Hero: Referenz-Layout (weiche Karte, Bild | Copy, Pill-CTA + runde Links) — Farben laut Brand Guide */}
+      <section className="bg-[#FAFAFA] pb-16 pt-6 md:pb-24 md:pt-8">
+        <div className="layout-page">
+          <div className="mx-auto max-w-[1200px] overflow-hidden rounded-[2.25rem] border border-slate-200 bg-[#F1F5F9] p-6 shadow-[0_24px_64px_-28px_rgba(26,27,38,0.12)] ring-1 ring-[#1A1B26]/[0.04] md:rounded-[2.5rem] md:p-10 lg:rounded-[2.75rem] lg:p-14">
+            <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+              <div className="relative aspect-[5/4] min-h-[220px] w-full overflow-hidden rounded-[1.75rem] md:aspect-auto md:min-h-[min(52vh,460px)]">
+                <Image
+                  src="/images/2020/09/cards2.jpg"
+                  alt="Spielkarten als Flat Lay auf dunklem Untergrund"
+                  fill
+                  priority
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="flex flex-col justify-center text-center md:text-left">
+                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[#64748B]">
+                  Kartentricks &amp; Techniken
+                </p>
+                <h1 className="mb-4 text-[clamp(1.875rem,4.2vw,3rem)] font-semibold leading-[1.1] tracking-tight text-[#1E293B]">
+                  Dein Weg durch die Welt der Kartenmagie
+                </h1>
+                <p className="mb-6 text-lg font-medium leading-snug text-[#7C3AED] sm:text-xl">
+                  Auf Deutsch. Kostenlos. Schritt für Schritt.
+                </p>
+                <p className="mb-10 max-w-xl text-base leading-[1.65] text-[#475569] sm:mb-11 sm:text-lg">
+                  Willkommen bei karten-tricks.de: klare Anleitungen, echtes Handwerk und keine
+                  Geheimniskrämerei – von der ersten Farbänderung bis zur Routine fürs nächste Treffen.
+                </p>
+                <div className="flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap md:justify-start">
+                  <Link
+                    href="/kartentricks"
+                    className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-[#7C3AED] px-10 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#6D28D9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]"
+                  >
+                    Tricks entdecken
+                  </Link>
+                  <div className="flex items-center justify-center gap-2.5 sm:justify-start">
+                    <a
+                      href="https://discord.gg/karten-tricks"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E2E8F0] text-[#334155] transition-colors hover:bg-[#DDD6FE] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]"
+                      aria-label="Discord-Server"
+                    >
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                      </svg>
+                    </a>
+                    <Link
+                      href="/community"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E2E8F0] text-[#334155] transition-colors hover:bg-[#DDD6FE] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]"
+                      aria-label="Community"
+                    >
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.09 9.09 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                      </svg>
+                    </Link>
+                    <Link
+                      href="/#newsletter"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E2E8F0] text-[#334155] transition-colors hover:bg-[#DDD6FE] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]"
+                      aria-label="Newsletter"
+                    >
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+                <p className="mt-8 text-sm text-[#64748B] md:mt-10">
+                  <Link
+                    href="/kartentricks/anfaenger-guide"
+                    className="font-medium text-[#7C3AED] underline-offset-4 hover:underline"
+                  >
+                    Erste Schritte für Anfänger
+                  </Link>
+                  <span className="text-[#CBD5E1]" aria-hidden>
+                    {" "}
+                    ·{" "}
+                  </span>
+                  <Link href="/kartentricks" className="font-medium text-[#7C3AED] underline-offset-4 hover:underline">
+                    Alle Anleitungen
+                  </Link>
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-md md:max-w-none">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-slate-100 shadow-xl ring-1 ring-slate-200/80">
-              <Image
-                src="/images/2020/05/Aufgedeckte-Karten-1.jpg"
-                alt="Aufgedeckte Spielkarten"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            <p className="mt-3 text-center text-xs text-slate-500 md:text-left">
-              Praxisnah erklärt – Schritt für Schritt.
-            </p>
           </div>
         </div>
       </section>
 
       <CategoryQuickNav />
 
-      <div className="max-w-[1280px] mx-auto px-6 py-16 space-y-16">
+      <div className="layout-page py-16 space-y-16">
 
         {/* Featured Articles */}
         {featured.length > 0 && (
@@ -128,7 +148,7 @@ export default function HomePage() {
               </svg>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-xl font-medium text-[#9D174D] mb-2 font-[family-name:var(--font-inter)]">
+              <h2 className="text-xl font-medium text-[#9D174D] mb-2">
                 Party steht an? Wir haben den richtigen Trick.
               </h2>
               <p className="text-[#9D174D]/70 text-sm leading-relaxed mb-4">
@@ -136,13 +156,13 @@ export default function HomePage() {
                 Wir zeigen dir welcher wann passt.
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                <Link href="/party-tricks/geburtstag" className="text-sm bg-[#EC4899] text-white px-5 py-2 rounded-[8px] hover:bg-[#DB2777] transition-colors font-medium font-[family-name:var(--font-inter)]">
+                <Link href="/party-tricks/geburtstag" className="text-sm bg-[#EC4899] text-white px-5 py-2 rounded-[8px] hover:bg-[#DB2777] transition-colors font-medium">
                   Geburtstag
                 </Link>
-                <Link href="/party-tricks/firmenfeier" className="text-sm bg-[#EC4899] text-white px-5 py-2 rounded-[8px] hover:bg-[#DB2777] transition-colors font-medium font-[family-name:var(--font-inter)]">
+                <Link href="/party-tricks/firmenfeier" className="text-sm bg-[#EC4899] text-white px-5 py-2 rounded-[8px] hover:bg-[#DB2777] transition-colors font-medium">
                   Firmenfeier
                 </Link>
-                <Link href="/party-tricks/kinder" className="text-sm bg-[#EC4899] text-white px-5 py-2 rounded-[8px] hover:bg-[#DB2777] transition-colors font-medium font-[family-name:var(--font-inter)]">
+                <Link href="/party-tricks/kinder" className="text-sm bg-[#EC4899] text-white px-5 py-2 rounded-[8px] hover:bg-[#DB2777] transition-colors font-medium">
                   Für Kinder
                 </Link>
               </div>
@@ -185,13 +205,13 @@ export default function HomePage() {
               </svg>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <span className="text-xs font-medium text-[#7C3AED] uppercase tracking-wider font-[family-name:var(--font-inter)]">Neu auf karten-tricks.de</span>
-              <h2 className="text-xl font-medium text-[#4C1D95] mt-1 mb-2 font-[family-name:var(--font-inter)]">Cardistry – Karten als Kunst</h2>
+              <span className="text-xs font-medium text-[#7C3AED] uppercase tracking-wider">Neu auf karten-tricks.de</span>
+              <h2 className="text-xl font-medium text-[#4C1D95] mt-1 mb-2">Cardistry – Karten als Kunst</h2>
               <p className="text-[#5B21B6]/70 text-sm leading-relaxed mb-4">
                 Keine Tricks, keine Illusion – nur pure Eleganz. Lerne Flourishes, Cuts und Fans.
                 Der erste und einzige deutschsprachige Guide.
               </p>
-              <Link href="/cardistry" className="inline-block text-sm bg-[#7C3AED] text-white px-6 py-2 rounded-[8px] hover:bg-[#6D28D9] transition-colors font-medium font-[family-name:var(--font-inter)]">
+              <Link href="/cardistry" className="inline-block text-sm bg-[#7C3AED] text-white px-6 py-2 rounded-[8px] hover:bg-[#6D28D9] transition-colors font-medium">
                 Cardistry entdecken
               </Link>
             </div>
@@ -210,7 +230,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg>
               </div>
-              <div className="text-3xl font-semibold text-[#5B21B6] font-[family-name:var(--font-inter)]">{totalArticles}+</div>
+              <div className="text-3xl font-semibold text-[#5B21B6]">{totalArticles}+</div>
               <div className="text-sm text-slate-500 mt-1">Anleitungen</div>
             </div>
             <div className="rounded-2xl bg-white px-4 py-5 shadow-sm ring-1 ring-slate-100">
@@ -219,7 +239,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.09 9.09 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                 </svg>
               </div>
-              <div className="text-3xl font-semibold text-[#5B21B6] font-[family-name:var(--font-inter)]">500+</div>
+              <div className="text-3xl font-semibold text-[#5B21B6]">500+</div>
               <div className="text-sm text-slate-500 mt-1">Community-Mitglieder</div>
             </div>
             <div className="rounded-2xl bg-white px-4 py-5 shadow-sm ring-1 ring-slate-100">
@@ -228,7 +248,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div className="text-3xl font-semibold text-[#5B21B6] font-[family-name:var(--font-inter)]">100%</div>
+              <div className="text-3xl font-semibold text-[#5B21B6]">100%</div>
               <div className="text-sm text-slate-500 mt-1">Kostenlos</div>
             </div>
           </div>

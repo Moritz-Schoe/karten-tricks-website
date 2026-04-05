@@ -34,7 +34,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
                   <span className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-[6px] font-medium">{article.difficulty}</span>
                 )}
               </div>
-              <h3 className="text-lg font-medium leading-snug font-[family-name:var(--font-inter)]">{article.title}</h3>
+              <h3 className="text-lg font-medium leading-snug">{article.title}</h3>
             </div>
           </div>
         ) : (
@@ -45,7 +45,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
                 <span className="text-xs bg-white/20 px-3 py-1 rounded-[6px] font-medium">{article.difficulty}</span>
               )}
             </div>
-            <h3 className="text-xl font-medium leading-snug group-hover:underline font-[family-name:var(--font-inter)]">{article.title}</h3>
+            <h3 className="text-xl font-medium leading-snug group-hover:underline">{article.title}</h3>
           </div>
         )}
         <div className="p-5">
@@ -63,7 +63,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
     return (
       <Link href={href} className="group flex items-start gap-3 p-3 rounded-[8px] hover:bg-[#F5F3FF] transition-colors">
         <div className="min-w-0">
-          <p className="font-medium text-sm text-slate-800 group-hover:text-[#7C3AED] transition-colors line-clamp-2 font-[family-name:var(--font-inter)]">
+          <p className="font-medium text-sm text-slate-800 group-hover:text-[#7C3AED] transition-colors line-clamp-2">
             {article.title}
           </p>
           <p className="text-xs text-slate-400 mt-0.5">{readTime} Min.</p>
@@ -99,7 +99,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
             )}
           </div>
         </div>
-        <h3 className="font-medium text-slate-800 group-hover:text-[#7C3AED] transition-colors leading-snug mb-2 font-[family-name:var(--font-inter)]">
+        <h3 className="font-medium text-slate-800 group-hover:text-[#7C3AED] transition-colors leading-snug mb-2">
           {article.title}
         </h3>
         <p className="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-4">

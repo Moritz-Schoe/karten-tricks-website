@@ -22,7 +22,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
   if (articles.length === 0) {
     return (
       <div className="text-center py-20 text-slate-400">
-        <p className="text-lg font-medium font-[family-name:var(--font-inter)]">Hier entstehen gerade neue Artikel.</p>
+        <p className="text-lg font-medium">Hier entstehen gerade neue Artikel.</p>
         <p className="text-sm mt-2">Schau bald wieder vorbei!</p>
       </div>
     );
@@ -38,7 +38,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
           <button
             type="button"
             onClick={() => setFilter(null)}
-            className={`text-xs px-4 py-1.5 rounded-[6px] border font-medium font-[family-name:var(--font-inter)] transition-colors ${
+            className={`text-xs px-4 py-1.5 rounded-[6px] border font-medium transition-colors ${
               filter === null
                 ? "border-[#7C3AED] bg-[#F5F3FF] text-[#5B21B6]"
                 : "border-slate-200 text-slate-600 hover:border-[#7C3AED] hover:text-[#7C3AED]"
@@ -51,7 +51,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
               key={d}
               type="button"
               onClick={() => setFilter(d)}
-              className={`text-xs px-4 py-1.5 rounded-[6px] border font-medium font-[family-name:var(--font-inter)] transition-colors ${
+              className={`text-xs px-4 py-1.5 rounded-[6px] border font-medium transition-colors ${
                 filter === d
                   ? "border-[#7C3AED] bg-[#F5F3FF] text-[#5B21B6]"
                   : "border-slate-200 text-slate-600 hover:border-[#7C3AED] hover:text-[#7C3AED]"
@@ -65,7 +65,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
 
       {filtered.length === 0 ? (
         <div className="text-center py-16 text-slate-400 rounded-[12px] border border-dashed border-slate-200 bg-slate-50/80">
-          <p className="text-sm font-medium text-slate-600 font-[family-name:var(--font-inter)]">
+          <p className="text-sm font-medium text-slate-600">
             Keine Artikel mit diesem Schwierigkeitsgrad.
           </p>
           <button

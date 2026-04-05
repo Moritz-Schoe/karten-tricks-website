@@ -12,13 +12,56 @@
   --color-info: #0EA5E9;
   --color-rose: #EC4899;
 
-  --font-heading: var(--font-inter), system-ui, sans-serif;
-  --font-body: var(--font-dm-sans), sans-serif;
+  --font-heading: var(--font-dm-sans), system-ui, sans-serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
 
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+
+  /*
+   * Spacing-Skala (8px-Basis) — in Tailwind: 1=4px, 2=8px, 3=12px, 4=16px, 6=24px,
+   * 8=32px, 12=48px, 16=64px, 24=96px
+   * xs=4, sm=8, md=12, lg=16, xl=24, 2xl=32, 3xl=48, 4xl=64, 5xl=96
+   */
+  --space-grid-max: 1280px;
+  --space-page-gutter: 24px;
+
+  /* Horizontaler Seitenrand (8px-Raster): mobile xl → desktop 4xl */
+  --page-padding-x: 1.5rem;
+
+  /* Floating nav: top (xl) + Bar (~56px) + Luft (lg) ≈ 5xl (96px) */
+  --floating-nav-gap: 6rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-padding-x: 2rem; /* 2xl 32px */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-padding-x: 3rem; /* 3xl 48px */
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-padding-x: 4rem; /* 4xl 64px */
+  }
+}
+
+/* Zentrierter Content bis 1280px + responsive Gutter */
+.layout-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--space-grid-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-padding-x);
+  padding-right: var(--page-padding-x);
 }
 
 @theme inline {
@@ -34,7 +77,7 @@
   --color-info: #0EA5E9;
   --color-rose: #EC4899;
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
-  --font-heading: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-dm-sans), system-ui, sans-serif;
 }
 
 body {
@@ -125,6 +168,18 @@ body {
 
 .prose a:hover {
   color: #6D28D9;
+}
+
+/* Affiliate product links (Amazon / amzn.to) — rust tones, matches Empfohlene-Produkte-Box */
+.prose a.prose-affiliate-link {
+  color: #5c2e0a;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a.prose-affiliate-link:hover {
+  color: #3d1f06;
 }
 
 .prose blockquote {

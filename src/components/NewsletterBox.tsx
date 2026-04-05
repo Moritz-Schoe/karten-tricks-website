@@ -2,8 +2,8 @@
 
 export default function NewsletterBox() {
   return (
-    <section className="bg-gradient-to-br from-[#1A1B26] to-[#4C1D95] rounded-[16px] p-8 text-white text-center">
-      <h2 className="text-2xl font-medium mb-2 font-[family-name:var(--font-inter)]">Werde besser &ndash; Woche f&uuml;r Woche</h2>
+    <section id="newsletter" className="bg-gradient-to-br from-[#1A1B26] to-[#4C1D95] rounded-[16px] p-8 text-white text-center">
+      <h2 className="text-2xl font-medium mb-2">Werde besser &ndash; Woche f&uuml;r Woche</h2>
       <p className="text-slate-300 mb-6 max-w-md mx-auto text-sm leading-relaxed">
         Jeden Freitag: Ein neuer Kartentrick, eine Technik, ein Tipp. Kostenlos, kein Spam.
       </p>
@@ -19,7 +19,7 @@ export default function NewsletterBox() {
         />
         <button
           type="submit"
-          className="bg-[#F97316] text-white font-medium h-[44px] px-6 rounded-[8px] text-sm hover:bg-[#EA580C] transition-colors whitespace-nowrap font-[family-name:var(--font-inter)]"
+          className="bg-[#F97316] text-white font-medium h-[44px] px-6 rounded-[8px] text-sm hover:bg-[#EA580C] transition-colors whitespace-nowrap"
         >
           Anmelden
         </button>

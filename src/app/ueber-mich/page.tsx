@@ -10,7 +10,8 @@ export const metadata: Metadata = {
 
 export default function UeberMichPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="layout-page py-12">
+      <div className="mx-auto max-w-3xl">
       <nav className="text-sm text-slate-400 mb-8">
         <Link href="/" className="hover:text-[#7C3AED] transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
@@ -19,11 +20,11 @@ export default function UeberMichPage() {
 
       {/* Header */}
       <div className="flex items-start gap-6 mb-10">
-        <div className="w-20 h-20 bg-gradient-to-br from-[#7C3AED] to-[#4C1D95] rounded-[16px] flex items-center justify-center text-white font-medium text-3xl flex-shrink-0 font-[family-name:var(--font-inter)]">
+        <div className="w-20 h-20 bg-gradient-to-br from-[#7C3AED] to-[#4C1D95] rounded-[16px] flex items-center justify-center text-white font-medium text-3xl flex-shrink-0">
           M
         </div>
         <div>
-          <h1 className="text-3xl font-medium text-slate-800 mb-1 font-[family-name:var(--font-inter)]">Moritz Schöbs</h1>
+          <h1 className="text-3xl font-medium text-slate-800 mb-1">Moritz Schöbs</h1>
           <p className="text-slate-500">Gründer von karten-tricks.de · Kartentrick-Enthusiast seit 2014</p>
           <div className="flex gap-3 mt-3">
             <span className="text-xs bg-[#F5F3FF] text-[#5B21B6] px-3 py-1 rounded-[6px] font-medium">Kartentricks</span>
@@ -67,6 +68,7 @@ export default function UeberMichPage() {
 
       <div className="mt-12">
         <NewsletterBox />
+      </div>
       </div>
     </div>
   );

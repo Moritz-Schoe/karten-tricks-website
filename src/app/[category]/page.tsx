@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: Props) {
   const articles = getArticlesByCategory(category as Category);
 
   return (
-    <div className="max-w-[1280px] mx-auto px-6 py-10">
+    <div className="layout-page py-10">
       {/* Breadcrumb */}
       <nav className="text-sm text-slate-400 mb-6">
         <Link href="/" className="hover:text-[#7C3AED] transition-colors">Startseite</Link>
@@ -43,7 +43,7 @@ export default async function CategoryPage({ params }: Props) {
 
       {/* Category Header */}
       <div className="mb-10">
-        <h1 className="text-[36px] font-medium text-slate-700 mb-3 font-[family-name:var(--font-inter)] leading-[1.2]">{cat.label}</h1>
+        <h1 className="text-[36px] font-medium text-slate-700 mb-3 leading-[1.2]">{cat.label}</h1>
         <p className="text-slate-500 text-lg max-w-2xl leading-relaxed">{cat.description}</p>
       </div>
 

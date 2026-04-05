@@ -4,18 +4,12 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = localFont({
-  src: "./fonts/Inter-Variable.woff2",
-  variable: "--font-inter",
-  display: "swap",
-  weight: "400 600",
-});
-
+/** DM Sans (fonts.google.com/specimen/DM+Sans), self-hosted variable file */
 const dmSans = localFont({
   src: "./fonts/DMSans-Variable.woff2",
   variable: "--font-dm-sans",
   display: "swap",
-  weight: "400 500",
+  weight: "400 700",
 });
 
 export const metadata: Metadata = {
@@ -57,10 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`h-full antialiased ${inter.variable} ${dmSans.variable}`}>
+    <html lang="de" className={`h-full antialiased ${dmSans.variable}`}>
       <body className="min-h-full flex flex-col bg-surface text-foreground font-sans">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-[var(--floating-nav-gap)]">{children}</main>
         <Footer />
       </body>
     </html>

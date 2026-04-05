@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { marked } from "marked";
 import ArticleCard from "@/components/ArticleCard";
+import AffiliateRecommendations, { AffiliateInlineNotice } from "@/components/AffiliateRecommendations";
+import { renderArticleMarkdown, articleContainsAffiliateLinks } from "@/lib/article-markdown";
 import { getArticle, getAllArticles, getArticlesByCategory } from "@/lib/content";
 import { estimateReadingTime } from "@/lib/reading";
 import { CATEGORIES, DIFFICULTY_COLORS } from "@/lib/types";
@@ -65,7 +66,10 @@ export default async function ArticlePage({ params }: Props) {
 
   const cat = CATEGORIES[category as Category];
   const readTime = estimateReadingTime(article.content);
-  const htmlContent = marked(article.content, { async: false });
+  const htmlContent = renderArticleMarkdown(article.content);
+  const hasFrontmatterAffiliate = Boolean(article.affiliate && article.affiliate.length > 0);
+  const showInlineAffiliateNotice =
+    articleContainsAffiliateLinks(article.content) && !hasFrontmatterAffiliate;
 
   const relatedArticles = getArticlesByCategory(category as Category)
     .filter((a) => a.slug !== slug)
@@ -82,7 +86,7 @@ export default async function ArticlePage({ params }: Props) {
         />
       )}
 
-      <div className="max-w-[1280px] mx-auto px-6 py-10">
+      <div className="layout-page py-10">
         {/* Breadcrumb */}
         <nav className="text-sm text-slate-400 mb-6 flex flex-wrap gap-1 items-center">
           <Link href="/" className="hover:text-[#7C3AED] transition-colors">Startseite</Link>
@@ -125,7 +129,7 @@ export default async function ArticlePage({ params }: Props) {
             )}
 
             {/* Title */}
-            <h1 className="text-3xl md:text-[36px] font-medium text-slate-800 leading-[1.2] mb-4 font-[family-name:var(--font-inter)]">
+            <h1 className="text-3xl md:text-[36px] font-medium text-slate-800 leading-[1.2] mb-4">
               {article.title}
             </h1>
 
@@ -139,37 +143,21 @@ export default async function ArticlePage({ params }: Props) {
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
 
-            {/* Affiliate Box */}
-            {article.affiliate && article.affiliate.length > 0 && (
-              <div className="mt-10 p-6 bg-[#FFF7ED] border border-[#FED7AA] rounded-[12px]">
-                <h3 className="font-medium text-[#9A3412] mb-3 font-[family-name:var(--font-inter)]">Empfohlene Produkte</h3>
-                <ul className="space-y-2">
-                  {article.affiliate.map((item) => (
-                    <li key={item.url}>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="nofollow noopener"
-                        className="text-[#9A3412] hover:text-[#7C2D12] font-medium text-sm hover:underline"
-                      >
-                        → {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-[#C2410C] mt-3">
-                  * Affiliate-Links. Bei einem Kauf erhalte ich eine kleine Provision – für dich entstehen keine Mehrkosten.
-                </p>
-              </div>
+            {showInlineAffiliateNotice && (
+              <AffiliateInlineNotice className="mt-10" />
+            )}
+
+            {hasFrontmatterAffiliate && article.affiliate && (
+              <AffiliateRecommendations items={article.affiliate} className="mt-10" />
             )}
 
             {/* Author Box */}
             <div className="mt-10 p-6 bg-white border border-slate-200 rounded-[12px] flex items-start gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#7C3AED] to-[#4C1D95] rounded-[12px] flex items-center justify-center text-white font-medium text-lg flex-shrink-0 font-[family-name:var(--font-inter)]">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#7C3AED] to-[#4C1D95] rounded-[12px] flex items-center justify-center text-white font-medium text-lg flex-shrink-0">
                 M
               </div>
               <div>
-                <p className="font-medium text-slate-800 font-[family-name:var(--font-inter)]">Moritz Schöbs</p>
+                <p className="font-medium text-slate-800">Moritz Schöbs</p>
                 <p className="text-sm text-slate-500 mt-1">
                   Seit über 10 Jahren beschäftige ich mich mit Kartentricks und Kartenmagie.
                   Auf karten-tricks.de teile ich alles was ich gelernt habe – kostenlos und auf Deutsch.
@@ -185,7 +173,7 @@ export default async function ArticlePage({ params }: Props) {
           <aside className="lg:col-span-1 space-y-6">
             <div className="sticky top-24">
               <div className="bg-white border border-slate-200 rounded-[12px] p-5 mb-6">
-                <h3 className="font-medium text-slate-800 mb-3 text-sm uppercase tracking-wider font-[family-name:var(--font-inter)]">
+                <h3 className="font-medium text-slate-800 mb-3 text-sm uppercase tracking-wider">
                   Verwandte Artikel
                 </h3>
                 <div className="space-y-1">
@@ -203,13 +191,13 @@ export default async function ArticlePage({ params }: Props) {
 
               {/* Community CTA */}
               <div className="bg-[#1A1B26] text-white rounded-[12px] p-5 text-center">
-                <p className="font-medium text-sm mb-2 font-[family-name:var(--font-inter)]">Fragen? Feedback?</p>
+                <p className="font-medium text-sm mb-2">Fragen? Feedback?</p>
                 <p className="text-slate-400 text-xs mb-4">
                   Join unsere Discord-Community!
                 </p>
                 <Link
                   href="/community"
-                  className="block bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-sm font-medium px-4 py-2 rounded-[8px] transition-colors font-[family-name:var(--font-inter)]"
+                  className="block bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-sm font-medium px-4 py-2 rounded-[8px] transition-colors"
                 >
                   Discord beitreten
                 </Link>
@@ -221,7 +209,7 @@ export default async function ArticlePage({ params }: Props) {
         {/* Related Articles (bottom) */}
         {relatedArticles.length > 0 && (
           <section className="mt-16">
-            <h2 className="text-xl font-medium text-slate-700 mb-6 font-[family-name:var(--font-inter)]">Das könnte dich auch interessieren</h2>
+            <h2 className="text-xl font-medium text-slate-700 mb-6">Das könnte dich auch interessieren</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />

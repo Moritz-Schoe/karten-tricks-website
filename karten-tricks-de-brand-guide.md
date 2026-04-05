@@ -33,7 +33,6 @@
 ### Zielgruppen
 
 - **Hobbyisten** (18-35 Jahre) — Lernen Tricks für Freunde und Familie
-- **Performer** (Semi-Profis) — Verbessern ihre Skills für Auftritte
 - **Party-Hosts & Event-Planer** — Suchen Entertainment-Ideen
 - **Sammler & Kartenliebhaber** — Interessieren sich für hochwertige Spielkarten
 
@@ -370,7 +369,7 @@ module.exports = {
         dark: '#1A1B26',
       },
       fontFamily: {
-        heading: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['DM Sans', 'system-ui', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
       },
       borderRadius: {

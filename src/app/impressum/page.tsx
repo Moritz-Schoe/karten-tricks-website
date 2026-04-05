@@ -9,14 +9,15 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="layout-page py-12">
+      <div className="mx-auto max-w-3xl">
       <nav className="text-sm text-slate-400 mb-8">
         <Link href="/" className="hover:text-[#7C3AED] transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-700">Impressum</span>
       </nav>
 
-      <h1 className="text-[36px] font-medium text-slate-800 mb-8 font-[family-name:var(--font-inter)] leading-[1.2]">Impressum</h1>
+      <h1 className="text-[36px] font-medium text-slate-800 mb-8 leading-[1.2]">Impressum</h1>
 
       <div className="prose">
         <h2>Angaben gemäß § 5 TMG</h2>
@@ -65,6 +66,7 @@ export default function ImpressumPage() {
           Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
           Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
         </p>
+      </div>
       </div>
     </div>
   );

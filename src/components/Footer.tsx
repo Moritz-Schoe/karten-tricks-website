@@ -23,7 +23,7 @@ const FOOTER_LINKS = {
 export default function Footer() {
   return (
     <footer className="bg-[#1A1B26] text-white mt-20">
-      <div className="max-w-[1280px] mx-auto px-6 py-12">
+      <div className="layout-page py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-3">
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {Object.entries(FOOTER_LINKS).map(([section, links]) => (
             <div key={section}>
-              <h3 className="font-medium text-slate-300 mb-3 text-sm uppercase tracking-wider font-[family-name:var(--font-inter)]">
+              <h3 className="font-medium text-slate-300 mb-3 text-sm uppercase tracking-wider">
                 {section}
               </h3>
               <ul className="space-y-2">

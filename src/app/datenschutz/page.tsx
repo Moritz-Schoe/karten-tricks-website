@@ -9,14 +9,15 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="layout-page py-12">
+      <div className="mx-auto max-w-3xl">
       <nav className="text-sm text-slate-400 mb-8">
         <Link href="/" className="hover:text-[#7C3AED] transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-700">Datenschutz</span>
       </nav>
 
-      <h1 className="text-[36px] font-medium text-slate-800 mb-8 font-[family-name:var(--font-inter)] leading-[1.2]">Datenschutzerklärung</h1>
+      <h1 className="text-[36px] font-medium text-slate-800 mb-8 leading-[1.2]">Datenschutzerklärung</h1>
 
       <div className="prose">
         <h2>1. Datenschutz auf einen Blick</h2>
@@ -102,6 +103,7 @@ export default function DatenschutzPage() {
           für die Zukunft widerrufen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich
           jederzeit an uns wenden.
         </p>
+      </div>
       </div>
     </div>
   );

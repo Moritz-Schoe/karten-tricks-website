@@ -106,9 +106,9 @@ const ICONS: Record<Category, FC<{ className?: string }>> = {
 
 export default function CategoryQuickNav() {
   return (
-    <section className="py-10 px-6 bg-white border-b border-slate-100">
-      <div className="max-w-[1280px] mx-auto">
-        <p className="text-center text-sm font-medium text-slate-500 mb-6 font-[family-name:var(--font-inter)]">
+    <section className="border-b border-slate-100 bg-white py-10">
+      <div className="layout-page">
+        <p className="text-center text-sm font-medium text-slate-500 mb-6">
           Wähle ein Thema
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
@@ -127,7 +127,7 @@ export default function CategoryQuickNav() {
                 >
                   <Icon className="h-6 w-6" />
                 </span>
-                <span className="font-medium text-sm text-slate-700 group-hover:text-violet-700 font-[family-name:var(--font-inter)]">
+                <span className="font-medium text-sm text-slate-700 group-hover:text-violet-700">
                   {cat.label}
                 </span>
               </Link>

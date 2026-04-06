@@ -51,13 +51,17 @@ export default function HomePage() {
   const recent = getRecentArticles(6);
   const totalArticles = getAllArticles().length;
 
+  const partyTricks = getArticlesByCategory("party-tricks");
+
   const counts = {
     kartentricks: getArticlesByCategory("kartentricks").length,
     cardistry: getArticlesByCategory("cardistry").length,
     spielkarten: getArticlesByCategory("spielkarten").length,
-    "party-tricks": getArticlesByCategory("party-tricks").length,
-    techniken: getArticlesByCategory("techniken").length,
+    "party-tricks": partyTricks.length,
+    fingerfertigkeit: getArticlesByCategory("fingerfertigkeit").length,
   };
+
+  const kidsTricksCount = partyTricks.filter((a) => a.slug === "kinder").length;
 
   return (
     <>
@@ -66,10 +70,10 @@ export default function HomePage() {
         {/* Gradient blob */}
         <div className="hero-blob" aria-hidden />
 
-        {/* Card spring – decorative parallax background */}
+        {/* Card spring - decorative parallax background */}
         <CardSpring />
 
-        {/* Left sidebar – scroll indicator */}
+        {/* Left sidebar - scroll indicator */}
         <div className="pointer-events-none absolute bottom-12 left-6 hidden items-end gap-3 lg:flex">
           <span className="hero-scroll-line text-[11px] font-medium uppercase tracking-[0.2em] text-slate-400">
             Scroll
@@ -77,7 +81,7 @@ export default function HomePage() {
           <span className="block h-14 w-px bg-slate-300" aria-hidden />
         </div>
 
-        {/* Right sidebar – follow links */}
+        {/* Right sidebar - follow links */}
         <div className="pointer-events-auto absolute bottom-12 right-6 hidden items-end gap-3 lg:flex">
           <span className="block h-14 w-px bg-slate-300" aria-hidden />
           <div className="hero-scroll-line flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
@@ -87,41 +91,44 @@ export default function HomePage() {
               href="https://discord.gg/QQ2nDMPZ6p"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 transition-colors hover:text-[#FF007D]"
+              className="text-slate-500 transition-colors hover:text-primary"
             >
               Dc.
             </a>
           </div>
         </div>
 
-        {/* Center content – flex-1 so the headline is truly centered */}
+        {/* Center content - flex-1 so the headline is truly centered */}
         <div className="relative z-10 flex flex-1 items-center justify-center">
-          <div className="layout-page flex flex-col items-center text-center">
-            <h1 className="text-[clamp(3rem,10vw,7.5rem)] font-semibold leading-[0.95] tracking-tight text-slate-800">
-              Erlerne
-              <br />
-              <span className="hero-gradient-text">Kartenmagie.</span>
+          <div className="layout-page flex flex-col items-center text-center max-w-4xl">
+            <h1 className="flex flex-col items-center justify-center text-center w-full">
+              <span className="text-[clamp(3.5rem,10vw,6.5rem)] leading-[1.15] font-extrabold leading-[0.95] tracking-tight text-slate-800">
+                <span className="hero-gradient-text">Kartentricks</span> lernen
+              </span>
+              <span className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-normal text-slate-500 max-w-2xl">
+                Von den Basics bis zur Profi-Performance
+              </span>
             </h1>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="layout-page relative z-10 flex flex-col gap-8 pb-10 sm:flex-row sm:items-end sm:justify-between">
-          {/* Left – description + CTA */}
-          <div className="max-w-xs">
-            <p className="text-sm leading-relaxed text-slate-500">
-              Klare Anleitungen, echtes Handwerk und keine Geheimniskrämerei – kostenlos, auf Deutsch, Schritt für Schritt.
+          {/* Left - description + CTA */}
+          <div className="max-w-lg">
+            <p className="text-base leading-relaxed text-slate-600 font-medium">
+              Entdecke detaillierte Schritt-für-Schritt Anleitungen, essenzielle Techniken und die besten Kartentricks für jeden Schwierigkeitsgrad - alles an einem Ort.
             </p>
             <Link
               href="/kartentricks"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-slate-800 transition-colors hover:text-[#FF007D]"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-slate-800 transition-colors hover:text-primary"
             >
               Tricks entdecken
               <ArrowRight className="h-3.5 w-3.5" aria-hidden />
             </Link>
           </div>
 
-          {/* Right – Discord CTA */}
+          {/* Right - Discord CTA */}
           <div className="flex items-center gap-3 self-start sm:self-auto">
               <a
                 href="https://discord.gg/QQ2nDMPZ6p"
@@ -138,73 +145,161 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Übersicht – Bento Grid */}
+      {/* Sektion 1: Der strukturierte Einstieg */}
       <section className="py-12 md:py-20">
         <div className="layout-page">
-          <h2 className="mb-10 text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-tight text-slate-800">
-            Übersicht
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-[repeat(5,minmax(72px,auto))]">
-            <BentoCard
-              title="Kartentricks"
-              count={`${counts.kartentricks} Artikel`}
-              description="Schritt-für-Schritt Anleitungen für beeindruckende Kartentricks – vom Klassiker bis zum Geheimtipp."
-              href="/kartentricks"
-              icon={Sparkles}
-              className="md:col-start-1 md:row-start-1 md:row-end-4"
-            />
-            <BentoCard
-              title="Cardistry"
-              count={`${counts.cardistry} Artikel`}
-              description="Karten als Kunstform – lerne Flourishes, Cuts und Fans."
-              href="/cardistry"
-              icon={Layers}
-              className="md:col-start-2 md:row-start-1 md:row-end-3"
-            />
-            <BentoCard
-              title="Spielkarten"
-              count={`${counts.spielkarten} Artikel`}
-              description="Finde hier das beste Equipment für deinen nächsten Trick!"
-              href="/spielkarten"
-              icon={Box}
-              className="md:col-start-3 md:row-start-1 md:row-end-3"
-            />
-            <BentoCard
-              title="Kartentricks für Kinder"
-              count={`${counts["party-tricks"]} Artikel`}
-              description="Einfache Tricks, die Kinderaugen strahlen lassen – ohne komplizierte Handgriffe."
-              href="/party-tricks/kinder"
-              icon={Star}
-              className="md:col-start-1 md:row-start-4 md:row-end-6"
-            />
-            <BentoCard
-              title="Party Tricks"
-              count={`${counts["party-tricks"]} Artikel`}
-              description="Kartentricks für jede Gelegenheit: Geburtstag, Firmenfeier oder gemütlicher Abend."
-              href="/party-tricks"
-              icon={PartyPopper}
-              className="md:col-start-2 md:row-start-3 md:row-end-6"
-            />
-            <BentoCard
-              title="Handgriffe"
-              count={`${counts.techniken} Artikel`}
-              description="Lerne Techniken zum Zaubern – Forces, Double Lifts und mehr."
-              href="/techniken"
-              icon={Hand}
-              className="md:col-start-3 md:row-start-3 md:row-end-6"
-            />
+          <div className="max-w-3xl">
+            <h2 className="text-[clamp(2rem,5vw,3rem)] leading-[1.15] font-bold tracking-tight text-slate-800 mb-6">
+              Kartentricks für Anfänger: Dein Start in die Kartenzauberei
+            </h2>
+            <p className="text-lg leading-relaxed text-slate-600 mb-8 max-w-2xl">
+              Du möchtest Kartentricks lernen, weißt aber nicht, wo du anfangen sollst? Keine Sorge. Du brauchst kein teures Zubehör - ein einfaches Kartendeck genügt. Auf dieser Seite findest du eine kuratierte Auswahl an Tricks, die einfach zu erlernen sind, aber eine maximale Wirkung auf dein Publikum haben.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/kartentricks"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[var(--color-primary-dark)] hover:shadow-lg"
+              >
+                Zu den Anfänger-Tricks
+              </Link>
+              <Link
+                href="/fingerfertigkeit"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-colors hover:bg-slate-50"
+              >
+                Fingerfertigkeit trainieren
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Sektion 2: Tiefer in die Materie */}
+      <section className="pb-12 md:pb-20">
+        <div className="layout-page">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-start">
+            {/* Left: copy (different feel than Sektion 1) */}
+            <div className="md:col-span-5">
+              <p className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-400 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+                Dein Weg
+              </p>
+              <h2 className="mt-4 text-[clamp(2rem,5vw,3rem)] leading-[1.15] font-bold tracking-tight text-slate-800">
+                Mehr als nur &quot;eine Karte ziehen&quot;
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                Kartenmagie ist extrem vielseitig. Wähle deinen Einstieg - je nachdem, ob du lieber mit Logik startest, mit Spezial-Decks arbeitest oder direkt an echten Profi-Griffen übst.
+              </p>
+
+              <div className="mt-6 rounded-3xl bg-gradient-to-br from-white to-slate-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-black/[0.04]">
+                <p className="text-sm font-semibold text-slate-700">Tipp für Anfänger</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                  Starte mit <strong>mathematischen Tricks</strong> (fehlerfrei), nimm dann <strong>Präparation/System</strong> dazu und übe parallel 1–2 <strong>Fingerfertigkeits-Griffe</strong>.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: path cards */}
+            <div className="md:col-span-7">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <Link
+                  href="/kartentricks#mathematisch"
+                  className="glass-card group relative flex flex-col justify-between rounded-3xl p-7 overflow-hidden border-t-[3px] border-t-blue-100 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 h-full"
+                >
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Pfad 1</p>
+                    <h3 className="mt-2 text-xl font-bold text-slate-800 transition-colors group-hover:text-primary">
+                      Mathematische Kartentricks
+                    </h3>
+                    <p className="mt-3 text-slate-600 leading-relaxed text-sm">
+                      Tricks, die &quot;von selbst&quot; funktionieren - ideal, um sicher vorzuführen und Selbstvertrauen aufzubauen.
+                    </p>
+                  </div>
+                  <div className="mt-8 flex justify-end">
+                    <ArrowRight className="h-5 w-5 text-slate-300 transition-all group-hover:text-primary group-hover:translate-x-1" />
+                  </div>
+                </Link>
+
+                <Link
+                  href="/kartentricks#system"
+                  className="glass-card group relative flex flex-col justify-between rounded-3xl p-7 overflow-hidden border-t-[3px] border-t-purple-100 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 h-full"
+                >
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Pfad 2</p>
+                    <h3 className="mt-2 text-xl font-bold text-slate-800 transition-colors group-hover:text-primary">
+                      Kartentricks mit System
+                    </h3>
+                    <p className="mt-3 text-slate-600 leading-relaxed text-sm">
+                      Präparierte Decks (z.B. Stripper oder Svengali) sorgen für unmögliche Effekte - ohne schwere Moves.
+                    </p>
+                  </div>
+                  <div className="mt-8 flex justify-end">
+                    <ArrowRight className="h-5 w-5 text-slate-300 transition-all group-hover:text-primary group-hover:translate-x-1" />
+                  </div>
+                </Link>
+
+                <Link
+                  href="/fingerfertigkeit"
+                  className="glass-card group relative flex flex-col justify-between rounded-3xl p-7 overflow-hidden border-t-[3px] border-t-primary/20 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 h-full sm:col-span-2"
+                >
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Pfad 3</p>
+                      <h3 className="mt-2 text-xl font-bold text-slate-800 transition-colors group-hover:text-primary">
+                        Sleight of Hand{" "}
+                        <span className="ml-2 align-middle text-xs font-medium text-slate-400 uppercase tracking-wider">
+                          Fingerfertigkeit
+                        </span>
+                      </h3>
+                      <p className="mt-3 text-slate-600 leading-relaxed text-sm max-w-[60ch]">
+                        Lerne die echten Profi-Griffe wie Double Lift, Pinky Break und Falschmischungen - für visuelle, direkte Wunder.
+                      </p>
+                    </div>
+                    <div className="mt-1 flex justify-end sm:mt-0">
+                      <ArrowRight className="h-5 w-5 text-slate-300 transition-all group-hover:text-primary group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop Bridge */}
+      <section className="pb-12 md:pb-20">
+        <div className="layout-page">
+          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-10 rounded-3xl bg-[#0F1219] overflow-hidden p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] border border-white/[0.05]">
+            {/* Luxury Gold ambient glows for shop bridge */}
+            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-[#EECD5C]/40 via-[#D2A63C]/15 to-transparent pointer-events-none" />
+            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-[#D2A63C]/30 blur-[100px] pointer-events-none mix-blend-screen" />
+            
+            <div className="relative z-10 max-w-xl">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#EECD5C]">
+                Welche Karten für Kartentricks?
+              </h2>
+              <p className="text-slate-300 text-base leading-relaxed mb-8 max-w-lg">
+                Nicht jedes Kartendeck eignet sich zum Zaubern. Erfahre, warum Profis auf bestimmte Marken schwören, und finde das perfekte Equipment für deinen Einstieg in unserem Shop.
+              </p>
+              <Link
+                href="/shop"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D2A63C] to-[#EECD5C] px-8 py-3.5 text-sm font-bold text-slate-900 transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(238,205,92,0.5)] border border-[#EECD5C]/40"
+              >
+                Zum Kartendecks & Zubehör Shop <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Featured Articles */}
       {featured.length > 0 && (
         <section className="py-12 md:py-20">
           <div className="layout-page">
-            <div className="mb-10 flex items-end justify-between">
-              <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-tight text-slate-800">
-                Empfohlen
+            <div className="mb-10 flex flex-col items-start gap-2">
+              <h2 className="text-[clamp(2rem,5vw,3rem)] leading-[1.15] font-bold tracking-tight text-slate-800">
+                Unsere Top-Empfehlungen
               </h2>
+              <p className="text-slate-500 text-lg">Die besten und beliebtesten Tutorials der Community</p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((article) => (
@@ -215,73 +310,15 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Cardistry Banner */}
-      <section className="py-12 md:py-20">
-        <div className="layout-page">
-          <div className="relative flex items-center overflow-hidden rounded-3xl bg-[#F6F6F8] p-8 sm:p-14 md:min-h-[340px]">
-            {/* Text Content */}
-            <div className="relative z-10 w-full sm:w-1/2 lg:w-3/5">
-              <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem]">
-                Jetzt neu auf Karten-tricks.de:<br />
-                <span className="text-[#FF007D]">Cardistry</span>!
-              </h2>
-              <Link
-                href="/cardistry"
-                className="mt-8 inline-flex items-center rounded-full bg-[#8A4CFF] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#7836f5] hover:shadow-lg"
-              >
-                Cardistry entdecken!
-              </Link>
-            </div>
-
-            {/* Media Asset */}
-            <div className="pointer-events-none absolute -right-10 top-1/2 w-4/5 max-w-[280px] -translate-y-1/2 sm:right-0 sm:w-1/2 md:max-w-[400px] lg:right-10">
-              <Image
-                src="/cardistry-illustration.png"
-                alt="Cardistry Illustration"
-                width={800}
-                height={800}
-                className="h-auto w-full object-contain mix-blend-multiply"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Articles */}
-      {recent.length > 0 && (
-        <section className="py-12 md:py-20">
-          <div className="layout-page">
-            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-tight text-slate-800">
-                Neue Artikel
-              </h2>
-              <Link
-                href="/kartentricks"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-800 transition-colors hover:text-[#FF007D]"
-              >
-                Alle ansehen
-                <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {recent.map((article) => (
-                <ArticleCard key={`${article.category}/${article.slug}`} article={article} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Community CTA */}
       <section className="py-12 md:py-20">
         <div className="layout-page">
           <div className="mx-auto max-w-2xl rounded-3xl bg-white p-10 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-16">
-            <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-semibold tracking-tight text-slate-800">
+            <h2 className="text-[clamp(2rem,5vw,3rem)] leading-[1.15] font-bold tracking-tight text-slate-800">
               Werde Teil der Community
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-slate-500">
-              Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community – direkt auf Discord.
+              Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community - direkt auf Discord.
             </p>
             <div className="mt-8 inline-flex rounded-full bg-slate-900 transition-colors hover:bg-slate-800">
               <a
@@ -318,6 +355,129 @@ export default function HomePage() {
             <div className="rounded-2xl bg-white p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
               <div className="text-3xl font-bold tracking-tight text-slate-800">100%</div>
               <div className="mt-1 text-sm text-slate-400">Kostenlos</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Übersicht - Bento Grid */}
+      <section className="py-12 md:py-20">
+        <div className="layout-page">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="text-[clamp(2rem,5vw,3rem)] leading-[1.15] font-bold tracking-tight text-slate-800">
+              Alles im Überblick: Kartentricks, Techniken &amp; Kartenwissen
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-slate-600">
+              Du hast noch nicht den richtigen Einstieg gefunden? Hier siehst du auf einen Blick, was es auf karten-tricks.de alles gibt - von{" "}
+              <strong>Kartentricks lernen</strong> über <strong>Fingerfertigkeit</strong> bis zu <strong>Spielkarten</strong> und{" "}
+              <strong>Party Tricks</strong>.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-[repeat(5,minmax(72px,auto))]">
+            <BentoCard
+              title="Kartentricks"
+              count={`${counts.kartentricks} Artikel`}
+              description="Schritt-für-Schritt Anleitungen, um Kartentricks zu lernen - perfekt für Anfänger, aber auch mit starken Effekten für Fortgeschrittene."
+              href="/kartentricks"
+              icon={Sparkles}
+              className="md:col-start-1 md:row-start-1 md:row-end-4"
+            />
+            <BentoCard
+              title="Cardistry"
+              count={`${counts.cardistry} Artikel`}
+              description="Cardistry lernen: Cuts, Flourishes und Fans für saubere, visuelle Kartenmoves - ideal als Ergänzung zur Kartenmagie."
+              href="/cardistry"
+              icon={Layers}
+              className="md:col-start-2 md:row-start-1 md:row-end-3"
+            />
+            <BentoCard
+              title="Spielkarten"
+              count={`${counts.spielkarten} Artikel`}
+              description="Spielkarten-Guide: Welche Kartendecks eignen sich zum Zaubern oder für Cardistry? Empfehlungen, Unterschiede und Kaufberatung."
+              href="/spielkarten"
+              icon={Box}
+              className="md:col-start-3 md:row-start-1 md:row-end-3"
+            />
+            <BentoCard
+              title="Kartentricks für Kinder"
+              count={`${kidsTricksCount} Artikel`}
+              description="Einfache Kartentricks für Kinder: schnell erklärt, leicht vorzuführen und mit großer Wirkung - ohne schwierige Griffe."
+              href="/party-tricks/kinder"
+              icon={Star}
+              className="md:col-start-1 md:row-start-4 md:row-end-6"
+            />
+            <BentoCard
+              title="Party Tricks"
+              count={`${counts["party-tricks"]} Artikel`}
+              description="Tricks nach Anlass: Kartentricks für Geburtstag, Firmenfeier oder Freunde - mit Fokus auf Präsentation, Wirkung und Ablauf."
+              href="/party-tricks"
+              icon={PartyPopper}
+              className="md:col-start-2 md:row-start-3 md:row-end-6"
+            />
+            <BentoCard
+              title="Fingerfertigkeit"
+              count={`${counts.fingerfertigkeit} Artikel`}
+              description="Techniken für Kartenzauberei: Double Lift, Pinky Break, Forces und Mischtechniken - damit deine Kartentricks wirklich täuschen."
+              href="/fingerfertigkeit"
+              icon={Hand}
+              className="md:col-start-3 md:row-start-3 md:row-end-6"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Text */}
+      <section className="pb-16 md:pb-24">
+        <div className="layout-page">
+          <div className="glass-card rounded-3xl border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-12">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+              <div className="lg:col-span-8">
+                <div className="text-slate-600 prose prose-slate md:prose-lg max-w-none">
+                  <h2 className="text-2xl font-bold text-slate-800 mb-6">
+                    Kartentricks lernen: Der ultimative Guide für Anfänger und Fortgeschrittene
+                  </h2>
+                  <p>
+                    Wer Kartentricks lernen möchte, findet auf karten-tricks.de die perfekte Anlaufstelle. Egal, ob du völlig am Anfang stehst oder bereits erste Erfahrungen mit{" "}
+                    <strong>Sleight of Hand</strong> (Fingerfertigkeit) hast - unsere detaillierten Step-by-Step Anleitungen begleiten dich auf jedem Level. Die Faszination der Kartenmagie liegt darin, dass du kein extrem teures Equipment benötigst. Ein einfaches, gutes Kartendeck reicht vollkommen aus, um deine Freunde, Familie oder Kollegen ins Staunen zu versetzen.
+                  </p>
+                  <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">
+                    Warum jeder Zaubertricks mit Karten lernen kann
+                  </h3>
+                  <p>
+                    Viele Menschen glauben fälschlicherweise, Kartenzauberei erfordere jahrelanges Training und unerreichbare Fingerfertigkeit. Das stimmt so nicht! Viele der stärksten Zaubertricks der Welt sind sogenannte{" "}
+                    <em>mathematische Kartentricks</em>. Diese funktionieren &quot;von selbst&quot; anhand genauer logischer Prinzipien, ganz ohne spezielle Fingerfertigkeit. Sie sind der perfekte Einstieg für dich, da du dich zu 100 % auf deine Präsentation konzentrieren kannst. Hast du erst einmal das nötige Selbstvertrauen aufgebaut, kannst du dich souverän an die echten Profi-Griffe (wie den Double Lift oder den Pinky Break) wagen, um noch visuellere Wunder zu erschaffen.
+                  </p>
+                </div>
+              </div>
+
+              <aside className="lg:col-span-4">
+                <div className="rounded-2xl bg-white/70 border border-black/[0.04] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    Schnell weiter
+                  </p>
+                  <div className="mt-4 space-y-2">
+                    <Link href="/kartentricks" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-slate-50">
+                      <span className="text-sm font-medium text-slate-700">Kartentricks entdecken</span>
+                      <ArrowRight className="h-4 w-4 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
+                    </Link>
+                    <Link href="/fingerfertigkeit" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-slate-50">
+                      <span className="text-sm font-medium text-slate-700">Techniken lernen</span>
+                      <ArrowRight className="h-4 w-4 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
+                    </Link>
+                    <Link href="/spielkarten" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-slate-50">
+                      <span className="text-sm font-medium text-slate-700">Spielkarten-Guide</span>
+                      <ArrowRight className="h-4 w-4 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
+                    </Link>
+                    <Link href="/zaubertricks" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-slate-50">
+                      <span className="text-sm font-medium text-slate-700">Alle Zaubertricks</span>
+                      <ArrowRight className="h-4 w-4 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
+                    </Link>
+                  </div>
+                  <p className="mt-4 text-xs leading-relaxed text-slate-400">
+                    Tipp: Wenn du neu bist, starte mit einfachen Effekten und übe dann gezielt Fingerfertigkeit.
+                  </p>
+                </div>
+              </aside>
             </div>
           </div>
         </div>

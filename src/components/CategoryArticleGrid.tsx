@@ -40,8 +40,8 @@ export default function CategoryArticleGrid({ articles }: Props) {
             onClick={() => setFilter(null)}
             className={`text-xs px-4 py-1.5 rounded-full font-medium transition-colors ${
               filter === null
-                ? "bg-[#FF007D] text-white shadow-sm"
-                : "glass-card text-slate-600 hover:text-[#FF007D]"
+                ? "bg-primary text-white shadow-sm"
+                : "glass-card text-slate-600 hover:text-primary"
             }`}
           >
             Alle
@@ -53,8 +53,8 @@ export default function CategoryArticleGrid({ articles }: Props) {
               onClick={() => setFilter(d)}
               className={`text-xs px-4 py-1.5 rounded-full font-medium transition-colors ${
                 filter === d
-                  ? "bg-[#FF007D] text-white shadow-sm"
-                  : "glass-card text-slate-600 hover:text-[#FF007D]"
+                  ? "bg-primary text-white shadow-sm"
+                  : "glass-card text-slate-600 hover:text-primary"
               }`}
             >
               {d}
@@ -71,7 +71,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
           <button
             type="button"
             onClick={() => setFilter(null)}
-            className="text-xs text-[#FF007D] font-medium mt-3 hover:underline"
+            className="text-xs text-primary font-medium mt-3 hover:underline"
           >
             Alle anzeigen
           </button>

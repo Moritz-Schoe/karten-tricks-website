@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Community & Discord",
-  description: "Tritt der karten-tricks.de Community bei – tausche Tricks aus, bekomme Feedback und lern von anderen Kartentrick-Fans.",
+  description: "Tritt der karten-tricks.de Community bei - tausche Tricks aus, bekomme Feedback und lern von anderen Kartentrick-Fans.",
 };
 
 export default function CommunityPage() {
@@ -12,14 +12,14 @@ export default function CommunityPage() {
     <div className="layout-page py-12">
       <div className="mx-auto max-w-4xl">
       <nav className="text-sm text-slate-400 mb-8">
-        <Link href="/" className="hover:text-[#FF007D] transition-colors">Startseite</Link>
+        <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-600">Community</span>
       </nav>
 
       <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight text-slate-800 mb-4 leading-[1.1]">Community & Discord</h1>
       <p className="text-slate-500 text-lg mb-10 max-w-xl leading-relaxed">
-        Lern nicht allein – tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und bekomme ehrliches Feedback.
+        Lern nicht allein - tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und bekomme ehrliches Feedback.
       </p>
 
       <div className="rounded-2xl bg-white p-8 text-center max-w-lg mx-auto mb-12 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
@@ -30,7 +30,7 @@ export default function CommunityPage() {
         </div>
         <h2 className="text-xl font-bold tracking-tight text-slate-800 mb-2">Discord Server</h2>
         <p className="text-slate-500 text-sm mb-6 leading-relaxed">
-          500+ Mitglieder. Tausche Tricks aus, teile Videos, stelle Fragen – direkt zu Moritz und anderen Fans.
+          500+ Mitglieder. Tausche Tricks aus, teile Videos, stelle Fragen - direkt zu Moritz und anderen Fans.
         </p>
           <a
             href="https://discord.gg/QQ2nDMPZ6p"

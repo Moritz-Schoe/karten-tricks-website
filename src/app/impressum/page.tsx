@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum von karten-tricks.de – Angaben gemäß § 5 TMG.",
+  description: "Impressum von karten-tricks.de - Angaben gemäß § 5 TMG.",
   robots: { index: false, follow: false },
 };
 
@@ -12,7 +12,7 @@ export default function ImpressumPage() {
     <div className="layout-page py-12">
       <div className="mx-auto max-w-3xl">
       <nav className="text-sm text-slate-400 mb-8">
-        <Link href="/" className="hover:text-[#FF007D] transition-colors">Startseite</Link>
+        <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-600">Impressum</span>
       </nav>
@@ -56,7 +56,7 @@ export default function ImpressumPage() {
         <h3>Affiliate-Links</h3>
         <p>
           Diese Website enthält Affiliate-Links zu Produkten. Bei einem Kauf über diese Links erhalten wir
-          eine kleine Provision – für dich entstehen keine Mehrkosten. Wir empfehlen nur Produkte, die wir
+          eine kleine Provision - für dich entstehen keine Mehrkosten. Wir empfehlen nur Produkte, die wir
           selbst verwenden oder getestet haben.
         </p>
 

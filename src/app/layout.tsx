@@ -13,7 +13,7 @@ const dmSans = localFont({
   weight: "400 700",
 });
 
-/** Source Serif 4 – article body text */
+/** Source Serif 4 - article body text */
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-source-serif",
@@ -23,11 +23,11 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kartentricks lernen – karten-tricks.de",
+    default: "Kartentricks lernen - karten-tricks.de",
     template: "%s | karten-tricks.de",
   },
   description:
-    "Lerne Kartentricks Schritt für Schritt – von einfachen Anfängertricks bis zu professionellen Techniken. Kostenlose Anleitungen auf Deutsch.",
+    "Lerne Kartentricks Schritt für Schritt - von einfachen Anfängertricks bis zu professionellen Techniken. Kostenlose Anleitungen auf Deutsch.",
   keywords: ["Kartentricks", "Zaubertricks", "Kartentricks lernen", "Kartenmagie", "Kartentricks Deutsch"],
   authors: [{ name: "Moritz" }],
   creator: "Moritz",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://karten-tricks.de",
     siteName: "karten-tricks.de",
-    title: "Kartentricks lernen – karten-tricks.de",
+    title: "Kartentricks lernen - karten-tricks.de",
     description:
       "Die beste deutschsprachige Ressource für Kartentricks und Kartenmagie.",
   },

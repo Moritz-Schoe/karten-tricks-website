@@ -5,7 +5,7 @@ import { Sparkles, Layers, BookOpen, Gift, Spade, type LucideIcon } from "lucide
 const ORDER: Category[] = [
   "kartentricks",
   "cardistry",
-  "techniken",
+  "fingerfertigkeit",
   "party-tricks",
   "spielkarten",
 ];
@@ -14,17 +14,17 @@ const ACCENT: Record<
   Category,
   { iconColor: string }
 > = {
-  kartentricks: { iconColor: "text-violet-600" },
-  cardistry: { iconColor: "text-fuchsia-600" },
-  techniken: { iconColor: "text-orange-600" },
-  "party-tricks": { iconColor: "text-rose-600" },
-  spielkarten: { iconColor: "text-sky-600" },
+  kartentricks: { iconColor: "text-amber-600" },
+  cardistry: { iconColor: "text-amber-600" },
+  fingerfertigkeit: { iconColor: "text-amber-600" },
+  "party-tricks": { iconColor: "text-amber-600" },
+  spielkarten: { iconColor: "text-amber-600" },
 };
 
 const ICONS: Record<Category, LucideIcon> = {
   kartentricks: Sparkles,
   cardistry: Layers,
-  techniken: BookOpen,
+  fingerfertigkeit: BookOpen,
   "party-tricks": Gift,
   spielkarten: Spade,
 };
@@ -45,14 +45,14 @@ export default function CategoryQuickNav() {
               <Link
                 key={key}
                 href={`/${key}`}
-                className="group glass-card flex flex-col items-center gap-3 rounded-2xl px-4 py-5 text-center transition-all hover:shadow-[0_8px_32px_-8px_rgba(124,58,237,0.12)] hover:-translate-y-0.5"
+                className="group glass-card flex flex-col items-center gap-3 rounded-2xl px-4 py-5 text-center transition-all hover:shadow-[0_8px_32px_-8px_rgba(212,175,55,0.18)] hover:-translate-y-0.5"
               >
                 <span
                   className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/60 ${accent.iconColor} transition-transform group-hover:scale-105`}
                 >
                   <Icon className="h-6 w-6" strokeWidth={1.75} />
                 </span>
-                <span className="font-medium text-sm text-slate-600 group-hover:text-violet-700">
+                <span className="font-medium text-sm text-slate-600 group-hover:text-primary">
                   {cat.label}
                 </span>
               </Link>

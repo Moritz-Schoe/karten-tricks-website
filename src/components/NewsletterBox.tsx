@@ -4,7 +4,7 @@ export default function NewsletterBox() {
   return (
     <section className="bg-gradient-to-br from-[#2e4057] to-[#1a6b3a] rounded-2xl p-8 text-white text-center">
       <div className="text-4xl mb-3">✉️</div>
-      <h2 className="text-2xl font-bold mb-2">Werde besser – Woche für Woche</h2>
+      <h2 className="text-2xl font-bold mb-2">Werde besser - Woche für Woche</h2>
       <p className="text-gray-200 mb-6 max-w-md mx-auto text-sm leading-relaxed">
         Jeden Freitag: Ein neuer Kartentrick, eine Technik, ein Tipp. Kostenlos, kein Spam.
       </p>

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kartendecks & Zubehör – Empfohlene Produkte | karten-tricks.de",
+  title: "Kartendecks & Zubehör - Empfohlene Produkte | karten-tricks.de",
   description:
-    "Unsere Empfehlungen für Spielkarten, Trick-Decks, Zauberkästen und Bücher – alle Affiliate-Produkte auf einen Blick.",
+    "Unsere Empfehlungen für Spielkarten, Trick-Decks, Zauberkästen und Bücher - alle Affiliate-Produkte auf einen Blick.",
 };
 
 interface Product {
@@ -32,7 +32,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Bicycle Rider Back",
         description:
-          "Der Allrounder – das meistgenutzte Kartendeck der Welt. Perfekt für Tricks, Poker und Cardistry.",
+          "Der Allrounder - das meistgenutzte Kartendeck der Welt. Perfekt für Tricks, Poker und Cardistry.",
         url: "https://amzn.to/3vUzH7h",
         image: "/images/xxIMG_6951-copy.jpg",
         tag: "Bestseller",
@@ -47,7 +47,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Tally-Ho Circle Back",
         description:
-          "Das Deck von Penn & Teller – glatteres Finish, perfekt für Cardistry und Flourishes. 2er-Pack.",
+          "Das Deck von Penn & Teller - glatteres Finish, perfekt für Cardistry und Flourishes. 2er-Pack.",
         url: "https://amzn.to/3vUK6zR",
         image: "/images/71fw80m4jL._AC_SL1000_.jpg",
       },
@@ -61,7 +61,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Bicycle Stripper Deck",
         description:
-          "Lässt dich jede frei gewählte Karte sofort im Deck finden – ganz ohne Pinky Break.",
+          "Lässt dich jede frei gewählte Karte sofort im Deck finden - ganz ohne Pinky Break.",
         url: "https://amzn.to/4cTIp6I",
         tag: "Empfehlung",
       },
@@ -80,7 +80,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Bicycle Invisible Deck",
         description:
-          "Einer der mächtigsten Tricks der Magie – der Zuschauer wählt, und seine Karte liegt umgedreht im Deck.",
+          "Einer der mächtigsten Tricks der Magie - der Zuschauer wählt, und seine Karte liegt umgedreht im Deck.",
         url: "https://amzn.to/3UBMLqx",
         tag: "Profi-Tipp",
       },
@@ -100,14 +100,14 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         tag: "Top-Empfehlung",
       },
       {
-        name: "Ravensburger – Meine erste Zaubershow",
+        name: "Ravensburger - Meine erste Zaubershow",
         description:
           "Speziell für jüngere Kinder ab 6 Jahren: einfache Tricks, robuste Materialien.",
         url: "https://amzn.to/4filnYa",
         image: "/images/61BFUYfkQFL._AC_SL1024_.jpg",
       },
       {
-        name: "Clementoni – Ehrlich Brothers Modern Magic",
+        name: "Clementoni - Ehrlich Brothers Modern Magic",
         description:
           "Moderne und kreative Tricks für Kinder und Jugendliche. Gutes Preis-Leistungs-Verhältnis.",
         url: "https://amzn.to/4dj8mM4",
@@ -121,14 +121,14 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         image: "/images/71A2hHPI8pL._AC_SL1500_.jpg",
       },
       {
-        name: "Marvin's Magic – Klassiker",
+        name: "Marvin's Magic - Klassiker",
         description:
           "Umfangreicher Zauberkasten mit hochwertigen Materialien für alle Altersgruppen.",
         url: "https://amzn.to/3A2pO9B",
         image: "/images/81dngsnHoPL._AC_SL1500_.jpg",
       },
       {
-        name: "Marvin's Magic – 275 Tricks",
+        name: "Marvin's Magic - 275 Tricks",
         description:
           "Einfache Tricks speziell für Kinder, hochwertige Materialien und gute Anleitungen.",
         url: "https://amzn.to/3Svvijp",
@@ -137,7 +137,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Japace Zauberkasten",
         description:
-          "Magie trifft Wissenschaft – ideal für neugierige Kinder, die verstehen wollen, wie Tricks funktionieren.",
+          "Magie trifft Wissenschaft - ideal für neugierige Kinder, die verstehen wollen, wie Tricks funktionieren.",
         url: "https://amzn.to/3WudmGS",
         image: "/images/81tWHfBiWiL._AC_SL1500_.jpg",
       },
@@ -156,7 +156,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
     description: "Lesetipps rund um Kartentricks und Zauberkunst.",
     products: [
       {
-        name: "Kartentricks für Anfänger – Buchempfehlung",
+        name: "Kartentricks für Anfänger - Buchempfehlung",
         description:
           "Der perfekte Begleiter zum Einstieg: Grundlagen, Techniken und erste Routinen verständlich erklärt.",
         url: "https://amzn.to/4cjeuD8",
@@ -195,13 +195,13 @@ function ProductCard({ product }: { product: Product }) {
             {product.tag}
           </span>
         )}
-        <h3 className="text-base font-semibold text-slate-800 group-hover:text-[#FF007D] transition-colors">
+        <h3 className="text-base font-semibold text-slate-800 group-hover:text-primary transition-colors">
           {product.name}
         </h3>
         <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-500">
           {product.description}
         </p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#FF007D]">
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
           Auf Amazon ansehen
           <ExternalLink className="h-3.5 w-3.5" />
         </span>
@@ -224,14 +224,14 @@ function ProductCardCompact({ product }: { product: Product }) {
             {product.tag}
           </span>
         )}
-        <h3 className="text-sm font-semibold text-slate-800 group-hover:text-[#FF007D] transition-colors">
+        <h3 className="text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors">
           {product.name}
         </h3>
         <p className="mt-1 text-xs leading-relaxed text-slate-500">
           {product.description}
         </p>
       </div>
-      <ExternalLink className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-[#FF007D]" />
+      <ExternalLink className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-primary" />
     </a>
   );
 }
@@ -298,7 +298,7 @@ export default function ShopPage() {
               <div className="mt-6">
                 <Link
                   href="/spielkarten/vergleich"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#FF007D] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                 >
                   Ausführlicher Spielkarten-Vergleich
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -310,7 +310,7 @@ export default function ShopPage() {
               <div className="mt-6">
                 <Link
                   href="/spielkarten/zauberkaesten"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#FF007D] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                 >
                   Alle Zauberkästen im Detail-Test
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -324,7 +324,7 @@ export default function ShopPage() {
         <div className="rounded-2xl border border-amber-200/40 bg-amber-50/40 p-6 text-center backdrop-blur-sm">
           <p className="text-xs leading-relaxed text-[#6B3A18]/70">
             * Alle Links auf dieser Seite sind Affiliate-Links. Bei einem Kauf
-            über diese Links erhalten wir eine kleine Provision – für dich
+            über diese Links erhalten wir eine kleine Provision - für dich
             entstehen keine Mehrkosten. So können wir karten-tricks.de
             weiterhin kostenlos betreiben.
           </p>

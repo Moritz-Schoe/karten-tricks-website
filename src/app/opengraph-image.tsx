@@ -41,7 +41,8 @@ export default async function Image() {
               width: 800,
               height: 800,
               borderRadius: "50%",
-              background: "linear-gradient(135deg, rgba(255, 0, 125, 0.1) 0%, rgba(255, 77, 166, 0.05) 50%, rgba(250, 250, 250, 0) 100%)",
+              background:
+                "linear-gradient(135deg, rgba(210, 166, 60, 0.13) 0%, rgba(238, 205, 92, 0.07) 50%, rgba(250, 250, 250, 0) 100%)",
             }}
           />
         </div>
@@ -71,7 +72,7 @@ export default async function Image() {
             }}
           >
             <span>Erlerne</span>
-            <span style={{ color: "#FF007D" }}>Kartenmagie.</span>
+            <span style={{ color: "#D2A63C" }}>Kartenmagie.</span>
           </h1>
 
           <p

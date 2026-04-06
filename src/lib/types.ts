@@ -3,7 +3,7 @@ export type Difficulty = "Anfänger" | "Mittel" | "Fortgeschrittene";
 export type Category =
   | "kartentricks"
   | "cardistry"
-  | "techniken"
+  | "fingerfertigkeit"
   | "party-tricks"
   | "spielkarten";
 
@@ -14,6 +14,10 @@ export interface ArticleFrontmatter {
   category: Category;
   slug: string;
   difficulty?: Difficulty;
+  duration?: string;
+  deck?: string;
+  preparation?: string;
+  whyThisTrick?: string;
   readingTime?: number;
   featured?: boolean;
   affiliate?: { label: string; url: string }[];
@@ -34,22 +38,22 @@ export const CATEGORIES: Record<
   kartentricks: {
     label: "Kartentricks",
     description: "Schritt-für-Schritt Anleitungen für beeindruckende Kartentricks – vom Klassiker bis zum Geheimtipp.",
-    color: "bg-[#FFF0F6] border-[#FFB3D9] text-[#CC0064]",
+    color: "bg-[#FFFBEB] border-[#EECD5C] text-[#B28D33]",
   },
   cardistry: {
     label: "Cardistry",
     description: "Karten als Kunstform – lerne Flourishes, Cuts und Fans für ein beeindruckendes Kartenerlebnis.",
-    color: "bg-[#FFF0F6] border-[#FFB3D9] text-[#CC0064]",
+    color: "bg-[#FFFBEB] border-[#EECD5C] text-[#B28D33]",
   },
-  techniken: {
-    label: "Techniken",
+  fingerfertigkeit: {
+    label: "Fingerfertigkeit",
     description: "Die handwerklichen Grundlagen: Forces, Double Lift, Kontrollen und Präsentation.",
     color: "bg-[#FFF7ED] border-[#FED7AA] text-[#9A3412]",
   },
   "party-tricks": {
     label: "Party Tricks",
     description: "Kartentricks im richtigen Kontext: Geburtstag, Firmenfeier, Kinder – wann welcher Trick funktioniert.",
-    color: "bg-[#FCE7F3] border-[#F9A8D4] text-[#9D174D]",
+    color: "bg-[#FFFBEB] border-[#EECD5C] text-[#B28D33]",
   },
   spielkarten: {
     label: "Spielkarten",

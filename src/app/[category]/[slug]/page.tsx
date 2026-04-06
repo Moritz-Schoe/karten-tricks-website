@@ -4,6 +4,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
+import QuickInfoBox from "@/components/QuickInfoBox";
+import WhyThisTrick from "@/components/WhyThisTrick";
 import AffiliateRecommendations, { AffiliateInlineNotice } from "@/components/AffiliateRecommendations";
 import { renderArticleMarkdown, articleContainsAffiliateLinks } from "@/lib/article-markdown";
 import { getArticle, getAllArticles, getArticlesByCategory } from "@/lib/content";
@@ -90,9 +92,9 @@ export default async function ArticlePage({ params }: Props) {
       <div className="layout-page py-10">
         {/* Breadcrumb */}
         <nav className="text-sm text-slate-400 mb-6 flex flex-wrap gap-1 items-center">
-          <Link href="/" className="hover:text-[#FF007D] transition-colors">Startseite</Link>
+          <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
           <span>/</span>
-          <Link href={`/${category}`} className="hover:text-[#FF007D] transition-colors">{cat.label}</Link>
+          <Link href={`/${category}`} className="hover:text-primary transition-colors">{cat.label}</Link>
           <span>/</span>
           <span className="text-slate-600 font-medium">{article.title}</span>
         </nav>
@@ -151,10 +153,25 @@ export default async function ArticlePage({ params }: Props) {
             )}
 
             {/* Prose content — constrained to reading width */}
-            <div
-              className="prose max-w-[680px]"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            <div className="max-w-[680px]">
+              {(article.difficulty || article.duration || article.deck || article.preparation) && (
+                <QuickInfoBox 
+                  difficulty={article.difficulty}
+                  duration={article.duration}
+                  deck={article.deck}
+                  preparation={article.preparation}
+                />
+              )}
+
+              {article.whyThisTrick && (
+                <WhyThisTrick reason={article.whyThisTrick} />
+              )}
+
+              <div
+                className="prose"
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+            </div>
 
             <div className="max-w-[680px]">
               {showInlineAffiliateNotice && (
@@ -167,16 +184,16 @@ export default async function ArticlePage({ params }: Props) {
 
               {/* Author box */}
               <div className="mt-10 p-6 rounded-2xl bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#FF007D] to-[#CC0064] rounded-2xl flex items-center justify-center text-white font-medium text-lg flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] rounded-2xl flex items-center justify-center text-white font-medium text-lg flex-shrink-0">
                   M
                 </div>
                 <div>
                   <p className="font-bold tracking-tight text-slate-800">Moritz</p>
                   <p className="text-sm text-slate-500 mt-1">
                     Seit über 10 Jahren beschäftige ich mich mit Kartentricks und Kartenmagie.
-                    Auf karten-tricks.de teile ich alles was ich gelernt habe – kostenlos und auf Deutsch.
+                    Auf karten-tricks.de teile ich alles was ich gelernt habe - kostenlos und auf Deutsch.
                   </p>
-                  <Link href="/ueber-mich" className="inline-flex items-center gap-1 text-sm text-[#FF007D] hover:underline mt-2 font-medium">
+                  <Link href="/ueber-mich" className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-2 font-medium">
                     Mehr über mich <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
@@ -198,7 +215,7 @@ export default async function ArticlePage({ params }: Props) {
                 </div>
                 <Link
                   href={`/${category}`}
-                  className="block mt-3 text-sm text-[#FF007D] hover:underline font-medium"
+                  className="block mt-3 text-sm text-primary hover:underline font-medium"
                 >
                   <span className="inline-flex items-center gap-1">Alle {cat.label} <ArrowRight className="h-3.5 w-3.5" /></span>
                 </Link>

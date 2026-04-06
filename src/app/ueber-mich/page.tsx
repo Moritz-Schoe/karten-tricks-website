@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
-  title: "Über mich – Moritz",
+  title: "Über mich - Moritz",
   description:
     "Lern mich kennen: Ich bin Moritz, und ich beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos.",
 };
@@ -11,22 +11,22 @@ export default function UeberMichPage() {
     <div className="layout-page py-12">
       <div className="mx-auto max-w-3xl">
       <nav className="text-sm text-slate-400 mb-8">
-        <Link href="/" className="hover:text-[#FF007D] transition-colors">Startseite</Link>
+        <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-600">Über mich</span>
       </nav>
 
       {/* Header */}
       <div className="rounded-2xl bg-white p-6 sm:p-8 flex items-start gap-6 mb-10 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-        <div className="w-20 h-20 bg-gradient-to-br from-[#FF007D] to-[#CC0064] rounded-2xl flex items-center justify-center text-white font-medium text-3xl flex-shrink-0">
+        <div className="w-20 h-20 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] rounded-2xl flex items-center justify-center text-white font-medium text-3xl flex-shrink-0">
           M
         </div>
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-800 mb-1">Moritz</h1>
           <p className="text-slate-500">Gründer von karten-tricks.de · Kartentrick-Enthusiast seit 2014</p>
           <div className="flex flex-wrap gap-2 mt-3">
-            <span className="text-xs bg-[#FF007D]/[0.08] text-[#FF007D] px-3 py-1 rounded-full font-medium">Kartentricks</span>
-            <span className="text-xs bg-[#FF007D]/[0.08] text-[#FF007D] px-3 py-1 rounded-full font-medium">Cardistry</span>
+            <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Kartentricks</span>
+            <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Cardistry</span>
             <span className="text-xs bg-sky-500/[0.08] text-[#0369A1] px-3 py-1 rounded-full font-medium">Community</span>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function UeberMichPage() {
       <div className="prose">
         <h2>Wie alles begann</h2>
         <p>
-          Mit 16 hat mir ein Freund den Chicago Opener gezeigt. Ich war sofort fasziniert – nicht nur vom Trick selbst,
+          Mit 16 hat mir ein Freund den Chicago Opener gezeigt. Ich war sofort fasziniert - nicht nur vom Trick selbst,
           sondern davon wie einfach man Menschen mit einem normalen Kartenspiel in den Bann ziehen kann.
           Seitdem habe ich nicht aufgehört, Tricks zu lernen.
         </p>
@@ -46,14 +46,14 @@ export default function UeberMichPage() {
           hinter Paywalls, oder einfach schlecht erklärt. Also habe ich angefangen, selbst zu schreiben.
         </p>
         <p>
-          Heute ist karten-tricks.de die umfassendste kostenlose Anlaufstelle für Kartentricks auf Deutsch –
+          Heute ist karten-tricks.de die umfassendste kostenlose Anlaufstelle für Kartentricks auf Deutsch -
           mit Tutorials für Anfänger bis Fortgeschrittene, dem ersten deutschen Cardistry-Guide, und einer
           wachsenden Community auf Discord.
         </p>
 
         <h2>Was ich glaube</h2>
         <p>
-          Kartentricks sind keine Kindersache. Sie trainieren Konzentration, Feinmotorik, soziale Intelligenz –
+          Kartentricks sind keine Kindersache. Sie trainieren Konzentration, Feinmotorik, soziale Intelligenz -
           und sie öffnen Gespräche auf jeder Party. Jeder kann es lernen. Es braucht nur die richtige Anleitung.
         </p>
 
@@ -68,7 +68,7 @@ export default function UeberMichPage() {
         <section className="rounded-2xl bg-white p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
           <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-2">Werde Teil der Community</h2>
           <p className="text-slate-500 mb-6 max-w-md mx-auto text-sm leading-relaxed">
-            Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community – direkt auf Discord.
+            Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community - direkt auf Discord.
           </p>
             <a
               href="https://discord.gg/QQ2nDMPZ6p"

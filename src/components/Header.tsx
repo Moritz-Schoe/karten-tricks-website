@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { href: "/kartentricks", label: "Kartentricks" },
   { href: "/party-tricks", label: "Party Tricks" },
   { href: "/cardistry", label: "Cardistry" },
-  { href: "/techniken", label: "Techniken" },
+  { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
   { href: "/spielkarten", label: "Spielkarten" },
   { href: "/shop", label: "Shop" },
 ];

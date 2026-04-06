@@ -12,7 +12,7 @@ export default function DatenschutzPage() {
     <div className="layout-page py-12">
       <div className="mx-auto max-w-3xl">
       <nav className="text-sm text-slate-400 mb-8">
-        <Link href="/" className="hover:text-[#FF007D] transition-colors">Startseite</Link>
+        <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-600">Datenschutz</span>
       </nav>

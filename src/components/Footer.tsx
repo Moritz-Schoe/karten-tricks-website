@@ -5,7 +5,7 @@ const FOOTER_LINKS = {
   "Tricks": [
     { href: "/kartentricks", label: "Kartentricks" },
     { href: "/cardistry", label: "Cardistry" },
-    { href: "/techniken", label: "Techniken" },
+    { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
     { href: "/party-tricks", label: "Party Tricks" },
   ],
   "Situationen": [
@@ -37,7 +37,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-neutral-400">
-              Die deutschsprachige Ressource für Kartentricks und Kartenmagie – von Anfänger bis Fortgeschritten.
+              Die deutschsprachige Ressource für Kartentricks und Kartenmagie - von Anfänger bis Fortgeschritten.
             </p>
             <a
                 href="https://discord.gg/QQ2nDMPZ6p"

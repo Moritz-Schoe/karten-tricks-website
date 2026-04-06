@@ -116,7 +116,7 @@ function CardFace({
   faceUp: boolean;
   dark: boolean;
 }) {
-  const suitColor = dark ? "#1A1B26" : "#FF007D";
+  const suitColor = dark ? "#1A1B26" : "#D2A63C";
   const shadow = "drop-shadow(0 6px 18px rgba(0,0,0,0.18))";
 
   if (!faceUp) {
@@ -131,19 +131,19 @@ function CardFace({
         <rect width="80" height="112" rx="7" fill="#1A1B26" />
         <rect
           x="5" y="5" width="70" height="102" rx="5"
-          fill="none" stroke="#FF007D" strokeWidth="1.5" opacity="0.55"
+          fill="none" stroke="#D2A63C" strokeWidth="1.5" opacity="0.55"
         />
         {/* Diagonal cross */}
-        <line x1="6" y1="6" x2="74" y2="106" stroke="#FF007D" strokeWidth="0.7" opacity="0.22" />
-        <line x1="74" y1="6" x2="6" y2="106" stroke="#FF007D" strokeWidth="0.7" opacity="0.22" />
+        <line x1="6" y1="6" x2="74" y2="106" stroke="#D2A63C" strokeWidth="0.7" opacity="0.22" />
+        <line x1="74" y1="6" x2="6" y2="106" stroke="#D2A63C" strokeWidth="0.7" opacity="0.22" />
         {/* Centre diamond */}
         <polygon
           points="40,44 56,56 40,68 24,56"
-          fill="none" stroke="#FF007D" strokeWidth="1.5" opacity="0.65"
+          fill="none" stroke="#D2A63C" strokeWidth="1.5" opacity="0.65"
         />
         <polygon
           points="40,50 49,56 40,62 31,56"
-          fill="#FF007D" opacity="0.35"
+          fill="#D2A63C" opacity="0.35"
         />
       </svg>
     );

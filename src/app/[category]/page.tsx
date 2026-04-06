@@ -36,7 +36,7 @@ export default async function CategoryPage({ params }: Props) {
     <div className="layout-page py-10">
       {/* Breadcrumb */}
       <nav className="text-sm text-slate-400 mb-6">
-        <Link href="/" className="hover:text-[#FF007D] transition-colors">Startseite</Link>
+        <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
         <span className="text-slate-700 font-medium">{cat.label}</span>
       </nav>

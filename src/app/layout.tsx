@@ -56,8 +56,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`h-full antialiased ${dmSans.variable} ${sourceSerif.variable}`}>
-      <body className="min-h-full flex flex-col bg-surface text-foreground font-sans">
+    <html lang="de" className={`antialiased ${dmSans.variable} ${sourceSerif.variable}`}>
+      <body className="min-h-screen flex flex-col bg-surface text-foreground font-sans">
         <Header />
         <main className="flex-1 pt-[var(--floating-nav-gap)]">{children}</main>
         <Footer />

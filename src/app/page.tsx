@@ -3,14 +3,15 @@ import Image from "next/image";
 import ArticleCard from "@/components/ArticleCard";
 import CardSpring from "@/components/CardSpring";
 import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand } from "lucide-react";
 
 function BentoCard({
   title,
   count,
   description,
   href,
-  hasArrow,
+  hasArrow = true,
+  icon: Icon,
   className = "",
 }: {
   title: string;
@@ -18,6 +19,7 @@ function BentoCard({
   description: string;
   href: string;
   hasArrow?: boolean;
+  icon?: any;
   className?: string;
 }) {
   return (
@@ -34,7 +36,12 @@ function BentoCard({
           <ArrowRight className="h-5 w-5 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-slate-500" />
         )}
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-slate-500">{description}</p>
+      <p className="mt-4 mb-2 flex-1 text-sm leading-relaxed text-slate-500">{description}</p>
+      {Icon && (
+        <div className="mt-2 flex justify-end">
+          <Icon className="h-7 w-7 text-slate-200 transition-all group-hover:-rotate-[10deg] group-hover:scale-110 group-hover:text-slate-400" strokeWidth={1.5} />
+        </div>
+      )}
     </Link>
   );
 }
@@ -176,7 +183,7 @@ export default function HomePage() {
               count={`${counts.kartentricks} Artikel`}
               description="Schritt-für-Schritt Anleitungen für beeindruckende Kartentricks – vom Klassiker bis zum Geheimtipp."
               href="/kartentricks"
-              hasArrow
+              icon={Sparkles}
               className="md:col-start-1 md:row-start-1 md:row-end-4"
             />
             <BentoCard
@@ -184,7 +191,7 @@ export default function HomePage() {
               count={`${counts.cardistry} Artikel`}
               description="Karten als Kunstform – lerne Flourishes, Cuts und Fans."
               href="/cardistry"
-              hasArrow
+              icon={Layers}
               className="md:col-start-2 md:row-start-1 md:row-end-3"
             />
             <BentoCard
@@ -192,7 +199,7 @@ export default function HomePage() {
               count={`${counts.spielkarten} Artikel`}
               description="Finde hier das beste Equipment für deinen nächsten Trick!"
               href="/spielkarten"
-              hasArrow
+              icon={Box}
               className="md:col-start-3 md:row-start-1 md:row-end-3"
             />
             <BentoCard
@@ -200,6 +207,7 @@ export default function HomePage() {
               count={`${counts["party-tricks"]} Artikel`}
               description="Einfache Tricks, die Kinderaugen strahlen lassen – ohne komplizierte Handgriffe."
               href="/party-tricks/kinder"
+              icon={Star}
               className="md:col-start-1 md:row-start-4 md:row-end-6"
             />
             <BentoCard
@@ -207,6 +215,7 @@ export default function HomePage() {
               count={`${counts["party-tricks"]} Artikel`}
               description="Kartentricks für jede Gelegenheit: Geburtstag, Firmenfeier oder gemütlicher Abend."
               href="/party-tricks"
+              icon={PartyPopper}
               className="md:col-start-2 md:row-start-3 md:row-end-6"
             />
             <BentoCard
@@ -214,6 +223,7 @@ export default function HomePage() {
               count={`${counts.techniken} Artikel`}
               description="Lerne Techniken zum Zaubern – Forces, Double Lifts und mehr."
               href="/techniken"
+              icon={Hand}
               className="md:col-start-3 md:row-start-4 md:row-end-6"
             />
           </div>

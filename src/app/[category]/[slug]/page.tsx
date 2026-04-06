@@ -185,9 +185,9 @@ export default async function ArticlePage({ params }: Props) {
           </article>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-1 space-y-6">
-            <div className="sticky top-24">
-              <div className="glass-card rounded-2xl p-5 mb-6">
+          <aside className="lg:col-span-1">
+            <div className="sticky top-28 flex flex-col gap-6">
+              <div className="glass-card rounded-2xl p-5">
                 <h3 className="font-bold tracking-tight text-slate-800 mb-3 text-sm uppercase">
                   Verwandte Artikel
                 </h3>
@@ -210,14 +210,14 @@ export default async function ArticlePage({ params }: Props) {
                 <p className="text-slate-400 text-xs mb-4">
                   Join unsere Discord-Community!
                 </p>
-                  <a
-                    href="https://discord.gg/QQ2nDMPZ6p"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50"
-                  >
-                    Discord beitreten
-                  </a>
+                <a
+                  href="https://discord.gg/QQ2nDMPZ6p"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50"
+                >
+                  Discord beitreten
+                </a>
               </div>
             </div>
           </aside>

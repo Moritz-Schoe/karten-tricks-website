@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,6 +11,14 @@ const dmSans = localFont({
   variable: "--font-dm-sans",
   display: "swap",
   weight: "400 700",
+});
+
+/** Source Serif 4 – article body text */
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
+  display: "swap",
+  weight: ["300", "400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`h-full antialiased ${dmSans.variable}`}>
+    <html lang="de" className={`h-full antialiased ${dmSans.variable} ${sourceSerif.variable}`}>
       <body className="min-h-full flex flex-col bg-surface text-foreground font-sans">
         <Header />
         <main className="flex-1 pt-[var(--floating-nav-gap)]">{children}</main>

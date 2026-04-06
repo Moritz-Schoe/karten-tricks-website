@@ -43,7 +43,7 @@ export default async function CategoryPage({ params }: Props) {
 
       {/* Category Header */}
       <div className="mb-10">
-        <h1 className="text-[36px] font-medium text-slate-700 mb-3 leading-[1.2]">{cat.label}</h1>
+        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight text-slate-800 mb-3 leading-[1.1]">{cat.label}</h1>
         <p className="text-slate-500 text-lg max-w-2xl leading-relaxed">{cat.description}</p>
       </div>
 

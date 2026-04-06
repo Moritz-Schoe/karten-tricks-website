@@ -82,7 +82,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
             <ArticleCard
               key={article.slug}
               article={article}
-              variant={article.featured ? "featured" : "default"}
+              variant="default"
             />
           ))}
         </div>

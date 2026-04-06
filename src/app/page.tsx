@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import ArticleCard from "@/components/ArticleCard";
+import CardSpring from "@/components/CardSpring";
 import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";
 import { ArrowRight } from "lucide-react";
 
@@ -56,6 +58,9 @@ export default function HomePage() {
       <section className="relative flex min-h-[calc(100svh-var(--floating-nav-gap))] flex-col overflow-hidden">
         {/* Gradient blob */}
         <div className="hero-blob" aria-hidden />
+
+        {/* Card spring – decorative parallax background */}
+        <CardSpring />
 
         {/* Left sidebar – scroll indicator */}
         <div className="pointer-events-none absolute bottom-12 left-6 hidden items-end gap-3 lg:flex">
@@ -126,6 +131,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Cardistry Banner */}
+      <section className="pt-20 pb-4 md:pt-28">
+        <div className="layout-page">
+          <div className="relative flex items-center overflow-hidden rounded-3xl bg-[#F6F6F8] p-8 sm:p-14 md:min-h-[340px]">
+            {/* Text Content */}
+            <div className="relative z-10 w-full sm:w-1/2 lg:w-3/5">
+              <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem]">
+                Jetzt neu auf Karten-tricks.de:<br />
+                <span className="text-[#FF007D]">Cardistry</span>!
+              </h2>
+              <Link
+                href="/cardistry"
+                className="mt-8 inline-flex items-center rounded-full bg-[#8A4CFF] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#7836f5] hover:shadow-lg"
+              >
+                Cardistry entdecken!
+              </Link>
+            </div>
+
+            {/* Media Asset */}
+            <div className="pointer-events-none absolute -right-10 top-1/2 w-4/5 max-w-[280px] -translate-y-1/2 sm:right-0 sm:w-1/2 md:max-w-[400px] lg:right-10">
+              <Image
+                src="/cardistry-illustration.png"
+                alt="Cardistry Illustration"
+                width={800}
+                height={800}
+                className="h-auto w-full object-contain mix-blend-multiply"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Übersicht – Bento Grid */}
       <section className="py-20 md:py-28">
         <div className="layout-page">
@@ -191,9 +229,9 @@ export default function HomePage() {
                 Empfohlen
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((article) => (
-                <ArticleCard key={article.slug} article={article} variant="featured" />
+                <ArticleCard key={article.slug} article={article} />
               ))}
             </div>
           </div>

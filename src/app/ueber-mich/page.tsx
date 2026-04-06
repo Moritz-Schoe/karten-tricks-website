@@ -17,12 +17,12 @@ export default function UeberMichPage() {
       </nav>
 
       {/* Header */}
-      <div className="glass-card rounded-3xl p-6 sm:p-8 flex items-start gap-6 mb-10">
+      <div className="rounded-2xl bg-white p-6 sm:p-8 flex items-start gap-6 mb-10 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
         <div className="w-20 h-20 bg-gradient-to-br from-[#FF007D] to-[#CC0064] rounded-2xl flex items-center justify-center text-white font-medium text-3xl flex-shrink-0">
           M
         </div>
         <div>
-          <h1 className="text-3xl font-medium text-slate-800 mb-1">Moritz</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-slate-800 mb-1">Moritz</h1>
           <p className="text-slate-500">Gründer von karten-tricks.de · Kartentrick-Enthusiast seit 2014</p>
           <div className="flex flex-wrap gap-2 mt-3">
             <span className="text-xs bg-[#FF007D]/[0.08] text-[#FF007D] px-3 py-1 rounded-full font-medium">Kartentricks</span>
@@ -65,8 +65,8 @@ export default function UeberMichPage() {
       </div>
 
       <div className="mt-12">
-        <section className="glass-card-elevated rounded-3xl p-8 text-center">
-          <h2 className="text-2xl font-medium text-slate-800 mb-2">Werde Teil der Community</h2>
+        <section className="rounded-2xl bg-white p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-2">Werde Teil der Community</h2>
           <p className="text-slate-500 mb-6 max-w-md mx-auto text-sm leading-relaxed">
             Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community – direkt auf Discord.
           </p>

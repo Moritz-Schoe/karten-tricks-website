@@ -100,24 +100,45 @@ export default async function ArticlePage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Main Article */}
           <article className="lg:col-span-3">
-            {/* Meta Tags */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className={`text-xs px-3 py-1 rounded-full border font-medium ${cat.color}`}>
-                {cat.label}
-              </span>
-              {article.difficulty && (
-                <span className={`text-xs px-3 py-1 rounded-full font-medium ${DIFFICULTY_COLORS[article.difficulty]}`}>
-                  {article.difficulty}
-                </span>
-              )}
-              <span className="text-xs px-3 py-1 rounded-full bg-black/[0.03] text-slate-500 font-medium">
-                {readTime} Min. Lesezeit
-              </span>
-            </div>
 
-            {/* Hero Image */}
+            {/* ── Article header (Medium-style: constrained width) ── */}
+            <header className="max-w-[680px] mb-8">
+              {/* Category + difficulty pills */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className={`text-xs px-3 py-1 rounded-full border font-medium ${cat.color}`}>
+                  {cat.label}
+                </span>
+                {article.difficulty && (
+                  <span className={`text-xs px-3 py-1 rounded-full font-medium ${DIFFICULTY_COLORS[article.difficulty]}`}>
+                    {article.difficulty}
+                  </span>
+                )}
+              </div>
+
+              {/* Title */}
+              <h1 className="text-[clamp(1.875rem,4vw,2.75rem)] font-bold tracking-tight text-slate-900 leading-[1.1] mb-4">
+                {article.title}
+              </h1>
+
+              {/* Meta line: date · reading time */}
+              <p className="text-sm text-slate-400 mb-5">
+                {new Date(article.date).toLocaleDateString("de-DE", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })}{" "}
+                · {readTime} Min. Lesezeit
+              </p>
+
+              {/* Lead / description */}
+              <p className="text-[1.125rem] leading-relaxed text-slate-500 pb-6 border-b border-slate-100">
+                {article.description}
+              </p>
+            </header>
+
+            {/* Hero image — full article column width for visual impact */}
             {article.heroImage && (
-              <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-6">
+              <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-8">
                 <Image
                   src={article.heroImage}
                   alt={article.heroAlt ?? article.title}
@@ -129,43 +150,36 @@ export default async function ArticlePage({ params }: Props) {
               </div>
             )}
 
-            {/* Title */}
-            <h1 className="text-3xl md:text-[36px] font-medium text-slate-800 leading-[1.2] mb-4">
-              {article.title}
-            </h1>
-
-            <p className="text-lg text-slate-500 leading-relaxed mb-8 border-b border-black/[0.06] pb-6">
-              {article.description}
-            </p>
-
-            {/* Content */}
+            {/* Prose content — constrained to reading width */}
             <div
-              className="prose"
+              className="prose max-w-[680px]"
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
 
-            {showInlineAffiliateNotice && (
-              <AffiliateInlineNotice className="mt-10" />
-            )}
+            <div className="max-w-[680px]">
+              {showInlineAffiliateNotice && (
+                <AffiliateInlineNotice className="mt-10" />
+              )}
 
-            {hasFrontmatterAffiliate && article.affiliate && (
-              <AffiliateRecommendations items={article.affiliate} className="mt-10" />
-            )}
+              {hasFrontmatterAffiliate && article.affiliate && (
+                <AffiliateRecommendations items={article.affiliate} className="mt-10" />
+              )}
 
-            {/* Author Box */}
-            <div className="glass-card mt-10 p-6 rounded-2xl flex items-start gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#FF007D] to-[#CC0064] rounded-2xl flex items-center justify-center text-white font-medium text-lg flex-shrink-0">
-                M
-              </div>
-              <div>
-                <p className="font-medium text-slate-800">Moritz</p>
-                <p className="text-sm text-slate-500 mt-1">
-                  Seit über 10 Jahren beschäftige ich mich mit Kartentricks und Kartenmagie.
-                  Auf karten-tricks.de teile ich alles was ich gelernt habe – kostenlos und auf Deutsch.
-                </p>
-                <Link href="/ueber-mich" className="inline-flex items-center gap-1 text-sm text-[#FF007D] hover:underline mt-2 font-medium">
-                  Mehr über mich <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+              {/* Author box */}
+              <div className="mt-10 p-6 rounded-2xl bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF007D] to-[#CC0064] rounded-2xl flex items-center justify-center text-white font-medium text-lg flex-shrink-0">
+                  M
+                </div>
+                <div>
+                  <p className="font-bold tracking-tight text-slate-800">Moritz</p>
+                  <p className="text-sm text-slate-500 mt-1">
+                    Seit über 10 Jahren beschäftige ich mich mit Kartentricks und Kartenmagie.
+                    Auf karten-tricks.de teile ich alles was ich gelernt habe – kostenlos und auf Deutsch.
+                  </p>
+                  <Link href="/ueber-mich" className="inline-flex items-center gap-1 text-sm text-[#FF007D] hover:underline mt-2 font-medium">
+                    Mehr über mich <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </article>
@@ -174,7 +188,7 @@ export default async function ArticlePage({ params }: Props) {
           <aside className="lg:col-span-1 space-y-6">
             <div className="sticky top-24">
               <div className="glass-card rounded-2xl p-5 mb-6">
-                <h3 className="font-medium text-slate-700 mb-3 text-sm uppercase tracking-wider">
+                <h3 className="font-bold tracking-tight text-slate-800 mb-3 text-sm uppercase">
                   Verwandte Artikel
                 </h3>
                 <div className="space-y-1">
@@ -212,7 +226,7 @@ export default async function ArticlePage({ params }: Props) {
         {/* Related Articles (bottom) */}
         {relatedArticles.length > 0 && (
           <section className="mt-16">
-            <h2 className="text-xl font-medium text-slate-700 mb-6">Das könnte dich auch interessieren</h2>
+            <h2 className="text-xl font-bold tracking-tight text-slate-800 mb-6">Das könnte dich auch interessieren</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />

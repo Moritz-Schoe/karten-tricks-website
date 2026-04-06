@@ -340,7 +340,7 @@ export default function ShopPage() {
         {SHOP_CATEGORIES.map((category) => (
           <section key={category.id} id={category.id} className="scroll-mt-28">
             <div className="mb-8">
-              <h2 className="text-[28px] font-medium text-slate-700">
+              <h2 className="text-[clamp(1.5rem,4vw,2rem)] font-bold tracking-tight text-slate-800">
                 {category.label}
               </h2>
               <p className="mt-1 text-sm text-slate-500">

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["/Users/moritz/Desktop/karten-tricks.de/website/.claude/start-dev.js"],
+      "port": 3001,
+      "autoPort": true
+    }
+  ]
+}

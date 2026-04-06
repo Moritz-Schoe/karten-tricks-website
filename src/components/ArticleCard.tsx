@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Article } from "@/lib/types";
-import { CATEGORIES, DIFFICULTY_COLORS } from "@/lib/types";
+import { CATEGORIES } from "@/lib/types";
 import { estimateReadingTime } from "@/lib/reading";
 import { ArrowRight } from "lucide-react";
 
@@ -10,106 +10,81 @@ interface Props {
   variant?: "default" | "compact" | "featured";
 }
 
+const cardShell =
+  "group block overflow-hidden rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] duration-300 hover:shadow-[0_10px_32px_rgba(0,0,0,0.09)] hover:-translate-y-0.5";
+
 export default function ArticleCard({ article, variant = "default" }: Props) {
   const cat = CATEGORIES[article.category];
   const readTime = article.readingTime ?? estimateReadingTime(article.content ?? "");
   const href = `/${article.category}/${article.slug}`;
 
-  if (variant === "featured") {
+  const metaLine = [
+    cat.label,
+    ...(article.difficulty ? [article.difficulty] : []),
+    `${readTime} Min. Lesezeit`,
+  ].join(" · ");
+
+  if (variant === "compact") {
     return (
-      <Link href={href} className="group block glass-card rounded-2xl hover:shadow-[0_12px_40px_-10px_rgba(255,0,125,0.15)] transition-all overflow-hidden">
+      <Link
+        href={href}
+        className="group flex gap-3 rounded-xl p-2.5 -mx-2.5 transition-colors hover:bg-slate-50/80"
+      >
         {article.heroImage ? (
-          <div className="relative aspect-[16/9] w-full">
+          <div className="relative h-14 w-[5.5rem] shrink-0 overflow-hidden rounded-xl bg-slate-100">
             <Image
               src={article.heroImage}
               alt={article.heroAlt ?? article.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover"
+              sizes="88px"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full font-medium">{cat.label}</span>
-                {article.difficulty && (
-                  <span className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full font-medium">{article.difficulty}</span>
-                )}
-              </div>
-              <h3 className="text-lg font-medium leading-snug">{article.title}</h3>
-            </div>
           </div>
         ) : (
-          <div className="bg-gradient-to-br from-[#FF007D] to-[#CC0064] p-8 text-white">
-            <div className="flex flex-wrap gap-2 mb-3">
-              <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">{cat.label}</span>
-              {article.difficulty && (
-                <span className="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">{article.difficulty}</span>
-              )}
-            </div>
-            <h3 className="text-xl font-medium leading-snug group-hover:underline">{article.title}</h3>
-          </div>
+          <div className="h-14 w-[5.5rem] shrink-0 rounded-xl bg-slate-100" />
         )}
-        <div className="p-5">
-          <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">{article.description}</p>
-          <div className="flex items-center justify-between mt-4 text-xs text-slate-400">
-            <span>{readTime} Min. Lesezeit</span>
-            <span className="inline-flex items-center gap-1 font-medium text-[#FF007D] group-hover:underline">Lesen <ArrowRight className="h-3 w-3" /></span>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start justify-between gap-2">
+            <p className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-slate-900">
+              {article.title}
+            </p>
+            <ArrowRight
+              className="mt-0.5 h-4 w-4 shrink-0 text-sky-400 opacity-70 transition-opacity group-hover:opacity-100"
+              aria-hidden
+            />
           </div>
-        </div>
-      </Link>
-    );
-  }
-
-  if (variant === "compact") {
-    return (
-      <Link href={href} className="group flex items-start gap-3 p-3 rounded-xl hover:bg-black/[0.03] transition-colors">
-        <div className="min-w-0">
-          <p className="font-medium text-sm text-slate-700 group-hover:text-[#FF007D] transition-colors line-clamp-2">
-            {article.title}
-          </p>
-          <p className="text-xs text-slate-400 mt-0.5">{readTime} Min.</p>
+          <p className="mt-1 line-clamp-1 text-xs text-[#A0AEC0]">{metaLine}</p>
         </div>
       </Link>
     );
   }
 
   return (
-    <Link
-      href={href}
-      className="group block glass-card rounded-2xl hover:shadow-[0_12px_40px_-10px_rgba(255,0,125,0.15)] transition-all overflow-hidden"
-    >
+    <Link href={href} className={cardShell}>
       {article.heroImage ? (
-        <div className="relative aspect-[16/9] w-full">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
           <Image
             src={article.heroImage}
             alt={article.heroAlt ?? article.title}
             fill
-            className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-      ) : null}
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <span className={`text-xs px-3 py-1 rounded-full border font-medium ${cat.color}`}>{cat.label}</span>
-          <div className="flex flex-wrap gap-1">
-            {article.difficulty && (
-              <span className={`text-xs px-3 py-1 rounded-full font-medium ${DIFFICULTY_COLORS[article.difficulty]}`}>
-                {article.difficulty}
-              </span>
-            )}
-          </div>
+      ) : (
+        <div className="relative aspect-[16/9] w-full bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100" />
+      )}
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="text-lg font-bold tracking-tight text-slate-800 sm:text-xl">
+            {article.title}
+          </h3>
+          <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-slate-500" aria-hidden />
         </div>
-        <h3 className="font-medium text-slate-700 group-hover:text-[#FF007D] transition-colors leading-snug mb-2">
-          {article.title}
-        </h3>
-        <p className="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="mt-1 text-sm text-slate-400">{metaLine}</p>
+        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-slate-500">
           {article.description}
         </p>
-        <div className="flex items-center justify-between text-xs text-slate-400">
-          <span>{readTime} Min. Lesezeit</span>
-          <span className="inline-flex items-center gap-1 font-medium text-[#FF007D] group-hover:underline">Lesen <ArrowRight className="h-3 w-3" /></span>
-        </div>
       </div>
     </Link>
   );

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Magic Shop – Empfohlene Produkte | karten-tricks.de",
+  title: "Kartendecks & Zubehör – Empfohlene Produkte | karten-tricks.de",
   description:
     "Unsere Empfehlungen für Spielkarten, Trick-Decks, Zauberkästen und Bücher – alle Affiliate-Produkte auf einen Blick.",
 };
@@ -245,8 +245,8 @@ export default function ShopPage() {
             <p className="text-sm font-normal lowercase tracking-normal text-slate-500">
               karten-tricks.de
             </p>
-            <h1 className="mt-1 text-[clamp(3.5rem,10vw,6rem)] font-semibold uppercase leading-none tracking-[-0.07em] text-black md:text-[5rem]">
-              MAGIC SHOP
+            <h1 className="mt-1 text-[clamp(2.5rem,8vw,5rem)] font-semibold uppercase leading-[0.95] tracking-[-0.05em] text-black md:text-[4.5rem] max-w-4xl mx-auto">
+              Kartendecks & Zubehör
             </h1>
             <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl">
               Ausgewählte Produktfavoriten der Community. Handverlesene Empfehlungen für dein nächstes Level der Zauberkunst.

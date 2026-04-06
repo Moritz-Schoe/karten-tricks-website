@@ -138,41 +138,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Cardistry Banner */}
-      <section className="pt-20 pb-4 md:pt-28">
-        <div className="layout-page">
-          <div className="relative flex items-center overflow-hidden rounded-3xl bg-[#F6F6F8] p-8 sm:p-14 md:min-h-[340px]">
-            {/* Text Content */}
-            <div className="relative z-10 w-full sm:w-1/2 lg:w-3/5">
-              <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem]">
-                Jetzt neu auf Karten-tricks.de:<br />
-                <span className="text-[#FF007D]">Cardistry</span>!
-              </h2>
-              <Link
-                href="/cardistry"
-                className="mt-8 inline-flex items-center rounded-full bg-[#8A4CFF] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#7836f5] hover:shadow-lg"
-              >
-                Cardistry entdecken!
-              </Link>
-            </div>
-
-            {/* Media Asset */}
-            <div className="pointer-events-none absolute -right-10 top-1/2 w-4/5 max-w-[280px] -translate-y-1/2 sm:right-0 sm:w-1/2 md:max-w-[400px] lg:right-10">
-              <Image
-                src="/cardistry-illustration.png"
-                alt="Cardistry Illustration"
-                width={800}
-                height={800}
-                className="h-auto w-full object-contain mix-blend-multiply"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Übersicht – Bento Grid */}
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-20">
         <div className="layout-page">
           <h2 className="mb-10 text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-tight text-slate-800">
             Übersicht
@@ -224,7 +191,7 @@ export default function HomePage() {
               description="Lerne Techniken zum Zaubern – Forces, Double Lifts und mehr."
               href="/techniken"
               icon={Hand}
-              className="md:col-start-3 md:row-start-4 md:row-end-6"
+              className="md:col-start-3 md:row-start-3 md:row-end-6"
             />
           </div>
         </div>
@@ -232,7 +199,7 @@ export default function HomePage() {
 
       {/* Featured Articles */}
       {featured.length > 0 && (
-        <section className="py-20 md:py-28">
+        <section className="py-12 md:py-20">
           <div className="layout-page">
             <div className="mb-10 flex items-end justify-between">
               <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-tight text-slate-800">
@@ -248,9 +215,42 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Cardistry Banner */}
+      <section className="py-12 md:py-20">
+        <div className="layout-page">
+          <div className="relative flex items-center overflow-hidden rounded-3xl bg-[#F6F6F8] p-8 sm:p-14 md:min-h-[340px]">
+            {/* Text Content */}
+            <div className="relative z-10 w-full sm:w-1/2 lg:w-3/5">
+              <h2 className="text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem]">
+                Jetzt neu auf Karten-tricks.de:<br />
+                <span className="text-[#FF007D]">Cardistry</span>!
+              </h2>
+              <Link
+                href="/cardistry"
+                className="mt-8 inline-flex items-center rounded-full bg-[#8A4CFF] px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-[#7836f5] hover:shadow-lg"
+              >
+                Cardistry entdecken!
+              </Link>
+            </div>
+
+            {/* Media Asset */}
+            <div className="pointer-events-none absolute -right-10 top-1/2 w-4/5 max-w-[280px] -translate-y-1/2 sm:right-0 sm:w-1/2 md:max-w-[400px] lg:right-10">
+              <Image
+                src="/cardistry-illustration.png"
+                alt="Cardistry Illustration"
+                width={800}
+                height={800}
+                className="h-auto w-full object-contain mix-blend-multiply"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Recent Articles */}
       {recent.length > 0 && (
-        <section className="py-20 md:py-28">
+        <section className="py-12 md:py-20">
           <div className="layout-page">
             <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-tight text-slate-800">
@@ -274,7 +274,7 @@ export default function HomePage() {
       )}
 
       {/* Community CTA */}
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-20">
         <div className="layout-page">
           <div className="mx-auto max-w-2xl rounded-3xl bg-white p-10 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-16">
             <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-semibold tracking-tight text-slate-800">
@@ -304,7 +304,7 @@ export default function HomePage() {
       </section>
 
       {/* Trust Stats */}
-      <section className="pb-20 md:pb-28">
+      <section className="pb-12 md:pb-20">
         <div className="layout-page">
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="rounded-2xl bg-white p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">

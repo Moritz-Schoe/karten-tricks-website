@@ -31,10 +31,6 @@ export const metadata: Metadata = {
   keywords: ["Kartentricks", "Zaubertricks", "Kartentricks lernen", "Kartenmagie", "Kartentricks Deutsch"],
   authors: [{ name: "Moritz" }],
   creator: "Moritz",
-  icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-  },
   openGraph: {
     type: "website",
     locale: "de_DE",

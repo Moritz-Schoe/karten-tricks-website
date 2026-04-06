@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Mouse } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Magic Shop – Empfohlene Produkte | karten-tricks.de",
@@ -236,102 +236,34 @@ function ProductCardCompact({ product }: { product: Product }) {
   );
 }
 
-const HERO_GRAY_CARD =
-  "relative flex shrink-0 flex-col justify-end rounded-sm px-3 pb-3 pt-4 transition-opacity hover:opacity-90 sm:px-4 sm:pb-4";
-const HERO_PINK_CARD =
-  "relative flex shrink-0 flex-col justify-between rounded-sm px-3 pb-3 pt-4 transition-opacity hover:opacity-95 sm:px-4 sm:pb-4";
-
 export default function ShopPage() {
   return (
     <>
-      {/* Hero — staggered category cards (design reference) */}
-      <section className="bg-white pt-[var(--floating-nav-gap)] pb-12 md:pb-16">
+      <section className="bg-white pt-[var(--floating-nav-gap)] pb-6 md:pb-8">
         <div className="layout-page">
-          <header className="text-center">
+          <header className="mx-auto max-w-3xl px-4 text-center">
             <p className="text-sm font-normal lowercase tracking-normal text-slate-500">
               karten-tricks.de
             </p>
-            <h1 className="mt-1 text-[clamp(2.25rem,7vw,3.5rem)] font-semibold uppercase leading-none tracking-[-0.07em] text-black md:text-[2.625rem]">
+            <h1 className="mt-1 text-[clamp(3.5rem,10vw,6rem)] font-semibold uppercase leading-none tracking-[-0.07em] text-black md:text-[5rem]">
               MAGIC SHOP
             </h1>
-          </header>
-
-          <div className="no-scrollbar -mx-[var(--page-padding-x)] mt-10 overflow-x-auto px-[var(--page-padding-x)] md:mx-0 md:overflow-visible md:px-0">
-            <div className="mx-auto flex w-max max-w-full items-start justify-center gap-2 pb-2 sm:gap-3 md:max-w-none md:gap-4">
-              {/* 1 Spielkarten — mid, etwas nach unten */}
-              <a
-                href="#spielkarten"
-                className={`${HERO_GRAY_CARD} mt-8 h-[168px] w-[72px] bg-[#F0F0F0] sm:mt-10 sm:h-[188px] sm:w-[88px] md:mt-12 md:h-[200px] md:w-[100px]`}
-              >
-                <span className="text-[10px] font-medium leading-tight text-black sm:text-[11px]">
-                  Spielkarten
-                </span>
-              </a>
-
-              {/* 2 Pink CTA — am höchsten, stärker nach unten versetzt */}
-              <a
-                href="#shop-produkte"
-                className={`${HERO_PINK_CARD} mt-14 h-[228px] w-[72px] bg-[#FF007F] sm:mt-16 sm:h-[252px] sm:w-[88px] md:mt-[4.5rem] md:h-[280px] md:w-[100px]`}
-                aria-label="Alle Produkte anzeigen"
-              >
-                <span className="text-[9px] font-medium uppercase leading-snug tracking-wide text-white sm:text-[10px]">
-                  SEE ALL
-                  <br />
-                  ACCESSORIES
-                </span>
-                <span
-                  className="flex h-7 w-7 items-center justify-center rounded-full bg-white sm:h-8 sm:w-8"
-                  aria-hidden
-                >
-                  <ArrowRight
-                    className="h-3.5 w-3.5 text-[#FF007F] sm:h-4 sm:w-4"
-                    strokeWidth={2}
-                  />
-                </span>
-              </a>
-
-              {/* 3 Trick-Anleitungen — hoch angesetzt, groß */}
-              <Link
-                href="/kartentricks"
-                className={`${HERO_GRAY_CARD} mt-4 h-[200px] w-[72px] bg-[#F0F0F0] sm:mt-5 sm:h-[220px] sm:w-[88px] md:mt-6 md:h-[248px] md:w-[100px]`}
-              >
-                <span className="text-[10px] font-medium leading-tight text-black sm:text-[11px]">
-                  Trick-Anleitungen
-                </span>
-              </Link>
-
-              {/* 4 Bücher — kurz, tiefer */}
-              <a
-                href="#buecher"
-                className={`${HERO_GRAY_CARD} mt-12 h-[148px] w-[72px] bg-[#F0F0F0] sm:mt-14 sm:h-[160px] sm:w-[88px] md:mt-16 md:h-[172px] md:w-[100px]`}
-              >
-                <span className="text-[10px] font-medium leading-tight text-black sm:text-[11px]">
-                  Bücher
-                </span>
-              </a>
-
-              {/* 5 Zauberkästen — mittelhoch */}
-              <a
-                href="#zauberkaesten"
-                className={`${HERO_GRAY_CARD} mt-6 h-[188px] w-[72px] bg-[#F0F0F0] sm:mt-7 sm:h-[208px] sm:w-[88px] md:mt-8 md:h-[232px] md:w-[100px]`}
-              >
-                <span className="text-[10px] font-medium leading-tight text-black sm:text-[11px]">
-                  Zauberkästen
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col items-center gap-2 md:mt-14">
-            <Mouse
-              className="h-9 w-9 text-slate-400"
-              strokeWidth={1.25}
-              aria-hidden
-            />
-            <p className="text-center text-xs text-slate-500 sm:text-sm">
-              Scroll down to discover more
+            <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl">
+              Ausgewählte Produktfavoriten der Community. Handverlesene Empfehlungen für dein nächstes Level der Zauberkunst.
             </p>
-          </div>
+            
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              {SHOP_CATEGORIES.map((category) => (
+                <a
+                  key={category.id}
+                  href={`#${category.id}`}
+                  className="inline-flex h-10 items-center justify-center rounded-full bg-slate-100 px-5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-900 hover:text-white"
+                >
+                  {category.label}
+                </a>
+              ))}
+            </div>
+          </header>
         </div>
       </section>
 

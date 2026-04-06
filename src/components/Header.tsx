@@ -19,12 +19,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  const shellRadius = open ? "rounded-3xl" : "rounded-full";
-
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-[var(--page-padding-x)] pointer-events-none">
       <div
-        className={`pointer-events-auto w-full max-w-[var(--space-grid-max)] overflow-hidden border border-black/[0.06] bg-white/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12),inset_0_1px_0_0_rgba(255,255,255,0.8)] backdrop-blur-2xl backdrop-saturate-150 transition-[border-radius] duration-200 supports-[backdrop-filter]:bg-white/[0.45] ${shellRadius}`}
+        className={`pointer-events-auto w-full max-w-[var(--space-grid-max)] overflow-hidden border border-black/[0.06] bg-white/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12),inset_0_1px_0_0_rgba(255,255,255,0.8)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/[0.45] ${open ? "rounded-3xl" : "rounded-full"}`}
       >
         <div className="flex h-[52px] items-center justify-between gap-4 px-4 sm:h-14 sm:px-5">
           <Link
@@ -89,26 +87,32 @@ export default function Header() {
           </div>
         </div>
 
-        {open && (
-          <div className="border-t border-black/[0.06] px-4 py-3 sm:px-5 md:hidden">
-            {NAV_ITEMS.map((item) => {
-              const isActive = pathname.startsWith(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block rounded-2xl px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "bg-black/[0.07] text-slate-900"
-                      : "text-slate-500 hover:bg-black/[0.04] hover:text-slate-800"
-                  }`}
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            <a
+        {/* Mobile menu — grid-rows trick for smooth height animation, no flash of circle */}
+        <div
+          className={`grid md:hidden transition-[grid-template-rows] duration-300 ease-out ${
+            open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="border-t border-black/[0.06] px-4 py-3 sm:px-5">
+              {NAV_ITEMS.map((item) => {
+                const isActive = pathname.startsWith(item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block rounded-2xl px-3.5 py-2.5 text-sm font-medium transition-colors ${
+                      isActive
+                        ? "bg-black/[0.07] text-slate-900"
+                        : "text-slate-500 hover:bg-black/[0.04] hover:text-slate-800"
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+              <a
                 href="https://discord.gg/QQ2nDMPZ6p"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -120,8 +124,9 @@ export default function Header() {
                 </svg>
                 Discord beitreten
               </a>
+            </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

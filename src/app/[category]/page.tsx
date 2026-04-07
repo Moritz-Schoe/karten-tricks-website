@@ -35,16 +35,16 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <div className="layout-page py-10">
       {/* Breadcrumb */}
-      <nav className="text-sm text-slate-400 mb-6">
+      <nav className="text-sm text-neutral-400 mb-6">
         <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
-        <span className="text-slate-700 font-medium">{cat.label}</span>
+        <span className="text-neutral-700 font-medium">{cat.label}</span>
       </nav>
 
       {/* Category Header */}
       <div className="mb-10">
-        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight text-slate-800 mb-3 leading-[1.1]">{cat.label}</h1>
-        <p className="text-slate-500 text-lg max-w-2xl leading-relaxed">{cat.description}</p>
+        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight text-neutral-800 mb-3 leading-[1.1]">{cat.label}</h1>
+        <p className="text-neutral-500 text-lg max-w-2xl leading-relaxed">{cat.description}</p>
       </div>
 
       <CategoryArticleGrid articles={articles} />

@@ -91,12 +91,12 @@ export default async function ArticlePage({ params }: Props) {
 
       <div className="layout-page py-10">
         {/* Breadcrumb */}
-        <nav className="text-sm text-slate-400 mb-6 flex flex-wrap gap-1 items-center">
+        <nav className="text-sm text-neutral-400 mb-6 flex flex-wrap gap-1 items-center">
           <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
           <span>/</span>
           <Link href={`/${category}`} className="hover:text-primary transition-colors">{cat.label}</Link>
           <span>/</span>
-          <span className="text-slate-600 font-medium">{article.title}</span>
+          <span className="text-neutral-600 font-medium">{article.title}</span>
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
@@ -118,12 +118,12 @@ export default async function ArticlePage({ params }: Props) {
               </div>
 
               {/* Title */}
-              <h1 className="text-[clamp(1.875rem,4vw,2.75rem)] font-bold tracking-tight text-slate-900 leading-[1.1] mb-4">
+              <h1 className="text-[clamp(1.875rem,4vw,2.75rem)] font-bold tracking-tight text-neutral-900 leading-[1.1] mb-4">
                 {article.title}
               </h1>
 
               {/* Meta line: date · reading time */}
-              <p className="text-sm text-slate-400 mb-5">
+              <p className="text-sm text-neutral-400 mb-5">
                 {new Date(article.date).toLocaleDateString("de-DE", {
                   day: "2-digit",
                   month: "2-digit",
@@ -133,7 +133,7 @@ export default async function ArticlePage({ params }: Props) {
               </p>
 
               {/* Lead / description */}
-              <p className="text-[1.125rem] leading-relaxed text-slate-500 pb-6 border-b border-slate-100">
+              <p className="text-[1.125rem] leading-relaxed text-neutral-500 pb-6 border-b border-neutral-100">
                 {article.description}
               </p>
             </header>
@@ -188,8 +188,8 @@ export default async function ArticlePage({ params }: Props) {
                   M
                 </div>
                 <div>
-                  <p className="font-bold tracking-tight text-slate-800">Moritz</p>
-                  <p className="text-sm text-slate-500 mt-1">
+                  <p className="font-bold tracking-tight text-neutral-800">Moritz</p>
+                  <p className="text-sm text-neutral-500 mt-1">
                     Seit über 10 Jahren beschäftige ich mich mit Kartentricks und Kartenmagie.
                     Auf karten-tricks.de teile ich alles was ich gelernt habe - kostenlos und auf Deutsch.
                   </p>
@@ -202,10 +202,10 @@ export default async function ArticlePage({ params }: Props) {
           </article>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="sticky top-28 flex flex-col gap-6">
+          <aside className="lg:col-span-1 sticky top-[calc(var(--floating-nav-gap)+1rem)] self-start">
+            <div className="flex flex-col gap-6">
               <div className="glass-card rounded-2xl p-5">
-                <h3 className="font-bold tracking-tight text-slate-800 mb-3 text-sm uppercase">
+                <h3 className="font-bold tracking-tight text-neutral-800 mb-3 text-sm uppercase">
                   Verwandte Artikel
                 </h3>
                 <div className="space-y-1">
@@ -223,15 +223,15 @@ export default async function ArticlePage({ params }: Props) {
 
               {/* Community CTA */}
               <div className="glass-card-elevated rounded-2xl p-5 text-center">
-                <p className="font-medium text-sm text-slate-700 mb-2">Fragen? Feedback?</p>
-                <p className="text-slate-400 text-xs mb-4">
+                <p className="font-medium text-sm text-neutral-700 mb-2">Fragen? Feedback?</p>
+                <p className="text-neutral-400 text-xs mb-4">
                   Join unsere Discord-Community!
                 </p>
                 <a
                   href="https://discord.gg/QQ2nDMPZ6p"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50"
+                  className="block rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-800 transition-colors hover:bg-neutral-50"
                 >
                   Discord beitreten
                 </a>
@@ -243,7 +243,7 @@ export default async function ArticlePage({ params }: Props) {
         {/* Related Articles (bottom) */}
         {relatedArticles.length > 0 && (
           <section className="mt-16">
-            <h2 className="text-xl font-bold tracking-tight text-slate-800 mb-6">Das könnte dich auch interessieren</h2>
+            <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-6">Das könnte dich auch interessieren</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />

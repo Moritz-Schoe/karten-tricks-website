@@ -1,6 +1,15 @@
 import { marked } from "marked";
 import type { Tokens } from "marked";
 
+/**
+ * Lines that start with a tab before `-` / `*` / `+` are parsed as indented code blocks,
+ * so `[text](/path)` stays raw and appears as monospaced “code”. This often comes from
+ * Word or CMS pastes. Normalise to real list items at column 0.
+ */
+function unwrapTabIndentedListMarkers(markdown: string): string {
+  return markdown.replace(/^[\t ]*\t([-*+])\s/gm, "$1 ");
+}
+
 function escapeHtmlAttr(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -50,5 +59,5 @@ marked.use({
 });
 
 export function renderArticleMarkdown(content: string): string {
-  return marked(content, { async: false }) as string;
+  return marked(unwrapTabIndentedListMarkers(content), { async: false }) as string;
 }

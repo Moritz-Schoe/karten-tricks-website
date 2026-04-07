@@ -14,11 +14,11 @@ const ACCENT: Record<
   Category,
   { iconColor: string }
 > = {
-  kartentricks: { iconColor: "text-amber-600" },
-  cardistry: { iconColor: "text-amber-600" },
-  fingerfertigkeit: { iconColor: "text-amber-600" },
-  "party-tricks": { iconColor: "text-amber-600" },
-  spielkarten: { iconColor: "text-amber-600" },
+  kartentricks: { iconColor: "text-primary" },
+  cardistry: { iconColor: "text-primary" },
+  fingerfertigkeit: { iconColor: "text-primary" },
+  "party-tricks": { iconColor: "text-primary" },
+  spielkarten: { iconColor: "text-primary" },
 };
 
 const ICONS: Record<Category, LucideIcon> = {
@@ -33,7 +33,7 @@ export default function CategoryQuickNav() {
   return (
     <section className="border-b border-black/[0.04] py-10">
       <div className="layout-page">
-        <p className="text-center text-sm font-medium text-slate-400 mb-6">
+        <p className="text-center text-sm font-medium text-neutral-400 mb-6">
           Wähle ein Thema
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
@@ -52,7 +52,7 @@ export default function CategoryQuickNav() {
                 >
                   <Icon className="h-6 w-6" strokeWidth={1.75} />
                 </span>
-                <span className="font-medium text-sm text-slate-600 group-hover:text-primary">
+                <span className="font-medium text-sm text-neutral-600 group-hover:text-primary">
                   {cat.label}
                 </span>
               </Link>

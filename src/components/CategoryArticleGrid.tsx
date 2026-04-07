@@ -21,7 +21,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
 
   if (articles.length === 0) {
     return (
-      <div className="text-center py-20 text-slate-400">
+      <div className="text-center py-20 text-neutral-400">
         <p className="text-lg font-medium">Hier entstehen gerade neue Artikel.</p>
         <p className="text-sm mt-2">Schau bald wieder vorbei!</p>
       </div>
@@ -34,14 +34,14 @@ export default function CategoryArticleGrid({ articles }: Props) {
     <>
       {showFilter && (
         <div className="flex flex-wrap items-center gap-2 mb-8">
-          <span className="text-sm text-slate-400 mr-1">Filtern:</span>
+          <span className="text-sm text-neutral-400 mr-1">Filtern:</span>
           <button
             type="button"
             onClick={() => setFilter(null)}
             className={`text-xs px-4 py-1.5 rounded-full font-medium transition-colors ${
               filter === null
                 ? "bg-primary text-white shadow-sm"
-                : "glass-card text-slate-600 hover:text-primary"
+                : "glass-card text-neutral-600 hover:text-primary"
             }`}
           >
             Alle
@@ -54,7 +54,7 @@ export default function CategoryArticleGrid({ articles }: Props) {
               className={`text-xs px-4 py-1.5 rounded-full font-medium transition-colors ${
                 filter === d
                   ? "bg-primary text-white shadow-sm"
-                  : "glass-card text-slate-600 hover:text-primary"
+                  : "glass-card text-neutral-600 hover:text-primary"
               }`}
             >
               {d}
@@ -64,8 +64,8 @@ export default function CategoryArticleGrid({ articles }: Props) {
       )}
 
       {filtered.length === 0 ? (
-        <div className="text-center py-16 text-slate-400 glass-card rounded-3xl">
-          <p className="text-sm font-medium text-slate-600">
+        <div className="text-center py-16 text-neutral-400 glass-card rounded-3xl">
+          <p className="text-sm font-medium text-neutral-600">
             Keine Artikel mit diesem Schwierigkeitsgrad.
           </p>
           <button

@@ -28,10 +28,10 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
     return (
       <Link
         href={href}
-        className="group flex gap-3 rounded-xl p-2.5 -mx-2.5 transition-colors hover:bg-slate-50/80"
+        className="group flex gap-3 rounded-xl p-2.5 -mx-2.5 transition-colors hover:bg-neutral-50/80"
       >
         {article.heroImage ? (
-          <div className="relative h-14 w-[5.5rem] shrink-0 overflow-hidden rounded-xl bg-slate-100">
+          <div className="relative h-14 w-[5.5rem] shrink-0 overflow-hidden rounded-xl bg-neutral-100">
             <Image
               src={article.heroImage}
               alt={article.heroAlt ?? article.title}
@@ -41,19 +41,19 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
             />
           </div>
         ) : (
-          <div className="h-14 w-[5.5rem] shrink-0 rounded-xl bg-slate-100" />
+          <div className="h-14 w-[5.5rem] shrink-0 rounded-xl bg-neutral-100" />
         )}
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
-            <p className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-slate-900">
+            <p className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-neutral-900">
               {article.title}
             </p>
             <ArrowRight
-              className="mt-0.5 h-4 w-4 shrink-0 text-sky-400 opacity-70 transition-opacity group-hover:opacity-100"
+              className="mt-0.5 h-4 w-4 shrink-0 text-neutral-400 opacity-70 transition-opacity group-hover:opacity-100"
               aria-hidden
             />
           </div>
-          <p className="mt-1 line-clamp-1 text-xs text-[#A0AEC0]">{metaLine}</p>
+          <p className="mt-1 line-clamp-1 text-xs text-neutral-400">{metaLine}</p>
         </div>
       </Link>
     );
@@ -62,7 +62,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
   return (
     <Link href={href} className={cardShell}>
       {article.heroImage ? (
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-100">
           <Image
             src={article.heroImage}
             alt={article.heroAlt ?? article.title}
@@ -72,17 +72,17 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
           />
         </div>
       ) : (
-        <div className="relative aspect-[16/9] w-full bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100" />
+        <div className="relative aspect-[16/9] w-full bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-100" />
       )}
       <div className="p-6">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-lg font-bold tracking-tight text-slate-800 sm:text-xl">
+          <h3 className="text-lg font-bold tracking-tight text-neutral-800 sm:text-xl">
             {article.title}
           </h3>
-          <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-slate-500" aria-hidden />
+          <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-neutral-500" aria-hidden />
         </div>
-        <p className="mt-1 text-sm text-slate-400">{metaLine}</p>
-        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-slate-500">
+        <p className="mt-1 text-sm text-neutral-400">{metaLine}</p>
+        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-neutral-500">
           {article.description}
         </p>
       </div>

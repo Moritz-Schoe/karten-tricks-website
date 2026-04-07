@@ -58,10 +58,10 @@ function QuickLink({ href, icon, title, subtitle }: QuickLinkProps) {
         {icon}
       </div>
       <div className="min-w-0">
-        <p className="font-bold text-slate-800 tracking-tight leading-snug">{title}</p>
-        <p className="text-sm text-slate-500 mt-0.5">{subtitle}</p>
+        <p className="font-bold text-neutral-800 tracking-tight leading-snug">{title}</p>
+        <p className="text-sm text-neutral-500 mt-0.5">{subtitle}</p>
       </div>
-      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-slate-300 transition-colors group-hover:text-primary" />
+      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-neutral-300 transition-colors group-hover:text-primary" />
     </Link>
   );
 }
@@ -123,19 +123,19 @@ export default function ZauberticksPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-white to-amber-50/50 border-b border-black/[0.04]">
+      <section className="bg-gradient-to-b from-white to-neutral-50 border-b border-black/[0.04]">
         <div className="layout-page py-14 md:py-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-amber-200/60 px-4 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/30 px-4 py-1.5 mb-6">
               <Star className="h-3.5 w-3.5 text-primary" />
               <span className="text-xs font-semibold text-primary uppercase tracking-wider">
                 Kostenlos · Auf Deutsch
               </span>
             </div>
-            <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight text-slate-900 leading-[1.05] mb-5">
+            <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight text-neutral-900 leading-[1.05] mb-5">
               Zaubertricks lernen -<br className="hidden sm:block" /> für Anfänger & Einsteiger
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-slate-500 max-w-2xl mb-8">
+            <p className="text-lg md:text-xl leading-relaxed text-neutral-500 max-w-2xl mb-8">
               Hier findest du einfache Zaubertricks mit Karten: Schritt-für-Schritt
               erklärt, für Kinder und Erwachsene, ohne Vorkenntnisse. Und das alles
               kostenlos.
@@ -150,7 +150,7 @@ export default function ZauberticksPage() {
               </Link>
               <Link
                 href="/kartentricks/anfaenger-guide"
-                className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-black/20"
+                className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
               >
                 Anfänger-Leitfaden
                 <ArrowRight className="h-4 w-4" />
@@ -164,7 +164,7 @@ export default function ZauberticksPage() {
 
         {/* Quick-Start-Navigation */}
         <section>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-6">
+          <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-6">
             Wo möchtest du anfangen?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -198,10 +198,10 @@ export default function ZauberticksPage() {
         {/* Einfache Zaubertricks für Anfänger */}
         <section>
           <div className="mb-7">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-2">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
               Einfache Zaubertricks für Anfänger
             </h2>
-            <p className="text-slate-500 max-w-2xl">
+            <p className="text-neutral-500 max-w-2xl">
               Diese Tricks funktionieren mit einem normalen Kartenspiel - du brauchst
               keine Fingerfertigkeiten und keine Vorbereitung. Perfekt für den ersten
               Auftritt.
@@ -224,10 +224,10 @@ export default function ZauberticksPage() {
 
         {/* Was sind Zaubertricks - SEO-Textblock */}
         <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-4">
+          <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-4">
             Was sind Zaubertricks - und wie lernt man sie?
           </h2>
-          <div className="prose max-w-none text-slate-600">
+          <div className="prose max-w-none text-neutral-600">
             <p>
               Zaubertricks sind Illusionen, die das Publikum verblüffen, indem sie
               gegen die Erwartungen verstoßen. Die meisten Zaubertricks basieren auf
@@ -270,10 +270,10 @@ export default function ZauberticksPage() {
         {/* Zaubertricks für Partys & besondere Anlässe */}
         <section>
           <div className="mb-7">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-2">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
               Zaubertricks für Partys & besondere Anlässe
             </h2>
-            <p className="text-slate-500 max-w-2xl">
+            <p className="text-neutral-500 max-w-2xl">
               Nicht jeder Trick passt in jeden Kontext. Diese Artikel helfen dir, den
               richtigen Trick für den richtigen Moment zu finden.
             </p>
@@ -296,10 +296,10 @@ export default function ZauberticksPage() {
         {/* Techniken */}
         <section>
           <div className="mb-7">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-800 mb-2">
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
               Grundtechniken - das Handwerk hinter Zaubertricks
             </h2>
-            <p className="text-slate-500 max-w-2xl">
+            <p className="text-neutral-500 max-w-2xl">
               Hinter jedem guten Zaubertrick steckt eine erlernbare Technik. Diese
               Grundlagen machen dich zu einem besseren Zauberer - egal welchen Trick
               du als nächstes lernen willst.

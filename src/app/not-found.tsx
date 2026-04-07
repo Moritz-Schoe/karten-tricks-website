@@ -8,15 +8,15 @@ export default function NotFound() {
       <div className="glass-card w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6">
         <CircleHelp className="w-10 h-10 text-primary" strokeWidth={1.5} />
       </div>
-      <h1 className="text-3xl font-medium text-slate-800 mb-3">Diese Seite gibt es nicht</h1>
-      <p className="text-slate-500 mb-8">
+      <h1 className="text-3xl font-medium text-neutral-800 mb-3">Diese Seite gibt es nicht</h1>
+      <p className="text-neutral-500 mb-8">
         Vielleicht war der Link falsch oder die Seite wurde verschoben.
       </p>
       <div className="flex gap-3 justify-center">
         <div className="accent-border rounded-full p-[2px]">
           <Link
             href="/"
-            className="block bg-white hover:bg-slate-50 text-slate-800 font-medium px-6 py-3 rounded-full transition-colors text-sm"
+            className="block bg-white hover:bg-neutral-50 text-neutral-800 font-medium px-6 py-3 rounded-full transition-colors text-sm"
           >
             Zur Startseite
           </Link>

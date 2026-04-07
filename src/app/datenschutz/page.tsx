@@ -11,13 +11,13 @@ export default function DatenschutzPage() {
   return (
     <div className="layout-page py-12">
       <div className="mx-auto max-w-3xl">
-      <nav className="text-sm text-slate-400 mb-8">
+      <nav className="text-sm text-neutral-400 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
         <span className="mx-2">/</span>
-        <span className="text-slate-600">Datenschutz</span>
+        <span className="text-neutral-600">Datenschutz</span>
       </nav>
 
-      <h1 className="text-[36px] font-medium text-slate-800 mb-8 leading-[1.2]">Datenschutzerklärung</h1>
+      <h1 className="text-[36px] font-medium text-neutral-800 mb-8 leading-[1.2]">Datenschutzerklärung</h1>
 
       <div className="prose">
         <h2>1. Datenschutz auf einen Blick</h2>

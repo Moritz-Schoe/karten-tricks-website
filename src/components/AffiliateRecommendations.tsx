@@ -1,16 +1,16 @@
 import { ArrowRight } from "lucide-react";
 
 const boxClass =
-  "rounded-2xl border border-amber-200/40 bg-amber-50/40 backdrop-blur-sm p-6 sm:p-7 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.04)]";
+  "rounded-2xl border border-primary/25 bg-primary/[0.05] backdrop-blur-sm p-6 sm:p-7 shadow-[0_4px_24px_-6px_rgba(0,0,0,0.04)]";
 
 const headingClass =
-  "font-semibold text-[#5C2E0A] text-base sm:text-lg mb-3";
+  "font-semibold text-neutral-800 text-base sm:text-lg mb-3";
 
 const linkClass =
-  "text-[#5C2E0A] hover:text-[#3D1F06] font-medium text-sm hover:underline";
+  "text-neutral-700 hover:text-primary font-medium text-sm hover:underline";
 
 const disclaimerClass =
-  "text-xs text-[#6B3A18]/70 mt-4 leading-relaxed";
+  "text-xs text-neutral-500 mt-4 leading-relaxed";
 
 const disclaimerText =
   "* Affiliate-Links. Bei einem Kauf erhalte ich eine kleine Provision - für dich entstehen keine Mehrkosten.";

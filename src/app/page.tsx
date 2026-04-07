@@ -98,30 +98,30 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Center content - flex-1 so the headline is truly centered */}
-        <div className="relative z-10 flex flex-1 items-center justify-center">
-          <div className="layout-page flex flex-col items-center text-center max-w-4xl">
-            <h1 className="flex flex-col items-center justify-center text-center w-full">
-              <span className="text-[clamp(3.5rem,10vw,6.5rem)] leading-[1.15] font-extrabold leading-[0.95] tracking-tight text-neutral-800">
+        {/* Center content — vertikal zentriert im freien Bereich (gleicher Raum oben/unten zum Rand der Bottom-Bar) */}
+        <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center py-6 sm:py-8 md:py-10">
+          <div className="layout-page flex max-w-4xl flex-col items-center text-center">
+            <h1 className="flex w-full flex-col items-center justify-center text-center">
+              <span className="text-[clamp(2.125rem,9.5vw,6.5rem)] font-extrabold leading-[1.05] tracking-tight text-neutral-800 md:text-[clamp(3.5rem,10vw,6.5rem)] md:leading-[0.95]">
                 <span className="hero-gradient-text">Kartentricks</span> lernen
               </span>
-              <span className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-normal text-neutral-500 max-w-2xl">
+              <span className="mt-3 max-w-2xl text-base font-normal leading-snug text-neutral-500 sm:mt-4 sm:text-lg md:mt-6 md:text-2xl md:leading-normal">
                 Von den Basics bis zur Profi-Performance
               </span>
             </h1>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="layout-page relative z-10 flex flex-col gap-8 pb-10 sm:flex-row sm:items-end sm:justify-between">
+        {/* Bottom bar — Einleitung auf Mobile kleiner; Discord ab sm */}
+        <div className="layout-page relative z-10 flex shrink-0 flex-col gap-4 pb-8 sm:gap-6 sm:pb-10 md:flex-row md:items-end md:justify-between md:gap-8">
           {/* Left - description + CTA */}
-          <div className="max-w-lg">
-            <p className="text-base leading-relaxed text-neutral-600 font-medium">
+          <div className="mx-auto max-w-lg text-center md:mx-0 md:text-left">
+            <p className="text-xs font-normal leading-relaxed text-neutral-600 sm:text-sm md:text-base md:font-medium">
               Entdecke detaillierte Schritt-für-Schritt Anleitungen, essenzielle Techniken und die besten Kartentricks für jeden Schwierigkeitsgrad - alles an einem Ort.
             </p>
             <Link
               href="/kartentricks"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-800 transition-colors hover:text-primary"
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-800 transition-colors hover:text-primary md:mt-4"
             >
               Tricks entdecken
               <ArrowRight className="h-3.5 w-3.5" aria-hidden />
@@ -129,7 +129,7 @@ export default function HomePage() {
           </div>
 
           {/* Right - Discord CTA */}
-          <div className="flex items-center gap-3 self-start sm:self-auto">
+          <div className="hidden items-center gap-3 sm:flex sm:self-auto">
               <a
                 href="https://discord.gg/QQ2nDMPZ6p"
                 target="_blank"

@@ -38,7 +38,7 @@ function contentForPathname(pathname: string): CardContent {
       paragraphs: [
         <>
           Der Trick ist nur die Hälfte: Die Wirkung entsteht durch <strong>Tempo</strong>, <strong>Timing</strong> und
-          eine klare <strong>Story</strong>. Übe zuerst den Ablauf ohne Worte – bis deine Hände automatisch wissen, was
+          eine klare <strong>Story</strong>. Übe zuerst den Ablauf ohne Worte, bis deine Hände automatisch wissen, was
           als Nächstes kommt.
         </>,
         <>
@@ -48,14 +48,14 @@ function contentForPathname(pathname: string): CardContent {
         </>,
         <>
           Wenn du den Trick öfter zeigen willst, bau dir eine zweite Phase oder einen sauberen Abschluss dazu. Oft
-          reicht schon eine kleine Variation oder ein Callback, damit es sich wie eine Routine anfühlt – nicht wie
+          reicht schon eine kleine Variation oder ein Callback, damit es sich wie eine Routine anfühlt und nicht wie
           ein einzelner Effekt.
         </>,
       ],
       bullets: [
         <>2–3× langsam ohne Publikum (nur Ablauf)</>,
         <>1× mit Script (laut sprechen, Blickführung)</>,
-        <>1× „unter Stress“: Timer 2 Minuten – als würdest du ihn spontan zeigen</>,
+        <>1× „unter Stress“: Timer 2 Minuten, als würdest du ihn spontan zeigen</>,
       ],
       footerLinks: [
         { href: `/${first}`, label: `Mehr ${cat.label}` },
@@ -77,7 +77,7 @@ function contentForPathname(pathname: string): CardContent {
           genau dazu passen.
         </>,
         <>
-          Viele machen den Fehler, zu viel zu konsumieren. Besser: Weniger lesen, mehr wiederholen. Ein Trick, den
+          Viele machen den Fehler, zu viel Tricks auf einmal zu lernen. Besser: Weniger lesen, mehr wiederholen. Ein Trick, den
           du sauber zeigen kannst, ist mehr wert als zehn, die nur „halb sitzen“.
         </>,
       ],
@@ -119,12 +119,12 @@ function contentForPathname(pathname: string): CardContent {
         </>,
         <>
           Wichtig: Ein Trick ist erst „fertig“, wenn du ihn <strong>ohne Nachdenken</strong> erklären und zeigen
-          kannst. Dafür ist Wiederholung entscheidend – nicht neues Material.
+          kannst. Dafür ist Wiederholung entscheidend, nicht neues Material.
         </>,
       ],
       bullets: [
         <>Phase 1: 2–3 Effekte, die „von selbst“ funktionieren</>,
-        <>Phase 2: 1 Technik (z. B. Double Lift) + 1 Kontrollgriff</>,
+        <>Phase 2: 1 Technik (z.B. Double Lift) + 1 Kontrollgriff</>,
         <>Phase 3: Routine (2 Effekte kombinieren, sauberer Abschluss)</>,
       ],
       footerLinks: [
@@ -152,7 +152,7 @@ function contentForPathname(pathname: string): CardContent {
       bullets: [
         <>Ein Take langsam + ein Take in Vorführtempo</>,
         <>Zeig Anfang/Ende klar (Deck vorher/nachher kurz in die Kamera)</>,
-        <>Schreib dazu, was du gerade übst (z. B. Double Lift / Force / Kontrolle)</>,
+        <>Schreib dazu, was du gerade übst (z.B. Double Lift / Force / Kontrolle)</>,
       ],
       footerLinks: [
         { href: "/kartentricks", label: "Tricks zum Üben" },
@@ -168,13 +168,13 @@ function contentForPathname(pathname: string): CardContent {
       title: "Wie du hier am schnellsten Fortschritte machst",
       paragraphs: [
         <>
-          Die Seite ist so aufgebaut, dass du dir Schritt für Schritt ein Repertoire aufbauen kannst – ohne dich zu
+          Die Seite ist so aufgebaut, dass du dir Schritt für Schritt ein Repertoire aufbauen kannst, ohne dich zu
           verzetteln. Wenn du neu bist: nimm erst Inhalte, die <strong>zuverlässig</strong> funktionieren, und ergänze
           dann Basics.
         </>,
         <>
           Eine einfache Formel, die fast immer klappt: <strong>1 Guide</strong> (Verständnis) + <strong>2 Tricks</strong>{" "}
-          (Wirkung) + <strong>1 Technik</strong> (Handwerk) – und das eine Woche lang wiederholen.
+          (Wirkung) + <strong>1 Technik</strong> (Handwerk) und das eine Woche lang wiederholen.
         </>,
       ],
       bullets: [
@@ -207,7 +207,7 @@ function contentForPathname(pathname: string): CardContent {
       paragraphs: [
         <>
           Wenn du einfach nur Kartentricks lernen willst, bist du hier richtig: Alle Anleitungen sind kostenlos und so
-          aufgebaut, dass du schnell vorführen kannst – ohne Spezial-Equipment.
+          aufgebaut, dass du schnell vorführen kannst, ohne Spezial-Equipment.
         </>,
       ],
       footerLinks: [
@@ -228,7 +228,7 @@ function contentForPathname(pathname: string): CardContent {
       </>,
     ],
     bullets: [
-      <>10 Minuten/Tag reichen – Hauptsache regelmäßig</>,
+      <>10 Minuten/Tag reichen. Hauptsache regelmäßig</>,
       <>Üb einmal langsam (sauber) und einmal in Vorführtempo</>,
     ],
     footerLinks: [

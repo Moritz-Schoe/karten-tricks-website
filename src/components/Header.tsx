@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/zaubertricks", label: "Zaubertricks" },
   { href: "/kartentricks", label: "Kartentricks" },
+  { href: "/zaubertricks", label: "Zaubertricks" },
   { href: "/party-tricks", label: "Party Tricks" },
   { href: "/cardistry", label: "Cardistry" },
   { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },

@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { getArticlesByCategory, getAllArticles } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Zaubertricks lernen - einfache Tricks für Anfänger",
+  title: "Zaubertricks lernen: Einfache Tricks für Anfänger",
   description:
     "Lerne einfache Zaubertricks für Anfänger Schritt für Schritt - kostenlos, auf Deutsch, mit Karten. Tricks für Kinder, Partys und Einsteiger.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://karten-tricks.de/zaubertricks" },
   openGraph: {
-    title: "Zaubertricks lernen - kostenlos & auf Deutsch",
+    title: "Zaubertricks lernen: Kostenlos & auf Deutsch",
     description:
       "Einfache Zaubertricks für Anfänger, Kinder und Partys. Schritt-für-Schritt Anleitungen mit Karten.",
     type: "website",
@@ -133,7 +133,7 @@ export default function ZauberticksPage() {
               Zaubertricks lernen -<br className="hidden sm:block" /> für Anfänger & Einsteiger
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-neutral-500 max-w-2xl mb-8">
-              Hier findest du einfache Zaubertricks mit Karten: Schritt-für-Schritt
+              Hier findest du einfache Zaubertricks mit Karten. Schritt-für-Schritt
               erklärt, für Kinder und Erwachsene, ohne Vorkenntnisse. Und das alles
               kostenlos.
             </p>
@@ -199,7 +199,7 @@ export default function ZauberticksPage() {
               Einfache Zaubertricks für Anfänger
             </h2>
             <p className="text-neutral-500 max-w-2xl">
-              Diese Tricks funktionieren mit einem normalen Kartenspiel - du brauchst
+              Diese Tricks funktionieren mit einem normalen Kartenspiel. Du brauchst
               keine Fingerfertigkeiten und keine Vorbereitung. Perfekt für den ersten
               Auftritt.
             </p>
@@ -238,7 +238,7 @@ export default function ZauberticksPage() {
               <Link href="/kartentricks" className="text-primary hover:underline font-medium">
                 Kartentricks
               </Link>
-              . Du brauchst nur ein normales Kartenspiel - das Werkzeug ist günstig,
+              . Du brauchst nur ein normales Kartenspiel. Das Werkzeug ist günstig,
               überall verfügbar und gleichzeitig vielseitig genug für Anfänger und
               Profis.
             </p>
@@ -298,7 +298,7 @@ export default function ZauberticksPage() {
             </h2>
             <p className="text-neutral-500 max-w-2xl">
               Hinter jedem guten Zaubertrick steckt eine erlernbare Technik. Diese
-              Grundlagen machen dich zu einem besseren Zauberer - egal welchen Trick
+              Grundlagen machen dich zu einem besseren Zauberer, egal welchen Trick
               du als nächstes lernen willst.
             </p>
           </div>
@@ -323,7 +323,7 @@ export default function ZauberticksPage() {
             Bereit für deinen ersten Zaubertrick?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-6">
-            Starte mit dem Artikel, der am besten zu dir passt - in 10 Minuten
+            Starte mit dem Artikel, der am besten zu dir passt. In 10 Minuten
             weißt du, ob Zaubertricks dein Ding sind.
           </p>
           <Link

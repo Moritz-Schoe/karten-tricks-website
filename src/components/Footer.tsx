@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const FOOTER_LINKS = {
   "Tricks": [
-    { href: "/zaubertricks", label: "Zaubertricks" },
     { href: "/kartentricks", label: "Kartentricks" },
+    { href: "/zaubertricks", label: "Zaubertricks" },
+    { href: "/party-tricks", label: "Party Tricks" },
     { href: "/cardistry", label: "Cardistry" },
     { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
-    { href: "/party-tricks", label: "Party Tricks" },
   ],
   "Situationen": [
     { href: "/party-tricks/geburtstag", label: "Geburtstag" },

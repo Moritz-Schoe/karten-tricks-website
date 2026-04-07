@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock, Zap, Users, Star } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
+import JsonLd from "@/components/JsonLd";
 import { getArticlesByCategory, getAllArticles } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -40,6 +41,37 @@ const EINSTIEG_SLUGS = [
 const PARTY_SLUGS = ["geburtstag", "spontan", "eisbrecher", "kinder"];
 
 const TECHNIK_SLUGS = ["pinky-break", "double-lift", "forces", "misdirection"];
+
+const ZAUBERTRICKS_FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Welche Zaubertricks kann ich als Anfänger lernen?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Als Anfänger eignen sich mathematische Tricks wie der 21-Karten-Trick oder der Dreimal-Abheben-Trick besonders gut – sie brauchen keine Fingerfertigkeiten. Auch Tricks auf Basis von Psychologie sind ideal für den Einstieg.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie lange dauert es, Zaubertricks zu lernen?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Einfache Zaubertricks lassen sich in 5–10 Minuten verstehen und grundlegend ausführen. Einen wirklich sauberen Vortrag zu entwickeln dauert länger - regelmäßiges Üben über einige Wochen ist empfehlenswert.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Welche Zaubertricks kann man ohne Requisiten machen?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Viele Kartentricks funktionieren mit einem normalen Kartenspiel, das in fast jedem Haushalt vorhanden ist. Trick-Decks oder spezielle Requisiten sind für den Einstieg nicht notwendig.",
+      },
+    },
+  ],
+} as const;
 
 interface QuickLinkProps {
   href: string;
@@ -85,42 +117,7 @@ export default function ZauberticksPage() {
 
   return (
     <>
-      {/* JSON-LD: FAQPage für Zaubertricks-Keywords */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Welche Zaubertricks kann ich als Anfänger lernen?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Als Anfänger eignen sich mathematische Tricks wie der 21-Karten-Trick oder der Dreimal-Abheben-Trick besonders gut – sie brauchen keine Fingerfertigkeiten. Auch Tricks auf Basis von Psychologie sind ideal für den Einstieg.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Wie lange dauert es, Zaubertricks zu lernen?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Einfache Zaubertricks lassen sich in 5–10 Minuten verstehen und grundlegend ausführen. Einen wirklich sauberen Vortrag zu entwickeln dauert länger - regelmäßiges Üben über einige Wochen ist empfehlenswert.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Welche Zaubertricks kann man ohne Requisiten machen?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Viele Kartentricks funktionieren mit einem normalen Kartenspiel, das in fast jedem Haushalt vorhanden ist. Trick-Decks oder spezielle Requisiten sind für den Einstieg nicht notwendig.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
+      <JsonLd data={ZAUBERTRICKS_FAQ_JSON_LD} />
 
       {/* Hero */}
       <section className="bg-gradient-to-b from-white to-neutral-50 border-b border-black/[0.04]">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
+import JsonLd from "@/components/JsonLd";
 import QuickInfoBox from "@/components/QuickInfoBox";
 import WhyThisTrick from "@/components/WhyThisTrick";
 import AffiliateRecommendations, { AffiliateInlineNotice } from "@/components/AffiliateRecommendations";
@@ -82,12 +83,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <>
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
+      <JsonLd data={jsonLd} />
 
       <div className="layout-page py-10">
         {/* Breadcrumb */}

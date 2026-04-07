@@ -116,14 +116,12 @@ export default function HomePage() {
         {/* Center content — vertikal zentriert im freien Bereich (gleicher Raum oben/unten zum Rand der Bottom-Bar) */}
         <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center justify-center py-6 sm:py-8 md:py-10">
           <div className="layout-page flex max-w-4xl flex-col items-center text-center">
-            <h1 className="flex w-full flex-col items-center justify-center text-center">
-              <span className="text-[clamp(2.125rem,9.5vw,6.5rem)] font-extrabold leading-[1.05] tracking-tight text-neutral-800 md:text-[clamp(3.5rem,10vw,6.5rem)] md:leading-[0.95]">
-                <span className="hero-gradient-text">Kartentricks</span> lernen
-              </span>
-              <span className="mt-3 max-w-2xl text-base font-normal leading-snug text-neutral-500 sm:mt-4 sm:text-lg md:mt-6 md:text-2xl md:leading-normal">
-                Von den Basics bis zur Profi-Performance
-              </span>
+            <h1 className="w-full text-[clamp(2.125rem,9.5vw,6.5rem)] font-extrabold leading-[1.05] tracking-tight text-neutral-800 md:text-[clamp(3.5rem,10vw,6.5rem)] md:leading-[0.95]">
+              <span className="hero-gradient-text">Kartentricks</span> lernen
             </h1>
+            <p className="mt-3 max-w-2xl text-base font-normal leading-snug text-neutral-500 sm:mt-4 sm:text-lg md:mt-6 md:text-2xl md:leading-normal">
+              Von den Basics bis zur Profi-Performance
+            </p>
           </div>
         </div>
 

@@ -5,12 +5,12 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: { absolute: "Kartentricks lernen - karten-tricks.de" },
   description:
-    "Lerne Kartentricks und Zaubertricks Schritt für Schritt – von einfachen Tricks für Anfänger bis zu fortgeschrittenen Kartenmagie-Techniken. Kostenlos auf Deutsch.",
+    "Lerne Kartentricks und Zaubertricks Schritt für Schritt. Von einfachen Tricks für Anfänger bis zu fortgeschrittenen Kartenmagie-Techniken. Kostenlos auf Deutsch.",
   alternates: { canonical: "https://karten-tricks.de" },
   openGraph: {
     title: "Kartentricks lernen - karten-tricks.de",
     description:
-      "Einfache Kartentricks und Zaubertricks lernen – kostenlos, auf Deutsch, Schritt für Schritt erklärt. Für Anfänger und Fortgeschrittene.",
+      "Einfache Kartentricks und Zaubertricks lernen. Kostenlos, auf Deutsch, Schritt für Schritt erklärt. Für Anfänger und Fortgeschrittene.",
     type: "website",
     url: "https://karten-tricks.de",
   },
@@ -130,7 +130,7 @@ export default function HomePage() {
           {/* Left - description + CTA */}
           <div className="mx-auto max-w-lg text-center md:mx-0 md:text-left">
             <p className="text-xs font-normal leading-relaxed text-neutral-600 sm:text-sm md:text-base md:font-medium">
-              Entdecke detaillierte Schritt-für-Schritt Anleitungen, essenzielle Techniken und die besten Kartentricks für jeden Schwierigkeitsgrad - alles an einem Ort.
+              Entdecke detaillierte Schritt-für-Schritt Anleitungen, essenzielle Techniken und die besten Kartentricks für jeden Schwierigkeitsgrad. Alles an einem Ort.
             </p>
             <Link
               href="/kartentricks"
@@ -166,7 +166,7 @@ export default function HomePage() {
               Kartentricks für Anfänger: Dein Start in die Kartenzauberei
             </h2>
             <p className="text-lg leading-relaxed text-neutral-600 mb-8 max-w-2xl">
-              Du möchtest Kartentricks lernen, weißt aber nicht, wo du anfangen sollst? Keine Sorge. Du brauchst kein teures Zubehör - ein einfaches Kartendeck genügt. Auf dieser Seite findest du eine kuratierte Auswahl an Tricks, die einfach zu erlernen sind, aber eine maximale Wirkung auf dein Publikum haben.
+              Du möchtest Kartentricks lernen, weißt aber nicht, wo du anfangen sollst? Keine Sorge. Du brauchst kein teures Zubehör, ein einfaches Kartendeck genügt. Auf dieser Seite findest du eine kuratierte Auswahl an Tricks, die einfach zu erlernen sind, aber eine maximale Wirkung auf dein Publikum haben.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -199,7 +199,7 @@ export default function HomePage() {
                 Mehr als nur &quot;eine Karte ziehen&quot;
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-neutral-600">
-                Kartenmagie ist extrem vielseitig. Wähle deinen Einstieg - je nachdem, ob du lieber mit Logik startest, mit Spezial-Decks arbeitest oder direkt an echten Profi-Griffen übst.
+                Kartenmagie ist extrem vielseitig. Wähle deinen Einstieg: je nachdem, ob du lieber mit Logik startest, mit Spezial-Decks arbeitest oder direkt an echten Profi-Griffen übst.
               </p>
 
               <div className="mt-6 rounded-3xl bg-gradient-to-br from-white to-neutral-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-black/[0.04]">
@@ -223,7 +223,7 @@ export default function HomePage() {
                       Mathematische Kartentricks
                     </h3>
                     <p className="mt-3 text-neutral-600 leading-relaxed text-sm">
-                      Tricks, die &quot;von selbst&quot; funktionieren - ideal, um sicher vorzuführen und Selbstvertrauen aufzubauen.
+                      Tricks, die &quot;von selbst&quot; funktionieren. Ideal, um sicher vorzuführen und Selbstvertrauen aufzubauen.
                     </p>
                   </div>
                   <div className="mt-8 flex justify-end">
@@ -241,7 +241,7 @@ export default function HomePage() {
                       Kartentricks mit System
                     </h3>
                     <p className="mt-3 text-neutral-600 leading-relaxed text-sm">
-                      Präparierte Decks (z.B. Stripper oder Svengali) sorgen für unmögliche Effekte - ohne schwere Moves.
+                      Präparierte Decks (z.B. Stripper oder Svengali) sorgen für unmögliche Effekte, ohne schwere Moves.
                     </p>
                   </div>
                   <div className="mt-8 flex justify-end">
@@ -263,7 +263,7 @@ export default function HomePage() {
                         </span>
                       </h3>
                       <p className="mt-3 text-neutral-600 leading-relaxed text-sm max-w-[60ch]">
-                        Lerne die echten Profi-Griffe wie Double Lift, Pinky Break und Falschmischungen - für visuelle, direkte Wunder.
+                        Lerne die echten Profi-Griffe wie Double Lift, Pinky Break und Falschmischungen. Für visuelle, direkte Wunder.
                       </p>
                     </div>
                     <div className="mt-1 flex justify-end sm:mt-0">
@@ -331,7 +331,7 @@ export default function HomePage() {
               Werde Teil der Community
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-neutral-500">
-              Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community - direkt auf Discord.
+              Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community, direkt auf Discord.
             </p>
             <div className="mt-8 inline-flex rounded-full bg-neutral-900 transition-colors hover:bg-neutral-800">
               <a
@@ -347,7 +347,7 @@ export default function HomePage() {
               </a>
             </div>
             <p className="mt-4 text-xs text-neutral-400">
-              Bereits über 500 Kartentrick-Fans dabei.
+              Werde teil unserer schnell wachsenden Community!
             </p>
           </div>
         </div>
@@ -381,7 +381,7 @@ export default function HomePage() {
               Alles im Überblick: Kartentricks, Techniken &amp; Kartenwissen
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-neutral-600">
-              Du hast noch nicht den richtigen Einstieg gefunden? Hier siehst du auf einen Blick, was es auf karten-tricks.de alles gibt - von{" "}
+              Du hast noch nicht den richtigen Einstieg gefunden? Hier siehst du auf einen Blick, was es auf karten-tricks.de alles gibt. Von{" "}
               <strong>Kartentricks lernen</strong> über <strong>Fingerfertigkeit</strong> bis zu <strong>Spielkarten</strong> und{" "}
               <strong>Party Tricks</strong>.
             </p>
@@ -390,7 +390,7 @@ export default function HomePage() {
             <BentoCard
               title="Kartentricks"
               count={`${counts.kartentricks} Artikel`}
-              description="Schritt-für-Schritt Anleitungen, um Kartentricks zu lernen - perfekt für Anfänger, aber auch mit starken Effekten für Fortgeschrittene."
+              description="Schritt-für-Schritt Anleitungen, um Kartentricks zu lernen. Perfekt für Anfänger, aber auch mit starken Effekten für Fortgeschrittene."
               href="/kartentricks"
               icon={Sparkles}
               className="md:col-start-1 md:row-start-1 md:row-end-4"
@@ -398,7 +398,7 @@ export default function HomePage() {
             <BentoCard
               title="Cardistry"
               count={`${counts.cardistry} Artikel`}
-              description="Cardistry lernen: Cuts, Flourishes und Fans für saubere, visuelle Kartenmoves - ideal als Ergänzung zur Kartenmagie."
+              description="Cardistry lernen: Cuts, Flourishes und Fans für saubere, visuelle Kartenmoves. Ideal als Ergänzung zur Kartenmagie."
               href="/cardistry"
               icon={Layers}
               className="md:col-start-2 md:row-start-1 md:row-end-3"
@@ -414,7 +414,7 @@ export default function HomePage() {
             <BentoCard
               title="Kartentricks für Kinder"
               count={`${kidsTricksCount} Artikel`}
-              description="Einfache Kartentricks für Kinder: schnell erklärt, leicht vorzuführen und mit großer Wirkung - ohne schwierige Griffe."
+              description="Einfache Kartentricks für Kinder: schnell erklärt, leicht vorzuführen und mit großer Wirkung. Ohne schwierige Griffe."
               href="/party-tricks/kinder"
               icon={Star}
               className="md:col-start-1 md:row-start-4 md:row-end-6"
@@ -422,7 +422,7 @@ export default function HomePage() {
             <BentoCard
               title="Party Tricks"
               count={`${counts["party-tricks"]} Artikel`}
-              description="Tricks nach Anlass: Kartentricks für Geburtstag, Firmenfeier oder Freunde - mit Fokus auf Präsentation, Wirkung und Ablauf."
+              description="Tricks nach Anlass: Kartentricks für Geburtstag, Firmenfeier oder Freunde, mit Fokus auf Präsentation, Wirkung und Ablauf."
               href="/party-tricks"
               icon={PartyPopper}
               className="md:col-start-2 md:row-start-3 md:row-end-6"
@@ -430,7 +430,7 @@ export default function HomePage() {
             <BentoCard
               title="Fingerfertigkeit"
               count={`${counts.fingerfertigkeit} Artikel`}
-              description="Techniken für Kartenzauberei: Double Lift, Pinky Break, Forces und Mischtechniken - damit deine Kartentricks wirklich täuschen."
+              description="Techniken für Kartenzauberei: Double Lift, Pinky Break, Forces und Mischtechniken, damit deine Kartentricks wirklich täuschen."
               href="/fingerfertigkeit"
               icon={Hand}
               className="md:col-start-3 md:row-start-3 md:row-end-6"
@@ -451,7 +451,7 @@ export default function HomePage() {
                   </h2>
                   <p>
                     Wer Kartentricks lernen möchte, findet auf karten-tricks.de die perfekte Anlaufstelle. Egal, ob du völlig am Anfang stehst oder bereits erste Erfahrungen mit{" "}
-                    <strong>Sleight of Hand</strong> (Fingerfertigkeit) hast - unsere detaillierten Step-by-Step Anleitungen begleiten dich auf jedem Level. Die Faszination der Kartenmagie liegt darin, dass du kein extrem teures Equipment benötigst. Ein einfaches, gutes Kartendeck reicht vollkommen aus, um deine Freunde, Familie oder Kollegen ins Staunen zu versetzen.
+                    <strong>Sleight of Hand</strong> (Fingerfertigkeit) hast, unsere detaillierten Step-by-Step Anleitungen begleiten dich auf jedem Level. Die Faszination der Kartenmagie liegt darin, dass du kein extrem teures Equipment benötigst. Ein einfaches, gutes Kartendeck reicht vollkommen aus, um deine Freunde, Familie oder Kollegen ins Staunen zu versetzen.
                   </p>
                   <h3 className="text-xl font-bold text-neutral-800 mt-8 mb-4">
                     Warum jeder Zaubertricks mit Karten lernen kann

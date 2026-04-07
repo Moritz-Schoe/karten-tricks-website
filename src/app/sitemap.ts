@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: BASE_URL, lastModified: new Date().toISOString(), changeFrequency: "daily", priority: 1.0 },
+    {
+      url: `${BASE_URL}/zaubertricks`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
     { url: `${BASE_URL}/ueber-mich`, lastModified: new Date().toISOString(), changeFrequency: "yearly", priority: 0.5 },
     { url: `${BASE_URL}/community`, lastModified: new Date().toISOString(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/impressum`, lastModified: new Date().toISOString(), changeFrequency: "yearly", priority: 0.2 },

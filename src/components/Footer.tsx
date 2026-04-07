@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const FOOTER_LINKS = {
   "Tricks": [
+    { href: "/zaubertricks", label: "Zaubertricks" },
     { href: "/kartentricks", label: "Kartentricks" },
     { href: "/cardistry", label: "Cardistry" },
     { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
@@ -37,7 +38,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-neutral-400">
-              Die deutschsprachige Ressource für Kartentricks und Kartenmagie - von Anfänger bis Fortgeschritten.
+              Die deutschsprachige Ressource für Kartentricks und Kartenmagie. Von Anfänger bis Fortgeschritten.
             </p>
             <a
                 href="https://discord.gg/QQ2nDMPZ6p"

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
-  title: "Über mich - Moritz, Gründer von karten-tricks.de",
+  title: "Über mich, Moritz, Gründer von karten-tricks.de",
   description:
-    "Ich bin Moritz und beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos – von Anfängertricks bis zu Cardistry.",
+    "Ich bin Moritz und beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos. Von Anfängertricks bis zu Cardistry.",
   alternates: { canonical: "https://karten-tricks.de/ueber-mich" },
   openGraph: {
-    title: "Über mich - Moritz, Gründer von karten-tricks.de",
+    title: "Über mich, Moritz, Gründer von karten-tricks.de",
     description:
       "Ich bin Moritz und beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos.",
     type: "website",
@@ -43,7 +43,7 @@ export default function UeberMichPage() {
       <div className="prose">
         <h2>Wie alles begann</h2>
         <p>
-          Mit 16 hat mir ein Freund den Chicago Opener gezeigt. Ich war sofort fasziniert - nicht nur vom Trick selbst,
+          Mit 16 hat mir ein Freund den Chicago Opener gezeigt. Ich war sofort fasziniert. Nicht nur vom Trick selbst,
           sondern davon wie einfach man Menschen mit einem normalen Kartenspiel in den Bann ziehen kann.
           Seitdem habe ich nicht aufgehört, Tricks zu lernen.
         </p>
@@ -54,15 +54,15 @@ export default function UeberMichPage() {
           hinter Paywalls, oder einfach schlecht erklärt. Also habe ich angefangen, selbst zu schreiben.
         </p>
         <p>
-          Heute ist karten-tricks.de die umfassendste kostenlose Anlaufstelle für Kartentricks auf Deutsch -
-          mit Tutorials für Anfänger bis Fortgeschrittene, dem ersten deutschen Cardistry-Guide, und einer
+          Heute ist karten-tricks.de die umfassendste kostenlose Anlaufstelle für Kartentricks auf Deutsch.
+          Mit Tutorials für Anfänger bis Fortgeschrittene, dem ersten deutschen Cardistry-Guide, und einer
           wachsenden Community auf Discord.
         </p>
 
         <h2>Was ich glaube</h2>
         <p>
-          Kartentricks sind keine Kindersache. Sie trainieren Konzentration, Feinmotorik, soziale Intelligenz -
-          und sie öffnen Gespräche auf jeder Party. Jeder kann es lernen. Es braucht nur die richtige Anleitung.
+          Kartentricks sind keine Kindersache. Sie trainieren Konzentration, Feinmotorik, soziale Intelligenz
+          und öffnen Gespräche auf jeder Party. Jeder kann es lernen mit der richtigen Anleitung.
         </p>
 
         <h2>Kontakt & Community</h2>
@@ -76,7 +76,7 @@ export default function UeberMichPage() {
         <section className="rounded-2xl bg-white p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
           <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">Werde Teil der Community</h2>
           <p className="text-neutral-500 mb-6 max-w-md mx-auto text-sm leading-relaxed">
-            Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community - direkt auf Discord.
+            Tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und lern von der Community direkt auf Discord.
           </p>
             <a
               href="https://discord.gg/QQ2nDMPZ6p"

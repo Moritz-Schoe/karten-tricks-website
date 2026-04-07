@@ -3,15 +3,15 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kartendecks & Zauberzubehör kaufen - Empfehlungen",
+  title: "Kartendecks & Zauberzubehör kaufen",
   description:
-    "Die besten Spielkarten, Trick-Decks, Zauberkästen und Bücher für Kartentricks – handverlesene Empfehlungen von karten-tricks.de für Anfänger und Fortgeschrittene.",
-  keywords: ["Spielkarten kaufen", "Trick-Decks", "Zauberkasten", "Bicycle Karten", "Kartentricks Zubehör", "Zauberbedarf"],
+    "Die besten Spielkarten, Trick-Decks, Zauberkästen und Bücher für Kartentricks. Handverlesene Empfehlungen für Anfänger und Fortgeschrittene.",
+  keywords: ["Spielkarten kaufen", "Zauberkasten kaufen", "Zauberkasten", "Bicycle Karten", "Kartentricks Zubehör", "Zauberbedarf"],
   alternates: { canonical: "https://karten-tricks.de/shop" },
   openGraph: {
-    title: "Kartendecks & Zauberzubehör - Empfehlungen von karten-tricks.de",
+    title: "Kartendecks & Zauberzubehör",
     description:
-      "Spielkarten, Trick-Decks, Zauberkästen und Bücher – handverlesene Empfehlungen für Kartentricks-Einsteiger und Fortgeschrittene.",
+      "Spielkarten, Trick-Decks, Zauberkästen und Bücher. Handverlesene Empfehlungen für Kartentricks-Einsteiger und Fortgeschrittene.",
     type: "website",
     url: "https://karten-tricks.de/shop",
   },
@@ -41,7 +41,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Bicycle Rider Back",
         description:
-          "Der Allrounder - das meistgenutzte Kartendeck der Welt. Perfekt für Tricks, Poker und Cardistry.",
+          "Der Allrounder. Das meistgenutzte Kartendeck der Welt. Perfekt für Tricks, Poker und Cardistry.",
         url: "https://amzn.to/3vUzH7h",
         image: "/images/xxIMG_6951-copy.jpg",
         tag: "Bestseller",
@@ -56,7 +56,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Tally-Ho Circle Back",
         description:
-          "Das Deck von Penn & Teller - glatteres Finish, perfekt für Cardistry und Flourishes. 2er-Pack.",
+          "Das Deck von Penn & Teller: Glatteres Finish, perfekt für Cardistry und Flourishes. 2er-Pack.",
         url: "https://amzn.to/3vUK6zR",
         image: "/images/71fw80m4jL._AC_SL1000_.jpg",
       },
@@ -70,7 +70,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Bicycle Stripper Deck",
         description:
-          "Lässt dich jede frei gewählte Karte sofort im Deck finden - ganz ohne Pinky Break.",
+          "Lässt dich jede frei gewählte Karte sofort im Deck finden. Ganz ohne Pinky Break.",
         url: "https://amzn.to/4cTIp6I",
         tag: "Empfehlung",
       },
@@ -89,7 +89,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Bicycle Invisible Deck",
         description:
-          "Einer der mächtigsten Tricks der Magie - der Zuschauer wählt, und seine Karte liegt umgedreht im Deck.",
+          "Einer der mächtigsten Tricks der Magie. Der Zuschauer wählt, und seine Karte liegt umgedreht im Deck.",
         url: "https://amzn.to/3UBMLqx",
         tag: "Profi-Tipp",
       },
@@ -146,7 +146,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
       {
         name: "Japace Zauberkasten",
         description:
-          "Magie trifft Wissenschaft - ideal für neugierige Kinder, die verstehen wollen, wie Tricks funktionieren.",
+          "Magie trifft Wissenschaft! Ideal für neugierige Kinder, die verstehen wollen, wie Tricks funktionieren.",
         url: "https://amzn.to/3WudmGS",
         image: "/images/81tWHfBiWiL._AC_SL1500_.jpg",
       },
@@ -165,7 +165,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
     description: "Lesetipps rund um Kartentricks und Zauberkunst.",
     products: [
       {
-        name: "Kartentricks für Anfänger - Buchempfehlung",
+        name: "Kartentricks für Anfänger: Unsere Buchempfehlung",
         description:
           "Der perfekte Begleiter zum Einstieg: Grundlagen, Techniken und erste Routinen verständlich erklärt.",
         url: "https://amzn.to/4cjeuD8",
@@ -333,8 +333,8 @@ export default function ShopPage() {
         <div className="rounded-2xl border border-primary/25 bg-primary/[0.05] p-6 text-center backdrop-blur-sm">
           <p className="text-xs leading-relaxed text-neutral-600">
             * Alle Links auf dieser Seite sind Affiliate-Links. Bei einem Kauf
-            über diese Links erhalten wir eine kleine Provision - für dich
-            entstehen keine Mehrkosten. So können wir karten-tricks.de
+            über diese Links erhalten wir eine kleine Provision. Für dich
+            entstehen keine Mehrkosten. So können wir Karten-tricks.de
             weiterhin kostenlos betreiben.
           </p>
         </div>

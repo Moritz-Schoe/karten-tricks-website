@@ -4,15 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 
 const NAV_ITEMS = [
+  { href: "/zaubertricks", label: "Zaubertricks" },
   { href: "/kartentricks", label: "Kartentricks" },
   { href: "/party-tricks", label: "Party Tricks" },
   { href: "/cardistry", label: "Cardistry" },
   { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
   { href: "/spielkarten", label: "Spielkarten" },
-  { href: "/shop", label: "Shop" },
 ];
 
 export default function Header() {
@@ -70,6 +70,17 @@ export default function Header() {
                 </svg>
                 Discord
               </a>
+            <Link
+              href="/shop"
+              className={`hidden items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-[13px] font-medium transition-colors hover:bg-neutral-50 sm:flex ${
+                pathname.startsWith("/shop")
+                  ? "text-neutral-900 ring-1 ring-black/10"
+                  : "text-neutral-800"
+              }`}
+            >
+              <ShoppingBag className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+              Shop
+            </Link>
 
             <button
               type="button"
@@ -124,6 +135,16 @@ export default function Header() {
                 </svg>
                 Discord beitreten
               </a>
+              <Link
+                href="/shop"
+                className={`mx-1 mt-2 flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-medium transition-colors hover:bg-neutral-50 ${
+                  pathname.startsWith("/shop") ? "text-neutral-900 ring-1 ring-black/10" : "text-neutral-800"
+                }`}
+                onClick={() => setOpen(false)}
+              >
+                <ShoppingBag className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+                Shop
+              </Link>
             </div>
           </div>
         </div>

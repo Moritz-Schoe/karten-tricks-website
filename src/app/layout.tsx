@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     template: "%s | karten-tricks.de",
   },
   description:
-    "Lerne Kartentricks Schritt für Schritt - von einfachen Anfängertricks bis zu professionellen Techniken. Kostenlose Anleitungen auf Deutsch.",
-  keywords: ["Kartentricks", "Zaubertricks", "Kartentricks lernen", "Kartenmagie", "Kartentricks Deutsch"],
+    "Lerne Kartentricks und Zaubertricks Schritt für Schritt – von einfachen Tricks für Anfänger bis zu professionellen Kartenmagie-Techniken. Kostenlos auf Deutsch.",
+  keywords: ["Kartentricks", "Zaubertricks", "Kartentricks lernen", "Kartenmagie", "Zaubertricks lernen", "Kartentricks Deutsch"],
   authors: [{ name: "Moritz" }],
   creator: "Moritz",
   openGraph: {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "karten-tricks.de",
     title: "Kartentricks lernen - karten-tricks.de",
     description:
-      "Die beste deutschsprachige Ressource für Kartentricks und Kartenmagie.",
+      "Einfache Kartentricks und Zaubertricks lernen – kostenlos, auf Deutsch, Schritt für Schritt erklärt. Für Anfänger und Fortgeschrittene.",
   },
   robots: {
     index: true,

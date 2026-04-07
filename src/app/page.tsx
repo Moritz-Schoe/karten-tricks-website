@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: { absolute: "Kartentricks lernen - karten-tricks.de" },
+  description:
+    "Lerne Kartentricks und Zaubertricks Schritt für Schritt – von einfachen Tricks für Anfänger bis zu fortgeschrittenen Kartenmagie-Techniken. Kostenlos auf Deutsch.",
+  alternates: { canonical: "https://karten-tricks.de" },
+  openGraph: {
+    title: "Kartentricks lernen - karten-tricks.de",
+    description:
+      "Einfache Kartentricks und Zaubertricks lernen – kostenlos, auf Deutsch, Schritt für Schritt erklärt. Für Anfänger und Fortgeschrittene.",
+    type: "website",
+    url: "https://karten-tricks.de",
+  },
+};
 import ArticleCard from "@/components/ArticleCard";
 import CardSpring from "@/components/CardSpring";
 import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";

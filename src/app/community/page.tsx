@@ -3,8 +3,18 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Community & Discord",
-  description: "Tritt der karten-tricks.de Community bei - tausche Tricks aus, bekomme Feedback und lern von anderen Kartentrick-Fans.",
+  title: "Kartentricks Community & Discord - Lern mit Gleichgesinnten",
+  description:
+    "Tritt der karten-tricks.de Community auf Discord bei – tausche Kartentricks aus, zeig deine Fortschritte und lern von über 500 Kartentrick-Fans direkt mit Moritz.",
+  keywords: ["Kartentricks Community", "Zaubertricks Discord", "Kartentricks lernen Community", "Kartentrick-Fans"],
+  alternates: { canonical: "https://karten-tricks.de/community" },
+  openGraph: {
+    title: "Kartentricks Community & Discord",
+    description:
+      "Tausche Kartentricks aus, zeig deine Fortschritte und lern von über 500 Fans – direkt auf Discord.",
+    type: "website",
+    url: "https://karten-tricks.de/community",
+  },
 };
 
 export default function CommunityPage() {

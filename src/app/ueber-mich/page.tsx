@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
-  title: "Über mich - Moritz",
+  title: "Über mich - Moritz, Gründer von karten-tricks.de",
   description:
-    "Lern mich kennen: Ich bin Moritz, und ich beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos.",
+    "Ich bin Moritz und beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos – von Anfängertricks bis zu Cardistry.",
+  alternates: { canonical: "https://karten-tricks.de/ueber-mich" },
+  openGraph: {
+    title: "Über mich - Moritz, Gründer von karten-tricks.de",
+    description:
+      "Ich bin Moritz und beschäftige mich seit über 10 Jahren mit Kartentricks und Kartenmagie. Auf karten-tricks.de teile ich alles kostenlos.",
+    type: "website",
+    url: "https://karten-tricks.de/ueber-mich",
+  },
 };
 
 export default function UeberMichPage() {

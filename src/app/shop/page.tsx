@@ -3,9 +3,18 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kartendecks & Zubehör - Empfohlene Produkte | karten-tricks.de",
+  title: "Kartendecks & Zauberzubehör kaufen - Empfehlungen",
   description:
-    "Unsere Empfehlungen für Spielkarten, Trick-Decks, Zauberkästen und Bücher - alle Affiliate-Produkte auf einen Blick.",
+    "Die besten Spielkarten, Trick-Decks, Zauberkästen und Bücher für Kartentricks – handverlesene Empfehlungen von karten-tricks.de für Anfänger und Fortgeschrittene.",
+  keywords: ["Spielkarten kaufen", "Trick-Decks", "Zauberkasten", "Bicycle Karten", "Kartentricks Zubehör", "Zauberbedarf"],
+  alternates: { canonical: "https://karten-tricks.de/shop" },
+  openGraph: {
+    title: "Kartendecks & Zauberzubehör - Empfehlungen von karten-tricks.de",
+    description:
+      "Spielkarten, Trick-Decks, Zauberkästen und Bücher – handverlesene Empfehlungen für Kartentricks-Einsteiger und Fortgeschrittene.",
+    type: "website",
+    url: "https://karten-tricks.de/shop",
+  },
 };
 
 interface Product {

@@ -15,9 +15,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = CATEGORIES[category as Category];
   if (!cat) return {};
   return {
-    title: cat.label,
-    description: cat.description,
+    title: cat.metaTitle,
+    description: cat.metaDescription,
+    keywords: cat.keywords,
     alternates: { canonical: `https://karten-tricks.de/${category}` },
+    openGraph: {
+      title: cat.metaTitle,
+      description: cat.metaDescription,
+      type: "website",
+      url: `https://karten-tricks.de/${category}`,
+    },
   };
 }
 

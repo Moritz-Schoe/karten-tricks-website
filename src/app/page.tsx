@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 import ArticleCard from "@/components/ArticleCard";
 import CardSpring from "@/components/CardSpring";
 import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";
-import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand } from "lucide-react";
+import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand, Zap } from "lucide-react";
 
 function BentoCard({
   title,
@@ -282,11 +282,11 @@ export default function HomePage() {
         <div className="layout-page">
           <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-10 rounded-3xl bg-neutral-950 overflow-hidden p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] border border-white/[0.05]">
             {/* Luxury Gold ambient glows for shop bridge */}
-            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-[#EECD5C]/40 via-[#D2A63C]/15 to-transparent pointer-events-none" />
-            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-[#D2A63C]/30 blur-[100px] pointer-events-none mix-blend-screen" />
+            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-[#9BB0D2]/40 via-[#6F8AB7]/15 to-transparent pointer-events-none" />
+            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-[#6F8AB7]/30 blur-[100px] pointer-events-none mix-blend-screen" />
             
             <div className="relative z-10 max-w-xl">
-              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#EECD5C]">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#9BB0D2]">
                 Welche Karten für Kartentricks?
               </h2>
               <p className="text-neutral-300 text-base leading-relaxed mb-8 max-w-lg">
@@ -294,7 +294,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#D2A63C] to-[#EECD5C] px-8 py-3.5 text-sm font-bold text-neutral-900 transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(238,205,92,0.5)] border border-[#EECD5C]/40"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#5872A0] to-[#9BB0D2] px-8 py-3.5 text-sm font-bold text-neutral-900 transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(111,138,183,0.45)] border border-[#9BB0D2]/40"
               >
                 Zum Kartendecks & Zubehör Shop <ArrowRight className="h-4 w-4" />
               </Link>
@@ -362,8 +362,10 @@ export default function HomePage() {
               <div className="mt-1 text-sm text-neutral-400">Anleitungen</div>
             </div>
             <div className="rounded-2xl bg-white p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-              <div className="text-3xl font-bold tracking-tight text-neutral-800">500+</div>
-              <div className="mt-1 text-sm text-neutral-400">Community-Mitglieder</div>
+              <div className="flex items-center justify-center">
+                <Zap className="h-9 w-9 text-primary" aria-hidden />
+              </div>
+              <div className="mt-2 text-sm font-medium text-neutral-600">Schnell wachsende Community</div>
             </div>
             <div className="rounded-2xl bg-white p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
               <div className="text-3xl font-bold tracking-tight text-neutral-800">100%</div>

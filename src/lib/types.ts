@@ -5,7 +5,8 @@ export type Category =
   | "cardistry"
   | "fingerfertigkeit"
   | "party-tricks"
-  | "spielkarten";
+  | "spielkarten"
+  | "zaubertricks";
 
 export interface ArticleFrontmatter {
   title: string;
@@ -42,7 +43,7 @@ export const CATEGORIES: Record<
     metaTitle: "Kartentricks lernen mit Schritt-für-Schritt Anleitungen",
     metaDescription: "Lerne Kartentricks Schritt für Schritt. Von einfachen Tricks für Anfänger bis hin zu fortgeschrittenen Techniken. Kostenlose Anleitungen auf Deutsch mit Spielkarten.",
     keywords: ["Kartentricks", "Kartentricks lernen", "einfache Kartentricks", "Kartentricks Anfänger", "Kartentricks Anleitung"],
-    color: "bg-[#FFFBEB] border-[#EECD5C] text-[#B28D33]",
+    color: "bg-[#F4F7FF] border-[#9BB0D2] text-[#5872A0]",
   },
   cardistry: {
     label: "Cardistry",
@@ -51,7 +52,7 @@ export const CATEGORIES: Record<
     metaTitle: "Cardistry lernen: Cuts, Flourishes & Fans auf Deutsch",
     metaDescription: "Lerne Cardistry auf Deutsch. Von ersten Cuts und Flourishes bis zu beeindruckenden Fans. Schritt-für-Schritt Anleitungen für Anfänger und Fortgeschrittene.",
     keywords: ["Cardistry", "Cardistry lernen", "Cardistry Anfänger", "Kartenkunst", "Flourishes lernen", "Cuts lernen"],
-    color: "bg-[#FFFBEB] border-[#EECD5C] text-[#B28D33]",
+    color: "bg-[#F4F7FF] border-[#9BB0D2] text-[#5872A0]",
   },
   fingerfertigkeit: {
     label: "Fingerfertigkeit",
@@ -69,7 +70,7 @@ export const CATEGORIES: Record<
     metaTitle: "Kartentricks für Partys & Geburtstage",
     metaDescription: "Die besten Kartentricks für Partys, Geburtstage und Feiern. Einfache Zaubertricks mit Karten, die vor Gruppen garantiert funktionieren kostenlos erklärt.",
     keywords: ["Party Tricks", "Zaubertricks Geburtstag", "Kartentricks für Kinder", "Tricks für Gruppen", "Party Zaubertricks", "Kartentricks Party"],
-    color: "bg-[#FFFBEB] border-[#EECD5C] text-[#B28D33]",
+    color: "bg-[#F4F7FF] border-[#9BB0D2] text-[#5872A0]",
   },
   spielkarten: {
     label: "Spielkarten",
@@ -79,6 +80,15 @@ export const CATEGORIES: Record<
     metaDescription: "Welche Spielkarten sind am besten für Kartentricks, Cardistry und Poker? Ausführliche Tests und Vergleiche von Bicycle bis NOC. Für Anfänger und Profis.",
     keywords: ["Spielkarten kaufen", "beste Spielkarten", "Spielkarten Vergleich", "Bicycle Karten", "Kartentricks Spielkarten", "Cardistry Karten"],
     color: "bg-[#E0F2FE] border-[#7DD3FC] text-[#0369A1]",
+  },
+  zaubertricks: {
+    label: "Zaubertricks",
+    h1: "Zaubertricks lernen",
+    description: "Mentalmagie, Münzmagie und mehr: Zaubertricks abseits der Karten, Schritt für Schritt erklärt.",
+    metaTitle: "Zaubertricks lernen: Mentalmagie, Münzmagie & mehr",
+    metaDescription: "Lerne Zaubertricks aus den Bereichen Mentalmagie und Münzmagie. Schritt-für-Schritt Anleitungen für Anfänger auf Deutsch, kostenlos.",
+    keywords: ["Zaubertricks", "Mentalmagie", "Münzmagie", "Zaubertricks lernen", "Mentalzauberei", "Münze verschwinden lassen"],
+    color: "bg-[#F0FDF4] border-[#86EFAC] text-[#166534]",
   },
 };
 

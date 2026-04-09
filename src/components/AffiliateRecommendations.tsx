@@ -13,7 +13,7 @@ const disclaimerClass =
   "text-xs text-neutral-500 mt-4 leading-relaxed";
 
 const disclaimerText =
-  "* Affiliate-Links. Bei einem Kauf erhalte ich eine kleine Provision - für dich entstehen keine Mehrkosten.";
+  "* Affiliate-Links. Bei einem Kauf erhalte ich eine kleine Provision. Für dich entstehen keine Mehrkosten.";
 
 export interface AffiliateItem {
   label: string;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES, type Category } from "@/lib/types";
-import { Sparkles, Layers, BookOpen, Gift, Spade, type LucideIcon } from "lucide-react";
+import { Sparkles, Layers, BookOpen, Gift, Spade, Wand2, type LucideIcon } from "lucide-react";
 
 const ORDER: Category[] = [
   "kartentricks",
@@ -8,6 +8,7 @@ const ORDER: Category[] = [
   "fingerfertigkeit",
   "party-tricks",
   "spielkarten",
+  "zaubertricks",
 ];
 
 const ACCENT: Record<
@@ -19,6 +20,7 @@ const ACCENT: Record<
   fingerfertigkeit: { iconColor: "text-primary" },
   "party-tricks": { iconColor: "text-primary" },
   spielkarten: { iconColor: "text-primary" },
+  zaubertricks: { iconColor: "text-primary" },
 };
 
 const ICONS: Record<Category, LucideIcon> = {
@@ -27,6 +29,7 @@ const ICONS: Record<Category, LucideIcon> = {
   fingerfertigkeit: BookOpen,
   "party-tricks": Gift,
   spielkarten: Spade,
+  zaubertricks: Wand2,
 };
 
 export default function CategoryQuickNav() {

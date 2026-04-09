@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, Zap, Users, Star } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
 import JsonLd from "@/components/JsonLd";
-import { getArticlesByCategory, getAllArticles } from "@/lib/content";
+import { getArticlesByCategory } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Zaubertricks lernen: Einfache Tricks für Anfänger",
@@ -102,6 +102,7 @@ export default function ZauberticksPage() {
   const allKartentricks = getArticlesByCategory("kartentricks");
   const allPartyTricks = getArticlesByCategory("party-tricks");
   const allTechniken = getArticlesByCategory("fingerfertigkeit");
+  const allZaubertricks = getArticlesByCategory("zaubertricks");
 
   const einstiegArtikel = allKartentricks.filter((a) =>
     EINSTIEG_SLUGS.includes(a.slug)
@@ -316,6 +317,26 @@ export default function ZauberticksPage() {
             </Link>
           </div>
         </section>
+
+        {/* Mentalmagie & Münzmagie */}
+        {allZaubertricks.length > 0 && (
+          <section>
+            <div className="mb-7">
+              <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
+                Mentalmagie & Münzmagie
+              </h2>
+              <p className="text-neutral-500 max-w-2xl">
+                Zaubertricks jenseits der Karten: Wie Gedankenleser wirklich arbeiten und wie du
+                eine Münze spurlos verschwinden lässt.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allZaubertricks.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* CTA-Box */}
         <section className="rounded-3xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] p-8 md:p-10 text-white text-center">

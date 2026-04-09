@@ -4,10 +4,10 @@
   --color-background: var(--color-surface);
   /* True neutral grays (no slate/blue cast) */
   --color-foreground: #404040;
-  /* Luxury gold accent */
-  --color-primary: #D2A63C; /* Aesthetic Gold */
-  --color-primary-light: #EECD5C; /* Rare Yellow */
-  --color-primary-dark: #B28D33;
+  /* Accent color */
+  --color-primary: #6F8AB7;
+  --color-primary-light: #9BB0D2;
+  --color-primary-dark: #5872A0;
   --color-dark: #171717;
   --color-surface: #FAFAFA;
   --color-success: #525252;
@@ -135,9 +135,9 @@ body::before {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(210, 166, 60, 0.16) 0%,
-    rgba(238, 205, 92, 0.11) 35%,
-    rgba(232, 200, 116, 0.07) 60%,
+    rgba(111, 138, 183, 0.16) 0%,
+    rgba(155, 176, 210, 0.11) 35%,
+    rgba(131, 155, 197, 0.07) 60%,
     transparent 80%
   );
   filter: blur(60px);

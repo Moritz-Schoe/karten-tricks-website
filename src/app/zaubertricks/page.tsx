@@ -42,7 +42,7 @@ const FAQ_JSON_LD = {
       name: "Was sind die einfachsten Zaubertricks für Anfänger?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Für Anfänger sind Mentalmagie-Tricks ideal: Sie brauchen keine Fingerfertigkeiten oder Requisiten. Der Dänemark-Trick funktioniert zum Beispiel mit reiner Mathematik und Psychologie und lässt sich in zwei Minuten lernen.",
+        text: "Für Anfänger sind Mentalmagie-Tricks ideal: Sie brauchen kaum Fingerfertigkeiten. Der Shiner-Trick funktioniert zum Beispiel mit Alltagsgegenständen und Psychologie und lässt sich in wenigen Minuten lernen.",
       },
     },
     {
@@ -58,7 +58,7 @@ const FAQ_JSON_LD = {
       name: "Welche Zaubertricks kann man ohne Requisiten machen?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Mentalmagie-Tricks wie der Dänemark-Trick oder das Vorhersage-Prinzip brauchen keine Requisiten - nur Worte und Mathematik. Für Münzmagie reicht eine einzige Münze aus dem Geldbeutel.",
+        text: "Mentalmagie-Tricks wie der Shiner-Trick oder das Vorhersage-Prinzip brauchen kaum Requisiten. Oft reichen Alltagsgegenstände wie ein Smartphone. Für Münzmagie reicht eine einzige Münze aus dem Geldbeutel.",
       },
     },
     {
@@ -231,11 +231,11 @@ export default function ZaubertricksPage() {
             </p>
             <p>
               Der Einstieg in die Mentalmagie ist denkbar einfach: Du brauchst kein Deck,
-              keine Münze, keine Vorbereitung. Ein Trick wie der{" "}
-              <Link href="/zaubertricks/mentalmagie-daenemark-trick" className="text-primary hover:underline font-medium">
-                ElefantTrick
+              keine Münze, keine Vorbereitung.               Ein Trick wie der{" "}
+              <Link href="/zaubertricks/shiner-gedankenlesen" className="text-primary hover:underline font-medium">
+                Shiner-Trick
                                             </Link>{" "}
-              lässt sich in zwei Minuten lernen und verblüfft trotzdem zuverlässig.
+              lässt sich in wenigen Minuten lernen und verblüfft trotzdem zuverlässig.
             </p>
           </div>
         </section>
@@ -362,11 +362,11 @@ export default function ZaubertricksPage() {
             {[
               {
                 q: "Welche Zaubertricks kann ich als Anfänger sofort lernen?",
-                a: "Der Dänemark-Trick ist in zwei Minuten lernbar - du brauchst dafür nichts außer deiner Stimme. Für Münzmagie ist der French Drop der ideale Einstieg: nach 15 Minuten Übung vor dem Spiegel funktioniert er zuverlässig.",
+                a: "Der Shiner-Trick ist in wenigen Minuten lernbar. Du brauchst dafür nur einen Alltagsgegenstand wie dein Smartphone. Für Münzmagie ist der French Drop der ideale Einstieg: nach 15 Minuten Übung vor dem Spiegel funktioniert er zuverlässig.",
               },
               {
                 q: "Brauche ich für Zaubertricks spezielle Requisiten?",
-                a: "Für Mentalmagie-Tricks wie das Vorhersage-Prinzip oder den Dänemark-Trick brauchst du gar nichts. Für Münztricks reicht eine normale Münze aus dem Portemonnaie.",
+                a: "Für Mentalmagie-Tricks wie das Vorhersage-Prinzip oder den Shiner-Trick brauchst du fast nichts - oft nur Stift, Papier und ein Smartphone. Für Münztricks reicht eine normale Münze aus dem Portemonnaie.",
               },
               {
                 q: "Was ist der Unterschied zwischen Mentalmagie und anderen Zaubertricks?",
@@ -396,16 +396,16 @@ export default function ZaubertricksPage() {
             Bereit für deinen ersten Zaubertrick?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-6">
-            Fang mit dem DänemarkTrick an. Kein Requisit, kein Risiko  und die
+            Fang mit dem Shiner-Trick an. Alltagsgegenstände, kein Risiko und die
                                   Reaktionen sind jedes Mal dieselbe: ungläubiges Staunen.
                                 </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="/zaubertricks/mentalmagie-daenemark-trick"
+              href="/zaubertricks/shiner-gedankenlesen"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"
             >
               <Zap className="h-4 w-4" />
-              DänemarkTrick lernen
+              Shiner-Trick lernen
                                       </Link>
             <Link
               href="/zaubertricks/muenzmagie-french-drop"

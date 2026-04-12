@@ -30,7 +30,7 @@ export default function Header() {
             className="flex shrink-0 items-center rounded-full px-2 outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
           >
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Karten-tricks.de"
               width={160}
               height={40}

@@ -59,6 +59,7 @@ function jsonLdHowTo(article: ReturnType<typeof getArticle>) {
       url: "https://karten-tricks.de",
     },
     datePublished: article.date,
+    ...(article.lastModified && { dateModified: article.lastModified }),
     inLanguage: "de",
   };
 }
@@ -118,7 +119,7 @@ export default async function ArticlePage({ params }: Props) {
                 {article.title}
               </h1>
 
-              {/* Meta line: date · reading time */}
+              {/* Meta line: date · reading time · last modified */}
               <p className="text-sm text-neutral-400 mb-5">
                 {new Date(article.date).toLocaleDateString("de-DE", {
                   day: "2-digit",
@@ -126,6 +127,19 @@ export default async function ArticlePage({ params }: Props) {
                   year: "numeric",
                 })}{" "}
                 · {readTime} Min. Lesezeit
+                {article.lastModified && (
+                  <>
+                    {" "}·{" "}
+                    <span title="Zuletzt überarbeitet">
+                      Überarbeitet{" "}
+                      {new Date(article.lastModified).toLocaleDateString("de-DE", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </>
+                )}
               </p>
 
               {/* Lead / description */}

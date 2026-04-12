@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum von karten-tricks.de - Angaben gemäß § 5 TMG.",
+  description: "Impressum von karten-tricks.de. Angaben gemäß § 5 TMG.",
   robots: { index: false, follow: false },
 };
 
@@ -22,7 +22,7 @@ export default function ImpressumPage() {
       <div className="prose">
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
-          Moritz Schöbs<br />
+          Moritz Schoeberichts<br />
           karten-tricks.de<br />
           [Adresse auf Anfrage]
         </p>
@@ -34,7 +34,7 @@ export default function ImpressumPage() {
 
         <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
         <p>
-          Moritz Schöbs<br />
+          Moritz Schoeberichts<br />
           [Adresse auf Anfrage]
         </p>
 

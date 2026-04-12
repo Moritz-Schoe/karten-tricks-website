@@ -109,6 +109,12 @@ export default function KartentricksLandingPage() {
   const matheArtikel = pickArticlesBySlugs(allKartentricks, MATHE_SLUGS, 6);
   const technikArtikel = pickArticlesBySlugs(allTechniken, TECHNIK_SLUGS, 4);
 
+  const slugsShownAbove = new Set([
+    ...einstiegArtikel.map((a) => a.slug),
+    ...matheArtikel.map((a) => a.slug),
+  ]);
+  const weitereKartentricks = allKartentricks.filter((a) => !slugsShownAbove.has(a.slug));
+
   return (
     <>
       <JsonLd data={KARTENTRICKS_FAQ_JSON_LD} />
@@ -220,32 +226,36 @@ export default function KartentricksLandingPage() {
               <ArticleCard key={article.slug} article={article} />
             ))}
           </div>
-          <div className="mt-6">
-            <Link
-              href="#alle"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-            >
-              Alle Kartentricks ansehen <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+          {weitereKartentricks.length > 0 ? (
+            <div className="mt-6">
+              <Link
+                href="#weitere-kartentricks"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+              >
+                Noch mehr Kartentricks <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          ) : null}
         </section>
 
-        {/* Alle Kartentricks */}
-        <section id="alle" className="scroll-mt-28">
-          <div className="mb-7">
-            <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Alle Kartentricks ({allKartentricks.length})
-            </h2>
-            <p className="text-neutral-500 max-w-2xl">
-              Hier findest du wirklich alle Kartentricks aus der Kategorie – chronologisch sortiert (neueste zuerst).
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {allKartentricks.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
-            ))}
-          </div>
-        </section>
+        {/* Weitere Kartentricks (nicht in den Auswahl-Sektionen oben) */}
+        {weitereKartentricks.length > 0 ? (
+          <section id="weitere-kartentricks" className="scroll-mt-28">
+            <div className="mb-7">
+              <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
+                Noch mehr Kartentricks
+              </h2>
+              <p className="text-neutral-500 max-w-2xl">
+                Weitere Anleitungen, die oben noch nicht vorkommen.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {weitereKartentricks.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {/* Kartentricks mit System (Pfad 2) */}
         <section id="system" className="scroll-mt-28 rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">

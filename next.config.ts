@@ -37,9 +37,11 @@ const nextConfig: NextConfig = {
       { source: "/unglaublichste-kartentrick", destination: "/kartentricks/herz-sieben", permanent: true },
       { source: "/karten-mischen-6-einfache-methoden", destination: "/fingerfertigkeit/karten-mischen", permanent: true },
       { source: "/spielkarten-kartendeck", destination: "/spielkarten/vergleich", permanent: true },
-      { source: "/zaubersprueche", destination: "/kartentricks/zaubersprueche", permanent: true },
+      { source: "/zaubersprueche", destination: "/zaubertricks/zaubersprueche", permanent: true },
+      { source: "/kartentricks/zaubersprueche", destination: "/zaubertricks/zaubersprueche", permanent: true },
       { source: "/die-besten-zauberkaesten-fuer-angehende-magier", destination: "/spielkarten/zauberkaesten", permanent: true },
-      { source: "/kartenhaus-bauen", destination: "/kartentricks/kartenhaus-bauen", permanent: true },
+      { source: "/kartenhaus-bauen", destination: "/party-tricks/kartenhaus-bauen", permanent: true },
+      { source: "/kartentricks/kartenhaus-bauen", destination: "/party-tricks/kartenhaus-bauen", permanent: true },
 
       // Old WP slug variants
       { source: "/zaubertrick-nr-1", destination: "/kartentricks/zuschauer-findet-karte", permanent: true },

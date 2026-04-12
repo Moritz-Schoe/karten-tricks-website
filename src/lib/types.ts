@@ -12,6 +12,7 @@ export interface ArticleFrontmatter {
   title: string;
   description: string;
   date: string;
+  lastModified?: string;
   category: Category;
   slug: string;
   difficulty?: Difficulty;

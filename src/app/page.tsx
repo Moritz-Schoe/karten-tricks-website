@@ -363,9 +363,9 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl bg-white p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
               <div className="flex items-center justify-center">
-                <Zap className="h-9 w-9 text-primary" aria-hidden />
+                <Zap className="h-9 w-9 text-neutral-800" aria-hidden strokeWidth={2} />
               </div>
-              <div className="mt-2 text-sm font-medium text-neutral-600">Schnell wachsende Community</div>
+              <div className="mt-1 text-sm text-neutral-400">Schnell wachsende Community</div>
             </div>
             <div className="rounded-2xl bg-white p-6 text-center shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
               <div className="text-3xl font-bold tracking-tight text-neutral-800">100%</div>

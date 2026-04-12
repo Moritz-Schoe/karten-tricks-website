@@ -3,15 +3,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kartentricks Community & Discord - Lern mit Gleichgesinnten",
+  title: "Kartentricks Community & Discord: Lerne mit Gleichgesinnten",
   description:
-    "Tritt der karten-tricks.de Community auf Discord bei – tausche Kartentricks aus, zeig deine Fortschritte und lern von über 500 Kartentrick-Fans direkt mit Moritz.",
+    "Tritt der karten-tricks.de Community auf Discord bei! Tausche Kartentricks aus, zeig deine Fortschritte und lerne direkt von anderen.",
   keywords: ["Kartentricks Community", "Zaubertricks Discord", "Kartentricks lernen Community", "Kartentrick-Fans"],
   alternates: { canonical: "https://karten-tricks.de/community" },
   openGraph: {
     title: "Kartentricks Community & Discord",
     description:
-      "Tausche Kartentricks aus, zeig deine Fortschritte und lern von über 500 Fans – direkt auf Discord.",
+      "Tausche Kartentricks aus, zeig deine Fortschritte und lerne mit anderen direkt auf Discord.",
     type: "website",
     url: "https://karten-tricks.de/community",
   },
@@ -29,7 +29,7 @@ export default function CommunityPage() {
 
       <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight text-neutral-800 mb-4 leading-[1.1]">Community & Discord</h1>
       <p className="text-neutral-500 text-lg mb-10 max-w-xl leading-relaxed">
-        Lern nicht allein - tausch dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und bekomme ehrliches Feedback.
+        Lern nicht allein. Tausche dich mit anderen Kartentrick-Fans aus, zeig deine Fortschritte und bekomme ehrliches Feedback.
       </p>
 
       <div className="rounded-2xl bg-white p-8 text-center max-w-lg mx-auto mb-12 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
@@ -40,7 +40,7 @@ export default function CommunityPage() {
         </div>
         <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-2">Discord Server</h2>
         <p className="text-neutral-500 text-sm mb-6 leading-relaxed">
-          500+ Mitglieder. Tausche Tricks aus, teile Videos, stelle Fragen - direkt zu Moritz und anderen Fans.
+          Tausche Tricks aus, teile Videos, stelle Fragen.
         </p>
           <a
             href="https://discord.gg/QQ2nDMPZ6p"

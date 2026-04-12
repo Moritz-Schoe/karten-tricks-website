@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 const MATHE_SLUGS = ["21-karten", "dreimal-abheben"];
 const EINSTIEG_SLUGS = [
   "10-in-10-minuten",
-  "anfaenger-guide",
-  "21-karten",
-  "dreimal-abheben",
+  "three-card-monte",
+  "herz-sieben",
+  "zuschauer-findet-karte",
   "umgedrehte-karte",
   "karte-erraten",
 ];

@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { href: "/party-tricks", label: "Party Tricks" },
   { href: "/cardistry", label: "Cardistry" },
   { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
-  { href: "/spielkarten", label: "Spielkarten" },
+  { href: "/spielkarten-vergleich", label: "Spielkarten Vergleich" },
 ];
 
 export default function Header() {

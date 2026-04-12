@@ -334,6 +334,30 @@ export default function ZaubertricksPage() {
           </div>
         </section>
 
+        {/* Zauberkästen CTA */}
+        <section>
+          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-10 rounded-3xl bg-neutral-950 overflow-hidden p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] border border-white/[0.05]">
+            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-violet-600/30 via-violet-600/10 to-transparent pointer-events-none" />
+            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-violet-600/20 blur-[100px] pointer-events-none mix-blend-screen" />
+            <div className="relative z-10 max-w-xl">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-violet-300">
+                Lust auf mehr Anleitungen & Gimmicks?
+              </h2>
+              <p className="text-neutral-300 text-base leading-relaxed mb-8 max-w-lg">
+                Zauberkästen sind der schnellste Weg zu professionellen Effekten — inklusive
+                Gimmicks, die du selbst nicht bauen könntest. Such dir einen unserer
+                empfohlenen Zauberkästen aus.
+              </p>
+              <Link
+                href="/spielkarten/zauberkaesten"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-violet-400 px-8 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(139,92,246,0.45)] border border-violet-400/40"
+              >
+                Zauberkästen Guide <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section>
           <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-6">

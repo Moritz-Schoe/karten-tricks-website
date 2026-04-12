@@ -153,8 +153,8 @@ export default function SpielkartenVergleichPage() {
                   <p className="font-bold tracking-tight text-neutral-800">Moritz</p>
                   <p className="text-sm text-neutral-500 mt-1">
                     Seit über 10 Jahren beschäftige ich mich mit Kartentricks und Kartenmagie.
-                    Auf karten-tricks.de teile ich alles was ich gelernt habe - kostenlos und auf Deutsch.
-                  </p>
+                                                          Auf kartentricks.de teile ich alles was ich gelernt habe, kostenlos und auf Deutsch.
+                                                        </p>
                   <Link href="/ueber-mich" className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-2 font-medium">
                     Mehr über mich <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
@@ -187,7 +187,7 @@ export default function SpielkartenVergleichPage() {
                 <p className="font-medium text-sm text-neutral-700 mb-2">Fragen? Feedback?</p>
                 <p className="text-neutral-400 text-xs mb-4">
                   Join unsere Discord-Community!
-                </p>
+                                                  </p>
                 <a
                   href="https://discord.gg/QQ2nDMPZ6p"
                   target="_blank"

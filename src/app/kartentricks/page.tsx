@@ -130,14 +130,14 @@ export default function KartentricksLandingPage() {
               </span>
             </div>
             <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight text-neutral-900 leading-[1.05] mb-5">
-              Kartentricks lernen -<br className="hidden sm:block" /> einfach, stark, verständlich
+              Kartentricks lernen -<br className="hidden sm:block" /> einfach, kostenlos, verständlich
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-neutral-500 max-w-2xl mb-8">
               Du willst Kartentricks lernen, ohne dich in tausend Moves zu verlieren?
               Starte mit <strong>mathematischen Tricks</strong> (fehlerfrei), gehe dann
               zu <strong>Tricks mit System</strong> über, und baue parallel echte Profi-Technik
-              auf.
-            </p>
+                                        auf.
+                                      </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/kartentricks/10-in-10-minuten"
@@ -151,7 +151,7 @@ export default function KartentricksLandingPage() {
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
               >
                 Anfänger-Guide
-                <ArrowRight className="h-4 w-4" />
+                                              <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function KartentricksLandingPage() {
             <QuickLink
               href="/fingerfertigkeit"
               icon={<Wand2 className="h-6 w-6" />}
-              title="Fingerfertigkeit (Profi-Griffe)"
+              title="Fingerfertigkeit (ProfiGriffe)"
               subtitle="Double Lift, Forces & Co. sauber lernen"
             />
             <QuickLink
@@ -283,8 +283,8 @@ export default function KartentricksLandingPage() {
                 href="/fingerfertigkeit"
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
               >
-                Profi-Griffe parallel lernen
-                <ArrowRight className="h-4 w-4" />
+                Profigriffe parallel lernen
+                                              <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -322,14 +322,14 @@ export default function KartentricksLandingPage() {
           </h2>
           <div className="prose max-w-none text-neutral-600">
             <p>
-              Gute Kartenmagie fühlt sich unmöglich an – und ist trotzdem erlernbar. Wenn du als Anfänger startest,
+              Gute Kartenmagie fühlt sich unmöglich an und ist trotzdem erlernbar. Wenn du als Anfänger startest,
               hilft dir eine Struktur: zuerst <strong>Mathematik</strong> (fehlerfrei), dann <strong>System</strong> (maximale Wirkung ohne schwere Moves),
               und anschließend <strong>Fingerfertigkeit</strong> (visuelle Wunder).
             </p>
             <p>
-              Genau deshalb findest du hier drei Einstiegs-Pfade. Du kannst sofort loslegen – mit einem normalen Kartendeck
-              oder, wenn du willst, mit einem System-Deck. Am Ende zählt nicht der Move, sondern die Performance.
-            </p>
+              Genau deshalb findest du hier drei Einstiegs-Pfade. Du kannst sofort loslegen mit einem normalen Kartendeck
+                                        oder, wenn du willst, mit einem SystemDeck. Am Ende zählt nicht der Move, sondern die Performance.
+                                      </p>
           </div>
         </section>
 
@@ -339,8 +339,8 @@ export default function KartentricksLandingPage() {
             Bereit für deinen ersten Kartentrick?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-6">
-            Starte mit „10 Tricks in 10 Minuten“ – und entscheide danach, ob du Mathe, System oder Profi-Technik als Nächstes willst.
-          </p>
+            Starte mit „10 Tricks in 10 Minuten“ und entscheide danach, ob du Mathe, System oder Profi-Technik als Nächstes willst.
+                                </p>
           <Link
             href="/kartentricks/10-in-10-minuten"
             className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"

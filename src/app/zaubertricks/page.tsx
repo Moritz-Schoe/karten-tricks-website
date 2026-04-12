@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const MENTALMAGIE_SLUGS = ["mentalmagie-vorhersage", "mentalmagie-daenemark-trick"];
+const MENTALMAGIE_SLUGS = ["mentalmagie-vorhersage", "shiner-gedankenlesen"];
 const MUENZMAGIE_SLUGS = ["muenzmagie-french-drop", "muenzmagie-durch-den-tisch"];
 
 const FAQ_JSON_LD = {
@@ -77,23 +77,22 @@ interface EinstiegCardProps {
   icon: React.ReactNode;
   title: string;
   subtitle: string;
-  iconBg: string;
 }
 
-function EinstiegCard({ href, icon, title, subtitle, iconBg }: EinstiegCardProps) {
+function EinstiegCard({ href, icon, title, subtitle }: EinstiegCardProps) {
   return (
     <Link
       href={href}
-      className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-5 transition-all duration-200 hover:shadow-[0_8px_28px_rgba(0,0,0,0.09)] hover:-translate-y-0.5"
+      className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-5 transition-all duration-200 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] hover:-translate-y-0.5"
     >
-      <div className={`flex-shrink-0 h-12 w-12 rounded-xl flex items-center justify-center text-white ${iconBg}`}>
+      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
         {icon}
       </div>
       <div className="min-w-0">
         <p className="font-bold text-neutral-800 tracking-tight leading-snug">{title}</p>
         <p className="text-sm text-neutral-500 mt-0.5">{subtitle}</p>
       </div>
-      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-neutral-300 transition-colors group-hover:text-neutral-600" />
+      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-neutral-300 transition-colors group-hover:text-primary" />
     </Link>
   );
 }
@@ -123,13 +122,13 @@ export default function ZaubertricksPage() {
               </span>
             </div>
             <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight text-neutral-900 leading-[1.05] mb-5">
-              Zaubertricks lernen -<br className="hidden sm:block" /> Mentalmagie & Münzmagie
+              Zaubertricks lernen –<br className="hidden sm:block" /> Mentalmagie & Münzmagie
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-neutral-500 max-w-2xl mb-8">
               Zauberei braucht keine Karten. Gedanken lesen, Münzen verschwinden lassen,
-              Vorhersagen treffen - hier lernst du die stärksten Tricks jenseits des
-              Kartendecks. Schritt für Schritt, auf Deutsch, kostenlos.
-            </p>
+                                        Vorhersagen treffen: hier lernst du die stärksten Tricks jenseits des
+                                        Kartendecks. Schritt für Schritt, auf Deutsch, kostenlos.
+                                      </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="#mentalmagie"
@@ -157,34 +156,30 @@ export default function ZaubertricksPage() {
           <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-6">
             Wähle deinen Einstieg
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <EinstiegCard
               href="#mentalmagie"
               icon={<Brain className="h-6 w-6" />}
               title="Mentalmagie"
               subtitle="Gedankenlesen, Vorhersagen, kein Requisit"
-              iconBg="bg-violet-600"
             />
             <EinstiegCard
               href="#muenzmagie"
               icon={<Coins className="h-6 w-6" />}
               title="Münzmagie"
               subtitle="Münzen verschwinden - eine Münze reicht"
-              iconBg="bg-rose-500"
             />
             <EinstiegCard
               href="/zaubertricks/zaubersprueche"
               icon={<ScrollText className="h-6 w-6" />}
               title="Zaubersprüche"
               subtitle="Sprüche für Show, Timing und Atmosphäre"
-              iconBg="bg-amber-600"
             />
             <EinstiegCard
               href="/kartentricks"
               icon={<Sparkles className="h-6 w-6" />}
               title="Kartentricks"
               subtitle="Der klassische Einstieg mit einem Deck"
-              iconBg="bg-emerald-600"
             />
           </div>
         </section>
@@ -193,17 +188,17 @@ export default function ZaubertricksPage() {
         <section id="mentalmagie" className="scroll-mt-28">
           <div className="mb-7">
             <div className="inline-flex items-center gap-2 mb-3">
-              <Brain className="h-5 w-5 text-violet-600" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-violet-600">Mentalmagie</span>
+              <Brain className="h-5 w-5 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Mentalmagie</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Gedanken lesen - so funktioniert Mentalmagie
-            </h2>
+              Gedanken lesen: so funktioniert Mentalmagie
+                                      </h2>
             <p className="text-neutral-500 max-w-2xl">
-              Mentalisten lesen keine Gedanken - sie nutzen Mathematik, Psychologie und Misdirection.
-              Diese Tricks brauchen kein einziges Requisit und funktionieren überall: im Büro,
-              auf einer Party, beim Abendessen.
-            </p>
+              Mentalisten lesen keine Gedanken. Sie nutzen Mathematik, Psychologie und Misdirection.
+                                        Diese Tricks brauchen kein einziges Requisit und funktionieren überall: im Büro,
+                                        auf einer Party, beim Abendessen.
+                                      </p>
           </div>
           {mentalmagieArtikel.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -224,9 +219,9 @@ export default function ZaubertricksPage() {
           <div className="prose max-w-none text-neutral-600 text-sm leading-relaxed">
             <p>
               Mentalmagie ist der Bereich der Zauberei, der mit dem menschlichen Geist spielt.
-              Der Zauberer scheint Gedanken zu lesen, Entscheidungen vorherzusagen oder Zahlen
-              zu kennen, die noch niemand gesagt hat. Das Geheimnis: Er liest keine Gedanken -
-              er <strong>erzeugt</strong> sie.
+                                        Der Zauberer scheint Gedanken zu lesen, Entscheidungen vorherzusagen oder Zahlen
+                                        zu kennen, die noch niemand gesagt hat. Das Geheimnis: Er liest keine Gedanken, sondern
+                                        er <strong>erzeugt</strong> sie.
             </p>
             <p>
               Mathematische Zwangsläufigkeiten sorgen dafür, dass bestimmte Ergebnisse immer
@@ -238,8 +233,8 @@ export default function ZaubertricksPage() {
               Der Einstieg in die Mentalmagie ist denkbar einfach: Du brauchst kein Deck,
               keine Münze, keine Vorbereitung. Ein Trick wie der{" "}
               <Link href="/zaubertricks/mentalmagie-daenemark-trick" className="text-primary hover:underline font-medium">
-                Elefant-Trick
-              </Link>{" "}
+                ElefantTrick
+                                            </Link>{" "}
               lässt sich in zwei Minuten lernen und verblüfft trotzdem zuverlässig.
             </p>
           </div>
@@ -249,17 +244,17 @@ export default function ZaubertricksPage() {
         <section id="muenzmagie" className="scroll-mt-28">
           <div className="mb-7">
             <div className="inline-flex items-center gap-2 mb-3">
-              <Coins className="h-5 w-5 text-rose-500" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-rose-500">Münzmagie</span>
+              <Coins className="h-5 w-5 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Münzmagie</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Münzen verschwinden lassen - Münzmagie für Anfänger
-            </h2>
+              Münzen verschwinden lassen: Münzmagie für Anfänger
+                                      </h2>
             <p className="text-neutral-500 max-w-2xl">
               Münzmagie ist die visuellste Form der Zauberei. Die Magie passiert direkt in deinen
-              Händen, aus nächster Nähe, ohne Bühne. Eine einzige 1-Euro-Münze reicht für
-              Effekte, die selbst skeptische Zuschauer sprachlos machen.
-            </p>
+                                        Händen, aus nächster Nähe, ohne Bühne. Eine einzige 1 Euro Münze reicht für
+                                        Effekte, die selbst skeptische Zuschauer sprachlos machen.
+                                      </p>
           </div>
           {muenzmagieArtikel.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -279,14 +274,14 @@ export default function ZaubertricksPage() {
           </h2>
           <div className="prose max-w-none text-neutral-600 text-sm leading-relaxed">
             <p>
-              Münzmagie ist Close-Up-Magie in Reinform. Alles passiert in deinen Händen,
-              ohne Tisch, ohne Abstand zum Publikum. Das macht sie besonders schwer zu
-              erkennen - und besonders verblüffend.
-            </p>
+              Münzmagie ist Close-Up Magie in Reinform. Alles passiert in deinen Händen,
+                                        ohne Tisch, ohne Abstand zum Publikum. Das macht sie besonders schwer zu
+                                        erkennen und besonders verblüffend.
+                                      </p>
             <p>
               Der Kern der Münzmagie sind sogenannte <strong>Scheingriffe</strong>: Bewegungen,
-              die aussehen, als würdest du eine Münze von einer Hand in die andere nehmen -
-              während sie in Wirklichkeit bleibt, wo sie ist. Der{" "}
+                                        die aussehen, als würdest du eine Münze von einer Hand in die andere nehmen, 
+                                        während sie in Wirklichkeit bleibt, wo sie ist. Der{" "}
               <Link href="/zaubertricks/muenzmagie-french-drop" className="text-primary hover:underline font-medium">
                 French Drop
               </Link>{" "}
@@ -294,9 +289,9 @@ export default function ZaubertricksPage() {
             </p>
             <p>
               Der große Vorteil gegenüber Kartentricks: Du brauchst wirklich nichts vorzubereiten.
-              Eine Münze aus dem Geldbeutel, fünfzehn Minuten Übung - und du hast einen Trick,
-              den du für den Rest deines Lebens zeigen kannst.
-            </p>
+                                        Eine Münze aus dem Geldbeutel, fünfzehn Minuten Übung und du hast einen Trick,
+                                        den du für den Rest deines Lebens zeigen kannst.
+                                      </p>
           </div>
         </section>
 
@@ -309,13 +304,13 @@ export default function ZaubertricksPage() {
             <div className="flex-1 min-w-0">
               <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1">Auch beliebt</p>
               <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-2">
-                Kartentricks - der klassische Einstieg
-              </h2>
+                Kartentricks: der klassische Einstieg
+                                            </h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-5">
-                Wer mit einem normalen Kartenspiel starten möchte, findet auf karten-tricks.de
-                alles von einfachen Anfänger-Tricks bis zu professionellen Techniken wie dem
-                Double Lift oder dem Pinky Break.
-              </p>
+                Wer mit einem normalen Kartenspiel starten möchte, findet auf kartentricks.de
+                                              alles von einfachen Anfänger-Tricks bis zu professionellen Techniken wie dem
+                                              Double Lift oder dem Pinky Break.
+                                            </p>
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/kartentricks"
@@ -328,7 +323,7 @@ export default function ZaubertricksPage() {
                   className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
                 >
                   Anfänger-Guide
-                </Link>
+                                                  </Link>
               </div>
             </div>
           </div>
@@ -337,20 +332,20 @@ export default function ZaubertricksPage() {
         {/* Zauberkästen CTA */}
         <section>
           <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-10 rounded-3xl bg-neutral-950 overflow-hidden p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] border border-white/[0.05]">
-            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-violet-600/30 via-violet-600/10 to-transparent pointer-events-none" />
-            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-violet-600/20 blur-[100px] pointer-events-none mix-blend-screen" />
+            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-primary/30 via-primary/10 to-transparent pointer-events-none" />
+            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-primary/20 blur-[100px] pointer-events-none mix-blend-screen" />
             <div className="relative z-10 max-w-xl">
-              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-violet-300">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
                 Lust auf mehr Anleitungen & Gimmicks?
               </h2>
               <p className="text-neutral-300 text-base leading-relaxed mb-8 max-w-lg">
-                Zauberkästen sind der schnellste Weg zu professionellen Effekten — inklusive
-                Gimmicks, die du selbst nicht bauen könntest. Such dir einen unserer
-                empfohlenen Zauberkästen aus.
-              </p>
+                Zauberkästen sind der schnellste Weg zu professionellen Effekten, inklusive
+                                              Gimmicks, die du selbst nicht bauen könntest. Such dir einen unserer
+                                              empfohlenen Zauberkästen aus.
+                                            </p>
               <Link
                 href="/spielkarten/zauberkaesten"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-violet-400 px-8 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(139,92,246,0.45)] border border-violet-400/40"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.45)] border border-primary/40"
               >
                 Zauberkästen Guide <ArrowRight className="h-4 w-4" />
               </Link>
@@ -401,17 +396,17 @@ export default function ZaubertricksPage() {
             Bereit für deinen ersten Zaubertrick?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-6">
-            Fang mit dem Dänemark-Trick an. Kein Requisit, kein Risiko - und die
-            Reaktionen sind jedes Mal dieselbe: ungläubiges Staunen.
-          </p>
+            Fang mit dem DänemarkTrick an. Kein Requisit, kein Risiko  und die
+                                  Reaktionen sind jedes Mal dieselbe: ungläubiges Staunen.
+                                </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/zaubertricks/mentalmagie-daenemark-trick"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"
             >
               <Zap className="h-4 w-4" />
-              Dänemark-Trick lernen
-            </Link>
+              DänemarkTrick lernen
+                                      </Link>
             <Link
               href="/zaubertricks/muenzmagie-french-drop"
               className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/30 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/25"

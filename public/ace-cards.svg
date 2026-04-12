@@ -1,0 +1,74 @@
+<svg
+  width="480"
+  height="330"
+  viewBox="0 0 480 330"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <filter id="card-shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Ace of Spades -->
+  <g transform="translate(20, 25)" filter="url(#card-shadow)">
+    <rect width="200" height="280" rx="14" fill="white" />
+    <rect x="0.5" y="0.5" width="199" height="279" rx="13.5"
+      fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="1.5" />
+
+    <!-- Top-left: rank -->
+    <text x="13" y="40"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="32" font-weight="bold" fill="#1A1B26">A</text>
+    <!-- Top-left: suit -->
+    <g transform="translate(14, 49) scale(0.2)" fill="#1A1B26">
+      <path d="M50 5 C 37 43 7 45 7 65 C 7 79 18 89 31 89 C 38 89 45 83 48 76 L 44 95 L 56 95 L 52 76 C 55 83 62 89 69 89 C 82 89 93 79 93 65 C 93 45 63 43 50 5 Z" />
+    </g>
+
+    <!-- Centre suit -->
+    <g transform="translate(100, 140) scale(0.65) translate(-50, -50)" fill="#1A1B26">
+      <path d="M50 5 C 37 43 7 45 7 65 C 7 79 18 89 31 89 C 38 89 45 83 48 76 L 44 95 L 56 95 L 52 76 C 55 83 62 89 69 89 C 82 89 93 79 93 65 C 93 45 63 43 50 5 Z" />
+    </g>
+
+    <!-- Bottom-right corner (rotated 180° around card centre) -->
+    <g transform="rotate(180 100 140)">
+      <text x="13" y="40"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="32" font-weight="bold" fill="#1A1B26">A</text>
+      <g transform="translate(14, 49) scale(0.2)" fill="#1A1B26">
+        <path d="M50 5 C 37 43 7 45 7 65 C 7 79 18 89 31 89 C 38 89 45 83 48 76 L 44 95 L 56 95 L 52 76 C 55 83 62 89 69 89 C 82 89 93 79 93 65 C 93 45 63 43 50 5 Z" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Ace of Hearts -->
+  <g transform="translate(260, 25)" filter="url(#card-shadow)">
+    <rect width="200" height="280" rx="14" fill="white" />
+    <rect x="0.5" y="0.5" width="199" height="279" rx="13.5"
+      fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="1.5" />
+
+    <!-- Top-left: rank -->
+    <text x="13" y="40"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="32" font-weight="bold" fill="#6F8AB7">A</text>
+    <!-- Top-left: suit -->
+    <g transform="translate(14, 49) scale(0.2)" fill="#6F8AB7">
+      <path d="M50 25 C 50 25 40 5 25 5 C 5 5 5 33 25 55 L 50 90 L 75 55 C 95 33 95 5 75 5 C 60 5 50 25 50 25 Z" />
+    </g>
+
+    <!-- Centre suit -->
+    <g transform="translate(100, 140) scale(0.65) translate(-50, -50)" fill="#6F8AB7">
+      <path d="M50 25 C 50 25 40 5 25 5 C 5 5 5 33 25 55 L 50 90 L 75 55 C 95 33 95 5 75 5 C 60 5 50 25 50 25 Z" />
+    </g>
+
+    <!-- Bottom-right corner (rotated 180° around card centre) -->
+    <g transform="rotate(180 100 140)">
+      <text x="13" y="40"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="32" font-weight="bold" fill="#6F8AB7">A</text>
+      <g transform="translate(14, 49) scale(0.2)" fill="#6F8AB7">
+        <path d="M50 25 C 50 25 40 5 25 5 C 5 5 5 33 25 55 L 50 90 L 75 55 C 95 33 95 5 75 5 C 60 5 50 25 50 25 Z" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -5,7 +5,7 @@ import type { Article, ArticleFrontmatter, Category } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
-export function getContentDir(category?: Category): string {
+function getContentDir(category?: Category): string {
   return category ? path.join(CONTENT_DIR, category) : CONTENT_DIR;
 }
 

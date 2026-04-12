@@ -15,7 +15,7 @@ const disclaimerClass =
 const disclaimerText =
   "* Affiliate-Links. Bei einem Kauf erhalte ich eine kleine Provision. Für dich entstehen keine Mehrkosten.";
 
-export interface AffiliateItem {
+interface AffiliateItem {
   label: string;
   url: string;
 }

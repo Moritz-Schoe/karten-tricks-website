@@ -43,7 +43,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         description:
           "Der Allrounder. Das meistgenutzte Kartendeck der Welt. Perfekt für Tricks, Poker und Cardistry.",
         url: "https://amzn.to/3vUzH7h",
-        image: "/images/xxIMG_6951-copy.jpg",
+        image: "/images/xxIMG_6951-copy.webp",
         tag: "Bestseller",
       },
       {
@@ -51,14 +51,14 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         description:
           "Casino-Qualität ohne weißen Rand. Ideal für fortgeschrittene Techniken und professionelle Auftritte.",
         url: "https://amzn.to/3xzgJUn",
-        image: "/images/61jJIveilAL._AC_SL1000_.jpg",
+        image: "/images/61jJIveilAL._AC_SL1000_.webp",
       },
       {
         name: "Tally-Ho Circle Back",
         description:
           "Das Deck von Penn & Teller: Glatteres Finish, perfekt für Cardistry und Flourishes. 2er-Pack.",
         url: "https://amzn.to/3vUK6zR",
-        image: "/images/71fw80m4jL._AC_SL1000_.jpg",
+        image: "/images/71fw80m4jL._AC_SL1000_.webp",
       },
     ],
   },
@@ -105,7 +105,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         description:
           "Über 150 Tricks und Illusionen, hochwertige Materialien. Der perfekte Einstieg für Kinder.",
         url: "https://amzn.to/3SwBKXv",
-        image: "/images/817kScCxs6L._AC_SL1500_.jpg",
+        image: "/images/817kScCxs6L._AC_SL1500_.webp",
         tag: "Top-Empfehlung",
       },
       {
@@ -113,49 +113,49 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         description:
           "Speziell für jüngere Kinder ab 6 Jahren: einfache Tricks, robuste Materialien.",
         url: "https://amzn.to/4filnYa",
-        image: "/images/61BFUYfkQFL._AC_SL1024_.jpg",
+        image: "/images/61BFUYfkQFL._AC_SL1024_.webp",
       },
       {
         name: "Clementoni - Ehrlich Brothers Modern Magic",
         description:
           "Moderne und kreative Tricks für Kinder und Jugendliche. Gutes Preis-Leistungs-Verhältnis.",
         url: "https://amzn.to/4dj8mM4",
-        image: "/images/81oGyYXJ8SL._AC_SL1500_.jpg",
+        image: "/images/81oGyYXJ8SL._AC_SL1500_.webp",
       },
       {
         name: "Noris iMagicBox",
         description:
           "Kombiniert klassische Zaubertricks mit einer interaktiven App. Für technikbegeisterte Kinder.",
         url: "https://amzn.to/3AdMkMt",
-        image: "/images/71A2hHPI8pL._AC_SL1500_.jpg",
+        image: "/images/71A2hHPI8pL._AC_SL1500_.webp",
       },
       {
         name: "Marvin's Magic - Klassiker",
         description:
           "Umfangreicher Zauberkasten mit hochwertigen Materialien für alle Altersgruppen.",
         url: "https://amzn.to/3A2pO9B",
-        image: "/images/81dngsnHoPL._AC_SL1500_.jpg",
+        image: "/images/81dngsnHoPL._AC_SL1500_.webp",
       },
       {
         name: "Marvin's Magic - 275 Tricks",
         description:
           "Einfache Tricks speziell für Kinder, hochwertige Materialien und gute Anleitungen.",
         url: "https://amzn.to/3Svvijp",
-        image: "/images/712lkVLWLVL._AC_SL1500_.jpg",
+        image: "/images/712lkVLWLVL._AC_SL1500_.webp",
       },
       {
         name: "Japace Zauberkasten",
         description:
           "Magie trifft Wissenschaft! Ideal für neugierige Kinder, die verstehen wollen, wie Tricks funktionieren.",
         url: "https://amzn.to/3WudmGS",
-        image: "/images/81tWHfBiWiL._AC_SL1500_.jpg",
+        image: "/images/81tWHfBiWiL._AC_SL1500_.webp",
       },
       {
         name: "Madus-Magic Premium",
         description:
           "15 innovative Tricks mit Video-Anleitungen. Für ältere Kinder und Erwachsene.",
         url: "https://amzn.to/3SvQnud",
-        image: "/images/812shWbYaL._AC_SL1500_.jpg",
+        image: "/images/812shWbYaL._AC_SL1500_.webp",
       },
     ],
   },

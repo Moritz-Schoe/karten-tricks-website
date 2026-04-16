@@ -58,6 +58,8 @@ const nextConfig: NextConfig = {
 
       // Old WP image paths — strip year/month dirs since images are now flat
       { source: "/wp-content/uploads/:year/:month/:file", destination: "/images/:file", permanent: true },
+      // Images still in year/month subfolders under /images/
+      { source: "/images/:year/:month/:file", destination: "/images/:file", permanent: true },
     ];
   },
 };

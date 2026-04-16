@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 import ArticleCard from "@/components/ArticleCard";
 import CardSpring from "@/components/CardSpring";
+import JsonLd from "@/components/JsonLd";
 import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";
 import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand, Zap } from "lucide-react";
 
@@ -78,8 +79,20 @@ export default function HomePage() {
 
   const kidsTricksCount = partyTricks.filter((a) => a.slug === "kinder").length;
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "karten-tricks.de",
+    url: "https://karten-tricks.de",
+    logo: "https://karten-tricks.de/logo.png",
+    sameAs: ["https://discord.gg/QQ2nDMPZ6p"],
+    description: "Die deutschsprachige Ressource für Kartentricks und Kartenmagie. Von Anfänger bis Fortgeschritten.",
+    inLanguage: "de-DE",
+  };
+
   return (
     <>
+      <JsonLd data={organizationSchema} />
       {/* Hero */}
       <section className="relative flex min-h-[calc(100svh-var(--floating-nav-gap))] flex-col overflow-hidden">
         {/* Gradient blob */}

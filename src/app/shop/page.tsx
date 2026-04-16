@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -185,11 +186,12 @@ function ProductCard({ product }: { product: Product }) {
     >
       {product.image && (
         <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-          <img
+          <Image
             src={product.image}
             alt={product.name}
-            className="h-full w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105"
-            loading="lazy"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-contain p-6 transition-transform duration-300 group-hover:scale-105"
           />
           {product.tag && (
             <span className="absolute left-3 top-3 rounded-full bg-neutral-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">

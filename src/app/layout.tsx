@@ -24,6 +24,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://karten-tricks.de"),
   title: {
     default: "Kartentricks lernen - karten-tricks.de",
     template: "%s | karten-tricks.de",
@@ -41,6 +42,14 @@ export const metadata: Metadata = {
     title: "Kartentricks lernen - karten-tricks.de",
     description:
       "Einfache Kartentricks und Zaubertricks lernen. Kostenlos, auf Deutsch, Schritt für Schritt erklärt. Für Anfänger und Fortgeschrittene.",
+    images: [{ url: "/logo.png", width: 400, height: 123, alt: "karten-tricks.de" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kartentricks lernen - karten-tricks.de",
+    description:
+      "Einfache Kartentricks und Zaubertricks lernen. Kostenlos, auf Deutsch, Schritt für Schritt erklärt. Für Anfänger und Fortgeschrittene.",
+    images: ["/logo.png"],
   },
   robots: {
     index: true,

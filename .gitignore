@@ -48,3 +48,6 @@ docs/wp-migration/backup_*
 
 # Local WordPress uploads mirror (use public/images for the site)
 /uploads/
+
+# Archive folder (not part of the build)
+/_archive/

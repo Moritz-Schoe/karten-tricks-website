@@ -37,6 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         images: [{ url: `https://karten-tricks.de${article.heroImage}` }],
       }),
     },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+      ...(article.heroImage && { images: [`https://karten-tricks.de${article.heroImage}`] }),
+    },
   };
 }
 
@@ -45,7 +51,7 @@ export async function generateStaticParams() {
   return all.map((a) => ({ category: a.category, slug: a.slug }));
 }
 
-function jsonLdHowTo(article: ReturnType<typeof getArticle>) {
+function jsonLdArticle(article: ReturnType<typeof getArticle>) {
   if (!article) return null;
   return {
     "@context": "https://schema.org",
@@ -60,7 +66,22 @@ function jsonLdHowTo(article: ReturnType<typeof getArticle>) {
     },
     datePublished: article.date,
     ...(article.lastModified && { dateModified: article.lastModified }),
-    inLanguage: "de",
+    ...(article.heroImage && { image: `https://karten-tricks.de${article.heroImage}` }),
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://karten-tricks.de/${article.category}/${article.slug}` },
+    inLanguage: "de-DE",
+  };
+}
+
+function jsonLdBreadcrumb(article: ReturnType<typeof getArticle>, cat: { label: string }, category: string) {
+  if (!article) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Start", item: "https://karten-tricks.de" },
+      { "@type": "ListItem", position: 2, name: cat.label, item: `https://karten-tricks.de/${category}` },
+      { "@type": "ListItem", position: 3, name: article.title },
+    ],
   };
 }
 
@@ -80,7 +101,9 @@ export default async function ArticlePage({ params }: Props) {
     .filter((a) => a.slug !== slug)
     .slice(0, 3);
 
-  const jsonLd = jsonLdHowTo(article);
+  const jsonLd = [jsonLdArticle(article), jsonLdBreadcrumb(article, cat, category)].filter(
+    (item): item is NonNullable<typeof item> => item !== null
+  );
 
   return (
     <>
@@ -174,7 +197,7 @@ export default async function ArticlePage({ params }: Props) {
               )}
 
               {article.whyThisTrick && (
-                <WhyThisTrick reason={article.whyThisTrick} />
+                <WhyThisTrick reason={article.whyThisTrick} category={article.category} />
               )}
 
               <div

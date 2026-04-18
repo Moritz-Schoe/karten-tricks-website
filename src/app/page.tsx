@@ -189,7 +189,7 @@ export default function HomePage() {
                 Zu den Anfänger-Tricks
               </Link>
               <Link
-                href="/fingerfertigkeit"
+                href="/kartentricks/fingerfertigkeit"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-800 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-colors hover:bg-neutral-50"
               >
                 Fingerfertigkeit trainieren
@@ -263,7 +263,7 @@ export default function HomePage() {
                 </Link>
 
                 <Link
-                  href="/fingerfertigkeit"
+                  href="/kartentricks/fingerfertigkeit"
                   className="glass-card group relative flex flex-col justify-between rounded-3xl p-7 overflow-hidden border-t-[3px] border-t-primary/20 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 h-full sm:col-span-2"
                 >
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -414,7 +414,7 @@ export default function HomePage() {
               title="Cardistry"
               count={`${counts.cardistry} Artikel`}
               description="Cardistry lernen: Cuts, Flourishes und Fans für saubere, visuelle Kartenmoves. Ideal als Ergänzung zur Kartenmagie."
-              href="/cardistry"
+              href="/kartentricks/cardistry"
               icon={Layers}
               className="md:col-start-2 md:row-start-1 md:row-end-3"
             />
@@ -446,7 +446,7 @@ export default function HomePage() {
               title="Fingerfertigkeit"
               count={`${counts.fingerfertigkeit} Artikel`}
               description="Techniken für Kartenzauberei: Double Lift, Pinky Break, Forces und Mischtechniken, damit deine Kartentricks wirklich täuschen."
-              href="/fingerfertigkeit"
+              href="/kartentricks/fingerfertigkeit"
               icon={Hand}
               className="md:col-start-3 md:row-start-3 md:row-end-5"
             />
@@ -496,7 +496,7 @@ export default function HomePage() {
                       <span className="text-sm font-medium text-neutral-700">Kartentricks entdecken</span>
                       <ArrowRight className="h-4 w-4 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
                     </Link>
-                    <Link href="/fingerfertigkeit" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-neutral-50">
+                    <Link href="/kartentricks/fingerfertigkeit" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-neutral-50">
                       <span className="text-sm font-medium text-neutral-700">Techniken lernen</span>
                       <ArrowRight className="h-4 w-4 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
                     </Link>

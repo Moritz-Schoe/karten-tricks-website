@@ -9,8 +9,9 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 const NAV_ITEMS = [
   { href: "/kartentricks", label: "Kartentricks" },
   { href: "/zaubertricks", label: "Zaubertricks" },
-  { href: "/cardistry", label: "Cardistry" },
-  { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
+  { href: "/zaubersprüche", label: "Zaubersprüche" },
+  { href: "/kartentricks/cardistry", label: "Cardistry" },
+  { href: "/kartentricks/fingerfertigkeit", label: "Fingerfertigkeit" },
   { href: "/spielkarten-vergleich", label: "Spielkarten Vergleich" },
 ];
 

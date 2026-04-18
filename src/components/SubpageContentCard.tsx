@@ -87,7 +87,7 @@ function contentForPathname(pathname: string): CardContent {
         </>,
         <>
           <strong>Dann Technik</strong>: ergänze 1–2 Basics aus{" "}
-          <Link className="text-primary hover:underline font-medium" href="/fingerfertigkeit">
+          <Link className="text-primary hover:underline font-medium" href="/kartentricks/fingerfertigkeit">
             Fingerfertigkeit
           </Link>
         </>,
@@ -187,7 +187,7 @@ function contentForPathname(pathname: string): CardContent {
         <>Lern zwei „sichere“ Effekte und zeig sie mindestens 5×</>,
         <>
           Ergänze eine Technik aus{" "}
-          <Link className="text-primary hover:underline font-medium" href="/fingerfertigkeit">
+          <Link className="text-primary hover:underline font-medium" href="/kartentricks/fingerfertigkeit">
             Fingerfertigkeit
           </Link>
         </>,

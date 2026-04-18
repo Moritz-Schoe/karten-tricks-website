@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowRight, Clock, Zap, Star, Layers, Wand2 } from "lucide-react";
+import { ArrowRight, Clock, Zap, Star, Layers, Wand2, HandMetal } from "lucide-react";
 import ArticleCard from "@/components/ArticleCard";
 import JsonLd from "@/components/JsonLd";
 import { getArticlesByCategory } from "@/lib/content";
@@ -181,10 +181,16 @@ export default function KartentricksLandingPage() {
               subtitle="Präparierte Decks, große Wirkung, wenig Moves"
             />
             <QuickLink
-              href="/fingerfertigkeit"
+              href="/kartentricks/fingerfertigkeit"
               icon={<Wand2 className="h-6 w-6" />}
-              title="Fingerfertigkeit (ProfiGriffe)"
+              title="Fingerfertigkeit"
               subtitle="Double Lift, Forces & Co. sauber lernen"
+            />
+            <QuickLink
+              href="/kartentricks/cardistry"
+              icon={<HandMetal className="h-6 w-6" />}
+              title="Cardistry"
+              subtitle="Flourishes & Cuts – Karten als Kunst"
             />
             <QuickLink
               href="/shop"
@@ -283,7 +289,7 @@ export default function KartentricksLandingPage() {
                 System-Decks im Shop ansehen <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/fingerfertigkeit"
+                href="/kartentricks/fingerfertigkeit"
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
               >
                 Profigriffe parallel lernen
@@ -310,7 +316,7 @@ export default function KartentricksLandingPage() {
           </div>
           <div className="mt-6">
             <Link
-              href="/fingerfertigkeit"
+              href="/kartentricks/fingerfertigkeit"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
             >
               Alle Techniken ansehen <ArrowRight className="h-3.5 w-3.5" />

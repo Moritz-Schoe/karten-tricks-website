@@ -4,7 +4,6 @@ export type Category =
   | "kartentricks"
   | "cardistry"
   | "fingerfertigkeit"
-  | "party-tricks"
   | "spielkarten"
   | "zaubertricks"
   | "zaubersprueche";
@@ -64,15 +63,6 @@ export const CATEGORIES: Record<
     metaDescription: "Lerne die Grundlagen der Kartenmagie: Double Lift, Pinky Break, Forces und Misdirection. Techniken-Anleitungen für Anfänger und Fortgeschrittene auf Deutsch.",
     keywords: ["Kartentrick Techniken", "Double Lift lernen", "Pinky Break", "Kartentricks Grundlagen", "Fingerfertigkeit Karten", "Forces Kartentricks"],
     color: "bg-[#FFF7ED] border-[#FED7AA] text-[#9A3412]",
-  },
-  "party-tricks": {
-    label: "Party Tricks",
-    h1: "Party Tricks mit Karten",
-    description: "Kartentricks im richtigen Kontext: Geburtstag oder Firmenfeier und wann welcher Trick funktioniert.",
-    metaTitle: "Kartentricks für Partys & Geburtstage",
-    metaDescription: "Die besten Kartentricks für Partys, Geburtstage und Feiern. Einfache Zaubertricks mit Karten, die vor Gruppen garantiert funktionieren kostenlos erklärt.",
-    keywords: ["Party Tricks", "Zaubertricks Geburtstag", "Kartentricks für Kinder", "Tricks für Gruppen", "Party Zaubertricks", "Kartentricks Party"],
-    color: "bg-[#F4F7FF] border-[#9BB0D2] text-[#5872A0]",
   },
   spielkarten: {
     label: "Spielkarten",

@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 };
 
 const MATHE_SLUGS = ["21-karten", "dreimal-abheben"];
+const KARTENHAUS_SLUGS = ["kartenhaus-bauen"];
 const EINSTIEG_SLUGS = [
   "10-in-10-minuten",
   "three-card-monte",
@@ -108,10 +109,12 @@ export default function KartentricksLandingPage() {
   const einstiegArtikel = pickArticlesBySlugs(allKartentricks, EINSTIEG_SLUGS, 6);
   const matheArtikel = pickArticlesBySlugs(allKartentricks, MATHE_SLUGS, 6);
   const technikArtikel = pickArticlesBySlugs(allTechniken, TECHNIK_SLUGS, 4);
+  const kartenhausArtikel = pickArticlesBySlugs(allKartentricks, KARTENHAUS_SLUGS, 0);
 
   const slugsShownAbove = new Set([
     ...einstiegArtikel.map((a) => a.slug),
     ...matheArtikel.map((a) => a.slug),
+    ...kartenhausArtikel.map((a) => a.slug),
   ]);
   const weitereKartentricks = allKartentricks.filter((a) => !slugsShownAbove.has(a.slug));
 
@@ -314,6 +317,25 @@ export default function KartentricksLandingPage() {
             </Link>
           </div>
         </section>
+
+        {/* Was man noch mit Karten machen kann */}
+        {kartenhausArtikel.length > 0 ? (
+          <section>
+            <div className="mb-7">
+              <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
+                Was man noch mit Karten machen kann
+              </h2>
+              <p className="text-neutral-500 max-w-2xl">
+                Spielkarten können mehr als Tricks: Ein stabiles Kartenhaus zu bauen ist eine eigene Kunst – Geduld, Geschicklichkeit und Physik in einem.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {kartenhausArtikel.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {/* SEO-Textblock */}
         <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">

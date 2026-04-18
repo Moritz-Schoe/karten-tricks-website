@@ -6,7 +6,8 @@ export type Category =
   | "fingerfertigkeit"
   | "party-tricks"
   | "spielkarten"
-  | "zaubertricks";
+  | "zaubertricks"
+  | "zaubersprueche";
 
 export interface ArticleFrontmatter {
   title: string;
@@ -90,6 +91,15 @@ export const CATEGORIES: Record<
     metaDescription: "Lerne Zaubertricks aus den Bereichen Mentalmagie und Münzmagie. Schritt-für-Schritt Anleitungen für Anfänger auf Deutsch, kostenlos.",
     keywords: ["Zaubertricks", "Mentalmagie", "Münzmagie", "Zaubertricks lernen", "Mentalzauberei", "Münze verschwinden lassen"],
     color: "bg-[#F0FDF4] border-[#86EFAC] text-[#166534]",
+  },
+  zaubersprueche: {
+    label: "Zaubersprüche",
+    h1: "Zaubersprüche – von Harry Potter bis Abrakadabra",
+    description: "Alle bekannten Zaubersprüche, ihre Bedeutung und wie du sie einsetzt – von Harry Potter bis zu klassischen Zauberwörtern.",
+    metaTitle: "Zaubersprüche: Bedeutung, Herkunft und Verwendung",
+    metaDescription: "Harry Potter Zaubersprüche, Abrakadabra, Hocus Pocus und mehr – mit Bedeutung, Aussprache und Herkunft erklärt.",
+    keywords: ["Zaubersprüche", "Harry Potter Zaubersprüche", "Abrakadabra Bedeutung", "Zaubersprüche für Kinder", "magische Wörter"],
+    color: "bg-[#F5F0FF] border-[#A78BFA] text-[#6D28D9]",
   },
 };
 

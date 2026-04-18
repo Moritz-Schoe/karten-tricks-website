@@ -19,7 +19,7 @@ import ArticleCard from "@/components/ArticleCard";
 import CardSpring from "@/components/CardSpring";
 import JsonLd from "@/components/JsonLd";
 import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";
-import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand, Zap } from "lucide-react";
+import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand, Zap, ScrollText } from "lucide-react";
 
 function BentoCard({
   title,
@@ -448,7 +448,15 @@ export default function HomePage() {
               description="Techniken für Kartenzauberei: Double Lift, Pinky Break, Forces und Mischtechniken, damit deine Kartentricks wirklich täuschen."
               href="/fingerfertigkeit"
               icon={Hand}
-              className="md:col-start-3 md:row-start-3 md:row-end-6"
+              className="md:col-start-3 md:row-start-3 md:row-end-5"
+            />
+            <BentoCard
+              title="Zaubersprüche"
+              count="10 Artikel"
+              description="Harry Potter Zaubersprüche, Abrakadabra, Hocus Pocus: alle bekannten Zauberformeln mit Bedeutung, Herkunft und Aussprache."
+              href="/zaubersprueche"
+              icon={ScrollText}
+              className="md:col-start-3 md:row-start-5 md:row-end-6"
             />
           </div>
         </div>
@@ -498,6 +506,10 @@ export default function HomePage() {
                     </Link>
                     <Link href="/zaubertricks" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-neutral-50">
                       <span className="text-sm font-medium text-neutral-700">Alle Zaubertricks</span>
+                      <ArrowRight className="h-4 w-4 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
+                    </Link>
+                    <Link href="/zaubersprueche" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-neutral-50">
+                      <span className="text-sm font-medium text-neutral-700">Zaubersprüche</span>
                       <ArrowRight className="h-4 w-4 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
                     </Link>
                   </div>

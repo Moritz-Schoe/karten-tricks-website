@@ -11,7 +11,6 @@ const NAV_ITEMS = [
   { href: "/zaubertricks", label: "Zaubertricks" },
   { href: "/zaubersprüche", label: "Zaubersprüche" },
   { href: "/kartentricks/cardistry", label: "Cardistry" },
-  { href: "/kartentricks/fingerfertigkeit", label: "Fingerfertigkeit" },
   { href: "/spielkarten-vergleich", label: "Spielkarten Vergleich" },
 ];
 

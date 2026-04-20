@@ -2,20 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 
 const FOOTER_LINKS = {
-  "Tricks": [
+  "Kartentricks": [
     { href: "/kartentricks", label: "Kartentricks" },
-    { href: "/zaubertricks", label: "Zaubertricks" },
-    { href: "/party-tricks", label: "Party Tricks" },
-    { href: "/cardistry", label: "Cardistry" },
-    { href: "/fingerfertigkeit", label: "Fingerfertigkeit" },
+    { href: "/kartentricks/fingerfertigkeit", label: "Fingerfertigkeit" },
+    { href: "/kartentricks/cardistry", label: "Cardistry" },
+    { href: "/spielkarten-vergleich", label: "Spielkarten-Guide" },
   ],
-  "Situationen": [
-    { href: "/party-tricks/geburtstag", label: "Geburtstag" },
-    { href: "/party-tricks/firmenfeier", label: "Firmenfeier" },
-    { href: "/party-tricks/kinder", label: "Für Kinder" },
+  "Zaubertricks": [
+    { href: "/zaubertricks", label: "Alle Zaubertricks" },
+    { href: "/zaubertricks/mentalmagie-vorhersage", label: "Mentalmagie" },
+    { href: "/zaubertricks/muenzmagie-french-drop", label: "Münzmagie" },
+    { href: "/zaubertricks/kinder", label: "Für Kinder" },
+  ],
+  "Zaubersprüche": [
+    { href: "/zaubersprueche", label: "Alle Zaubersprüche" },
+    { href: "/zaubersprueche/harry-potter-zaubersprueche", label: "Harry Potter" },
+    { href: "/zaubersprueche/zaubersprueche-kinder", label: "Für Kinder" },
   ],
   "Seiten": [
-    { href: "/spielkarten", label: "Spielkarten-Guide" },
     { href: "/shop", label: "Magic Shop" },
     { href: "/ueber-mich", label: "Über mich" },
     { href: "/community", label: "Community & Discord" },
@@ -26,8 +30,8 @@ export default function Footer() {
   return (
     <footer className="mt-20 bg-neutral-900 text-neutral-50">
       <div className="layout-page py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-3">
               <Image
                 src="/logo.png"
@@ -38,7 +42,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-neutral-400">
-              Die deutschsprachige Ressource für Kartentricks und Kartenmagie. Von Anfänger bis Fortgeschritten.
+              Die deutschsprachige Ressource für Kartentricks, Zaubertricks und Zaubersprüche. Von
+              Anfänger bis Fortgeschritten.
             </p>
             <a
                 href="https://discord.gg/QQ2nDMPZ6p"
@@ -54,13 +59,13 @@ export default function Footer() {
           </div>
 
           {Object.entries(FOOTER_LINKS).map(([section, links]) => (
-            <div key={section}>
+            <div key={section} className="min-w-0">
               <h3 className="mb-3 text-sm font-medium uppercase tracking-wider text-neutral-300">
                 {section}
               </h3>
-              <ul className="space-y-2">
+              <ul className="m-0 list-none space-y-2 pl-0">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href} className="m-0">
                     <Link
                       href={link.href}
                       className="text-sm text-neutral-400 transition-colors hover:text-neutral-100"

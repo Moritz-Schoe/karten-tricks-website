@@ -176,10 +176,10 @@ export default function SpielkartenVergleichPage() {
                   ))}
                 </div>
                 <Link
-                  href="/spielkarten"
+                  href="/spielkarten-vergleich"
                   className="block mt-3 text-sm text-primary hover:underline font-medium"
                 >
-                  <span className="inline-flex items-center gap-1">Alle Spielkarten <ArrowRight className="h-3.5 w-3.5" /></span>
+                  <span className="inline-flex items-center gap-1">Zum Spielkarten-Guide <ArrowRight className="h-3.5 w-3.5" /></span>
                 </Link>
               </div>
 

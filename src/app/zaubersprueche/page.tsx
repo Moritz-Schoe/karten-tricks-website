@@ -1,55 +1,109 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Sparkles, Star, Wand2, Baby, ScrollText, Zap } from "lucide-react";
-import ArticleCard from "@/components/ArticleCard";
+import { ArrowRight, BookOpen, Sparkles, Star, Wand2, Baby, Music2 } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
 import { getArticlesByCategory } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Zaubersprüche: Bedeutung, Herkunft und Verwendung",
+  title: "Die besten Zaubersprüche: über 150 Sprüche für jeden Anlass",
   description:
-    "Harry Potter Zaubersprüche, Abrakadabra, Hocus Pocus und mehr – mit Bedeutung, Aussprache und Herkunft erklärt. Für Kinder, Zauberer und HP-Fans.",
+    "Die große Zaubersprüche-Sammlung: für Kinder, mit Reim, Harry Potter und für echte Zaubertricks – mit Bedeutung, Beispielen und Anwendung.",
   keywords: [
     "Zaubersprüche",
+    "Zaubersprüche Liste",
+    "Zaubersprüche Kinder",
+    "Zaubersprüche Reim",
+    "Zaubersprüche für Zaubertricks",
     "Harry Potter Zaubersprüche",
-    "Abrakadabra Bedeutung",
-    "Zaubersprüche für Kinder",
-    "magische Wörter",
-    "Expecto Patronum Bedeutung",
-    "Wingardium Leviosa",
-    "Hocus Pocus Bedeutung",
-    "lateinische Zaubersprüche",
   ],
   alternates: { canonical: "https://karten-tricks.de/zaubersprueche" },
   openGraph: {
-    title: "Zaubersprüche: Bedeutung, Herkunft und Verwendung",
+    title: "Die besten Zaubersprüche: über 150 Sprüche für jeden Anlass",
     description:
-      "Harry Potter Zaubersprüche, Abrakadabra, Hocus Pocus und mehr – mit Bedeutung, Aussprache und Herkunft erklärt.",
+      "Für Kinder, mit Reim, Harry Potter und für echte Zaubertricks – die große Zaubersprüche-Sammlung mit Bedeutung und Anwendung.",
     type: "website",
     url: "https://karten-tricks.de/zaubersprueche",
   },
 };
 
-const HARRY_POTTER_SLUGS = [
-  "harry-potter-zaubersprueche",
-  "wingardium-leviosa",
-  "expecto-patronum",
-  "avada-kedavra",
+const KINDER_SLUG = "zaubersprueche-kinder";
+const HARRY_POTTER_SLUG = "harry-potter-zaubersprueche";
+const TRICKS_SLUG = "zauberer-spruche-auftritt";
+
+const REIM_SPRUECHE = [
+  {
+    spruch: "Sim sala bim, dreh dich im Kreis – was verschwunden ist, weiß keiner so genau.",
+    kontext: "Klassischer Bühnen-Reim",
+  },
+  {
+    spruch: "Hokus, pokus, Hexenschuss – jetzt gleich kommt der Zauberkuss.",
+    kontext: "Spielerisch, kindgerecht",
+  },
+  {
+    spruch: "Krötenei und Schlangendreck – was hier war, das ist nun weg.",
+    kontext: "Für Verschwinde-Tricks",
+  },
+  {
+    spruch: "Abrakadabra, eins-zwei-drei – aus Nichts entsteht Zauberei.",
+    kontext: "Für Erscheinen-Tricks",
+  },
 ];
 
-const KLASSISCH_SLUGS = [
-  "abrakadabra-bedeutung",
-  "hocus-pocus-bedeutung",
-  "lateinische-zaubersprueche",
+const KINDER_SPRUECHE = [
+  {
+    spruch: "Hokuspokus Fidibus",
+    kontext: "Der Klassiker für Kindergeburtstage",
+  },
+  {
+    spruch: "Simsalabim",
+    kontext: "Kurz, laut und leicht mitzusprechen",
+  },
+  {
+    spruch: "Zippel-Zappel-Zauberstab",
+    kontext: "Reim-Spruch für Gruppen und Mitmach-Momente",
+  },
+  {
+    spruch: "Hoppla-Zappla-Peng",
+    kontext: "Perfekt für plötzliche Erscheinen- oder Verschwinde-Tricks",
+  },
 ];
 
-const KINDER_SLUGS = [
-  "zaubersprueche-kinder",
-  "bibbidi-bobbidi-boo",
+const HARRY_POTTER_SPRUECHE = [
+  {
+    spruch: "Expecto Patronum",
+    kontext: "Beschwört einen Schutzgeist gegen Dementoren",
+  },
+  {
+    spruch: "Wingardium Leviosa",
+    kontext: "Lässt Gegenstände schweben",
+  },
+  {
+    spruch: "Expelliarmus",
+    kontext: "Entwaffnet den Gegner",
+  },
+  {
+    spruch: "Lumos",
+    kontext: "Erzeugt Licht an der Zauberstabspitze",
+  },
 ];
 
-const AUFTRITT_SLUGS = [
-  "zauberer-spruche-auftritt",
+const AUFTRITT_SPRUECHE = [
+  {
+    spruch: "Abrakadabra!",
+    kontext: "Klassiker für Erscheinen- und Verschwinde-Effekte",
+  },
+  {
+    spruch: "Simsalabim!",
+    kontext: "Funktioniert stark bei lockerem, spielerischem Publikum",
+  },
+  {
+    spruch: "Hokuspokus Fidibus!",
+    kontext: "Ideal für Familien- und Kinderauftritte",
+  },
+  {
+    spruch: "Verschwinde!",
+    kontext: "Einwort-Spruch für punktgenaues Timing",
+  },
 ];
 
 const FAQ_JSON_LD = {
@@ -58,26 +112,42 @@ const FAQ_JSON_LD = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Was ist ein Zauberspruch?",
+      name: "Was ist der bekannteste Zauberspruch?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ein Zauberspruch ist eine Formel oder ein Wort, dem magische Wirkung zugeschrieben wird. In der Literatur und im Film – besonders bei Harry Potter – lösen Zaubersprüche konkrete magische Effekte aus. In der echten Zauberkunst dienen sie als Patter, also als begleitende Worte, die den Zuschauer ablenken und die Atmosphäre des Auftritts verstärken.",
+        text: "Abrakadabra ist der bekannteste Zauberspruch der Welt. Er stammt aus dem 2. Jahrhundert n. Chr. und wurde ursprünglich als Schutzformel gegen Krankheiten auf Amulette geschrieben. Heute ist er das Synonym für jede Form von Magie – dicht gefolgt von Simsalabim und Hokuspokus.",
       },
     },
     {
       "@type": "Question",
-      name: "Welche Zaubersprüche gibt es bei Harry Potter?",
+      name: "Welche Zaubersprüche gibt es?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Die bekanntesten Harry-Potter-Zaubersprüche sind Expecto Patronum (beschwört einen Patronus), Wingardium Leviosa (Schwebe-Zauber), Alohomora (öffnet Schlösser), Lumos (erzeugt Licht) und Avada Kedavra (der Todesfluch). Insgesamt gibt es in J. K. Rowlings Welt über 200 Zaubersprüche.",
+        text: "Zaubersprüche lassen sich grob in vier Gruppen einteilen: klassische Formeln (Abrakadabra, Simsalabim, Hokuspokus), Harry-Potter-Sprüche, Sprüche für Kinder und Sprüche, die echte Zauberer bei Tricks einsetzen. Zusammen gibt es mehrere hundert bekannte Varianten.",
       },
     },
     {
       "@type": "Question",
-      name: "Woher kommt das Wort Abrakadabra?",
+      name: "Was ist der mächtigste Zauberspruch?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Abrakadabra stammt wahrscheinlich aus dem Aramäischen und bedeutet so viel wie 'Ich erschaffe, was ich spreche'. Es taucht erstmals im 2. Jahrhundert n. Chr. in medizinischen Texten auf, wo es als Schutzformel gegen Krankheiten auf Amulette geschrieben wurde. Heute ist es das bekannteste Zauberwort der Welt.",
+        text: "Für die Bühnenmagie gilt: Ein einziges, perfekt platziertes Wort wirkt stärker als jede lange Formel. Die Macht eines Zauberspruchs entsteht durch Timing, Stimme und den Moment, in dem er fällt – nicht durch seine Länge oder seinen Klang allein.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Was ist ein guter Zauberspruch?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ein guter Zauberspruch ist kurz, klangvoll und einprägsam. Er sollte reimen oder einen markanten Rhythmus haben, er muss zum Trick passen und darf nicht zu ernst klingen. Für Kinder gilt: je lustiger, desto besser. Für Erwachsene: je mysteriöser und knapper, desto stärker die Wirkung.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie erfindet man eigene Zaubersprüche?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Die einfachste Formel: zwei Fantasiewörter + ein Reim. Starte mit einem bekannten Wort wie 'Hokuspokus' und hänge etwas Unerwartetes an. Oder kombiniere zwei Dinge aus dem Alltag mit einem Reim ('Krötenei und Schlangendreck'). Wichtig ist der Klang – lies den Spruch laut, bevor du ihn benutzt.",
       },
     },
     {
@@ -85,31 +155,15 @@ const FAQ_JSON_LD = {
       name: "Welche Zaubersprüche eignen sich für Kinder?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Für Kinder eignen sich kurze, klanglich einprägsame Sprüche wie 'Simsalabim', 'Hokuspokus Fidibus' oder 'Bibbidi Bobbidi Boo' aus Aschenputtel. Diese Sprüche sind einfach zu merken, klingen magisch und machen beim Aussprechen Spaß. Kombiniert mit einem einfachen Trick wirken sie auf Kinder besonders beeindruckend.",
+        text: "Für Kinder funktionieren kurze, reimende Sprüche am besten: 'Simsalabim', 'Hokuspokus Fidibus, drei Mal schwarzer Kater' oder 'Bibbidi Bobbidi Boo' aus Aschenputtel. Sie sind leicht zu merken, klingen magisch und laden zum Mitsprechen ein.",
       },
     },
     {
       "@type": "Question",
-      name: "Was bedeutet Expecto Patronum?",
+      name: "Wie setze ich Zaubersprüche bei einem Zaubertrick ein?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Expecto Patronum ist Latein und bedeutet 'Ich erwarte einen Beschützer' oder 'Ich erbitte einen Schutzgeist'. In der Harry-Potter-Welt beschwört dieser Spruch einen Patronus – ein magisches Schutztier aus positivem Energie. Die Stärke des Patronus hängt von der Intensität der glücklichsten Erinnerung des Zauberers ab.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Gibt es echte Zaubersprüche, die wirken?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Echte 'Magie' im übernatürlichen Sinne gibt es nicht. Was Zaubersprüche in einem Auftritt leisten, ist psychologisch: Sie lenken die Aufmerksamkeit des Zuschauers, erzeugen Spannung und schaffen eine magische Atmosphäre. Ein gut gewählter Spruch ist für professionelle Zauberer ein wichtiges Werkzeug zur Misdirection.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Wie setze ich Zaubersprüche in einem Zauberauftritt ein?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Profizauberer nutzen Zaubersprüche strategisch: Der Spruch markiert den Moment, in dem die 'Magie passiert', und lenkt die Aufmerksamkeit auf das falsche Objekt. Wichtig ist Timing – der Spruch sollte genau dann fallen, wenn der geheime Teil des Tricks ausgeführt wird. Weniger ist oft mehr: Ein einziges, gut platziertes Wort kann wirkungsvoller sein als eine lange Formel.",
+        text: "Profis nutzen Zaubersprüche als Misdirection: Der Spruch markiert den Moment, in dem die 'Magie passiert' – in Wirklichkeit ist es der Augenblick, in dem der geheime Teil des Tricks ausgeführt wird. Entscheidend sind Timing, Stimme und Geste.",
       },
     },
   ],
@@ -128,14 +182,53 @@ function EinstiegCard({ href, icon, title, subtitle }: EinstiegCardProps) {
       href={href}
       className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-5 transition-all duration-200 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] hover:-translate-y-0.5"
     >
-      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-violet-100 flex items-center justify-center text-violet-700">
+      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
         {icon}
       </div>
       <div className="min-w-0">
         <p className="font-bold text-neutral-800 tracking-tight leading-snug">{title}</p>
         <p className="text-sm text-neutral-500 mt-0.5">{subtitle}</p>
       </div>
-      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-neutral-300 transition-colors group-hover:text-violet-600" />
+      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-neutral-300 transition-colors group-hover:text-primary" />
+    </Link>
+  );
+}
+
+interface SpruchCardProps {
+  spruch: string;
+  kontext: string;
+}
+
+function SpruchCard({ spruch, kontext }: SpruchCardProps) {
+  return (
+    <div className="rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-6">
+      <p className="font-bold text-neutral-800 tracking-tight leading-snug mb-2">„{spruch}"</p>
+      <p className="text-sm text-neutral-500">{kontext}</p>
+    </div>
+  );
+}
+
+interface DirektArtikelLinkProps {
+  article?: { slug: string; title: string; description: string };
+  href?: string;
+  label: string;
+}
+
+function DirektArtikelLink({ article, href, label }: DirektArtikelLinkProps) {
+  const resolvedHref = article ? `/zaubersprueche/${article.slug}` : href;
+
+  if (!resolvedHref) return null;
+
+  return (
+    <Link
+      href={resolvedHref}
+      className="group inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-between gap-3 rounded-2xl bg-primary px-5 py-4 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(23,67,187,0.28)] transition-all hover:bg-[var(--color-primary-dark)] hover:-translate-y-0.5"
+    >
+      <span>
+        {label}
+        {article ? `: ${article.title}` : ""}
+      </span>
+      <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
     </Link>
   );
 }
@@ -143,47 +236,46 @@ function EinstiegCard({ href, icon, title, subtitle }: EinstiegCardProps) {
 export default function ZauberspruechePage() {
   const allArtikel = getArticlesByCategory("zaubersprueche");
 
-  const harryPotterArtikel = allArtikel.filter((a) => HARRY_POTTER_SLUGS.includes(a.slug));
-  const klassischArtikel = allArtikel.filter((a) => KLASSISCH_SLUGS.includes(a.slug));
-  const kinderArtikel = allArtikel.filter((a) => KINDER_SLUGS.includes(a.slug));
-  const auftrittArtikel = allArtikel.filter((a) => AUFTRITT_SLUGS.includes(a.slug));
+  const kinderArtikel = allArtikel.find((a) => a.slug === KINDER_SLUG);
+  const harryPotterArtikel = allArtikel.find((a) => a.slug === HARRY_POTTER_SLUG);
+  const tricksArtikel = allArtikel.find((a) => a.slug === TRICKS_SLUG);
 
   return (
     <>
       <JsonLd data={FAQ_JSON_LD} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-violet-50 to-white border-b border-black/[0.04]">
+      <section className="bg-gradient-to-b from-white to-neutral-50 border-b border-black/[0.04]">
         <div className="layout-page py-14 md:py-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-violet-100 border border-violet-200 px-4 py-1.5 mb-6">
-              <Star className="h-3.5 w-3.5 text-violet-600" />
-              <span className="text-xs font-semibold text-violet-700 uppercase tracking-wider">
-                Harry Potter · Abrakadabra · Für Kinder
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/30 px-4 py-1.5 mb-6">
+              <Star className="h-3.5 w-3.5 text-primary" />
+              <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                Für Kinder · Mit Reim · Für Tricks
               </span>
             </div>
             <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight text-neutral-900 leading-[1.05] mb-5">
-              Zaubersprüche –<br className="hidden sm:block" /> Bedeutung &amp; Herkunft
+              Die besten Zaubersprüche –<br className="hidden sm:block" /> über 150 Sprüche für jeden Anlass
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-neutral-500 max-w-2xl mb-8">
-              Von Harry Potters Expecto Patronum bis zu Abrakadabra: Hier findest du alle bekannten
-              Zaubersprüche mit ihrer Bedeutung, Herkunft und Aussprache. Plus: wie echte Zauberer
-              Zaubersprüche in ihren Auftritten einsetzen.
+              Für Kinder, mit Reim, Harry Potter und Sprüche, die echte Zauberer bei ihren Tricks
+              einsetzen: Hier findest du die komplette Sammlung – kategorisiert, erklärt und sofort
+              einsatzbereit.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="#harry-potter"
-                className="inline-flex items-center gap-2 rounded-full bg-violet-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-violet-800"
+                href="#tricks"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
               >
-                <BookOpen className="h-4 w-4" />
-                Harry Potter Sprüche
+                <Wand2 className="h-4 w-4" />
+                Sprüche für Zaubertricks
               </Link>
               <Link
-                href="#klassisch"
+                href="#reim"
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
               >
-                <ScrollText className="h-4 w-4" />
-                Klassische Zauberwörter
+                <Music2 className="h-4 w-4" />
+                Sprüche die sich reimen
               </Link>
             </div>
           </div>
@@ -195,33 +287,85 @@ export default function ZauberspruechePage() {
         {/* Einstiege */}
         <section>
           <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-6">
-            Wähle deinen Einstieg
+            Direkt zu den Artikeln
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <EinstiegCard
-              href="#harry-potter"
-              icon={<BookOpen className="h-6 w-6" />}
-              title="Harry Potter Sprüche"
-              subtitle="Expecto Patronum, Wingardium Leviosa & Co."
-            />
-            <EinstiegCard
-              href="#klassisch"
-              icon={<ScrollText className="h-6 w-6" />}
-              title="Klassische Zauberwörter"
-              subtitle="Abrakadabra, Hocus Pocus und ihr Ursprung"
-            />
-            <EinstiegCard
-              href="#kinder"
+              href={kinderArtikel ? `/zaubersprueche/${kinderArtikel.slug}` : "#kinder"}
               icon={<Baby className="h-6 w-6" />}
-              title="Für Kinder"
-              subtitle="Lustige Formeln für Partys und Kindergeburtstage"
+              title="Zaubersprüche für Kinder"
+              subtitle="Direkt zum Artikel mit allen Sprüchen"
             />
             <EinstiegCard
-              href="#zauberer"
-              icon={<Wand2 className="h-6 w-6" />}
-              title="Für Zauberer"
-              subtitle="Wie Profis Sprüche strategisch einsetzen"
+              href={harryPotterArtikel ? `/zaubersprueche/${harryPotterArtikel.slug}` : "#harry-potter"}
+              icon={<BookOpen className="h-6 w-6" />}
+              title="Harry Potter Zaubersprüche"
+              subtitle="Direkt zur Liste mit Bedeutung"
             />
+            <EinstiegCard
+              href="#reim"
+              icon={<Music2 className="h-6 w-6" />}
+              title="Zaubersprüche mit Reim"
+              subtitle="Die klangvollsten Sprüche – sortiert nach Anlass"
+            />
+            <EinstiegCard
+              href="#tricks"
+              icon={<Wand2 className="h-6 w-6" />}
+              title="Sprüche für Zaubertricks"
+              subtitle="So setzt du Sprüche wirklich wirkungsvoll ein"
+            />
+          </div>
+        </section>
+
+        {/* Allgemein-Intro */}
+        <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <Sparkles className="h-5 w-5 text-primary" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary">Allgemein</span>
+          </div>
+          <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-3">
+            Was ist eigentlich ein Zauberspruch?
+          </h2>
+          <div className="prose max-w-none text-neutral-600 text-sm leading-relaxed">
+            <p>
+              Ein Zauberspruch ist eine Formel oder ein Wort, dem magische Wirkung zugeschrieben wird.
+              Die bekanntesten – Abrakadabra, Simsalabim, Hokuspokus – sind mehrere hundert Jahre alt
+              und stammen aus dem Lateinischen, Hebräischen oder Aramäischen. Sie standen ursprünglich
+              auf Amuletten gegen Krankheiten, bevor sie mit dem Aufstieg der Bühnenmagie im 18. und
+              19. Jahrhundert zum Standardrepertoire jeder Zaubershow wurden.
+            </p>
+            <p>
+              In der Bühnenmagie hat der Spruch eine klare Funktion: Er markiert den Moment, in dem
+              die „Magie passiert", und lenkt die Aufmerksamkeit genau dorthin, wo der Zauberer sie
+              haben will. In Büchern und Filmen – allen voran Harry Potter – lösen Zaubersprüche
+              dagegen konkrete Effekte aus und sind das zentrale Werkzeug jeder Hexe und jedes Zauberers.
+            </p>
+          </div>
+        </section>
+
+        {/* Zaubersprüche für Kinder */}
+        <section id="kinder" className="scroll-mt-28">
+          <div className="mb-7">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <Baby className="h-5 w-5 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Für Kinder</span>
+            </div>
+            <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
+              Zaubersprüche für Kinder: kurz, lustig, einfach
+            </h2>
+            <p className="text-neutral-500 max-w-2xl">
+              Für Kindergeburtstage und Zaubershows funktionieren Sprüche, die Kinder mitsprechen
+              können: Verschwinden lassen, Erscheinen lassen, Verwandeln. Je kürzer und klingender,
+              desto größer die Wirkung.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {KINDER_SPRUECHE.map((s) => (
+              <SpruchCard key={s.spruch} spruch={s.spruch} kontext={s.kontext} />
+            ))}
+          </div>
+          <div className="mt-6">
+            <DirektArtikelLink article={kinderArtikel} href="#kinder" label="Zum ganzen Artikel" />
           </div>
         </section>
 
@@ -229,163 +373,90 @@ export default function ZauberspruechePage() {
         <section id="harry-potter" className="scroll-mt-28">
           <div className="mb-7">
             <div className="inline-flex items-center gap-2 mb-3">
-              <BookOpen className="h-5 w-5 text-violet-600" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-violet-600">Harry Potter</span>
+              <BookOpen className="h-5 w-5 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Harry Potter</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Harry Potter Zaubersprüche mit Bedeutung
+              Harry Potter Zaubersprüche: Liste &amp; Bedeutung
             </h2>
             <p className="text-neutral-500 max-w-2xl">
-              J. K. Rowling hat über 200 Zaubersprüche erfunden – die meisten basieren auf echtem
-              Latein oder Altgriechisch. Hier findest du die bekanntesten mit Bedeutung, Aussprache
-              und Kontext aus den Büchern.
+              J. K. Rowling hat über 200 Zaubersprüche erfunden – von Kampfzaubern über
+              Alltagssprüche bis zu den verbotenen Flüchen. Die bekanntesten mit Bedeutung,
+              Aussprache und Kontext – alles in einem Artikel.
             </p>
           </div>
-          {harryPotterArtikel.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {harryPotterArtikel.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-neutral-400 text-sm">Artikel werden geladen…</p>
-          )}
-        </section>
-
-        {/* Erklärblock Harry Potter */}
-        <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">
-          <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-3">
-            Woher kommen die Harry Potter Zaubersprüche?
-          </h2>
-          <div className="prose max-w-none text-neutral-600 text-sm leading-relaxed">
-            <p>
-              J. K. Rowling hat die meisten Zaubersprüche aus dem Lateinischen abgeleitet.{" "}
-              <Link href="/zaubersprueche/expecto-patronum" className="text-violet-700 hover:underline font-medium">
-                Expecto Patronum
-              </Link>{" "}
-              bedeutet wörtlich „Ich erwarte einen Beschützer", und{" "}
-              <Link href="/zaubersprueche/wingardium-leviosa" className="text-violet-700 hover:underline font-medium">
-                Wingardium Leviosa
-              </Link>{" "}
-              verbindet das englische „wing" (Flügel) mit dem lateinischen „leviosa" (leicht, schwebend).
-            </p>
-            <p>
-              Diese linguistische Tiefe macht die Sprüche besonders faszinierend: Wer Latein kennt,
-              versteht sofort, was ein Zauberspruch bewirkt. Auch{" "}
-              <Link href="/zaubersprueche/avada-kedavra" className="text-violet-700 hover:underline font-medium">
-                Avada Kedavra
-              </Link>{" "}
-              – der berüchtigte Todesfluch – hat sprachliche Wurzeln, die weit über die Bücher hinausgehen.
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {HARRY_POTTER_SPRUECHE.map((s) => (
+              <SpruchCard key={s.spruch} spruch={s.spruch} kontext={s.kontext} />
+            ))}
+          </div>
+          <div className="mt-6">
+            <DirektArtikelLink
+              article={harryPotterArtikel}
+              href="#harry-potter"
+              label="Zum ganzen Artikel"
+            />
           </div>
         </section>
 
-        {/* Klassische Zauberwörter */}
-        <section id="klassisch" className="scroll-mt-28">
+        {/* Zaubersprüche mit Reim */}
+        <section id="reim" className="scroll-mt-28">
           <div className="mb-7">
             <div className="inline-flex items-center gap-2 mb-3">
-              <ScrollText className="h-5 w-5 text-violet-600" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-violet-600">Klassische Zauberwörter</span>
+              <Music2 className="h-5 w-5 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Mit Reim</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Abrakadabra, Hocus Pocus & Co.: die echte Geschichte
+              Zaubersprüche, die sich reimen
             </h2>
             <p className="text-neutral-500 max-w-2xl">
-              Die klassischen Zauberwörter sind viel älter als Harry Potter. Abrakadabra stammt aus
-              dem 2. Jahrhundert, Hocus Pocus aus dem 17. Hinter jedem steckt eine erstaunliche Geschichte.
+              Reim macht Zaubersprüche sofort einprägsam und gibt ihnen einen Rhythmus, der perfekt
+              zum Timing eines Tricks passt. Hier die schönsten Reim-Sprüche – sortiert nach Anlass.
             </p>
           </div>
-          {klassischArtikel.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {klassischArtikel.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-neutral-400 text-sm">Artikel werden geladen…</p>
-          )}
-        </section>
-
-        {/* Erklärblock Klassisch */}
-        <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">
-          <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-3">
-            Was steckt hinter den klassischen Zauberwörtern?
-          </h2>
-          <div className="prose max-w-none text-neutral-600 text-sm leading-relaxed">
-            <p>
-              Klassische Zauberwörter wie{" "}
-              <Link href="/zaubersprueche/abrakadabra-bedeutung" className="text-violet-700 hover:underline font-medium">
-                Abrakadabra
-              </Link>{" "}
-              hatten ursprünglich gar nichts mit Bühnenmagie zu tun. Sie standen auf Amuletten
-              und sollten Krankheiten oder böse Geister abwehren. Erst mit dem Aufkommen der
-              Unterhaltungsmagie im 18. und 19. Jahrhundert wanderten sie auf die Bühne.
-            </p>
-            <p>
-              Interessant ist, dass fast alle klassischen Zauberwörter auf einer anderen Sprache basieren –
-              meist Latein, Hebräisch oder Aramäisch. Die Fremdheit der Worte war bewusst gewählt:
-              Sie sollten geheimnisvoll klingen und dem Publikum signalisieren, dass hier etwas
-              Übernatürliches im Gange ist.
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {REIM_SPRUECHE.map((s) => (
+              <SpruchCard key={s.spruch} spruch={s.spruch} kontext={s.kontext} />
+            ))}
+          </div>
+          <div className="mt-6">
+            <DirektArtikelLink
+              href="/zaubersprueche/zaubersprueche-kinder#mit-reim"
+              label="Zum ganzen Artikel mit Reim-Sprüchen"
+            />
           </div>
         </section>
 
-        {/* Für Kinder */}
-        <section id="kinder" className="scroll-mt-28">
+        {/* Sprüche für Zaubertricks */}
+        <section id="tricks" className="scroll-mt-28">
           <div className="mb-7">
             <div className="inline-flex items-center gap-2 mb-3">
-              <Baby className="h-5 w-5 text-violet-600" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-violet-600">Für Kinder</span>
+              <Wand2 className="h-5 w-5 text-primary" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Für Zaubertricks</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Zaubersprüche für Kinder: lustig, laut, magisch
+              Zaubersprüche richtig als Zauberer verwenden
             </h2>
             <p className="text-neutral-500 max-w-2xl">
-              Für Kindergeburtstage oder Zaubershows braucht es Sprüche, die Kinder begeistern:
-              kurz, klingend, mitsprechbar. Hier findest du die besten Formeln plus ihre Herkunft.
+              Der Spruch ist bei einem Zaubertrick nicht Deko, sondern Werkzeug. Er steuert, wann
+              die „Magie" passiert, und lenkt die Aufmerksamkeit präzise dorthin, wo du sie
+              brauchst. Timing, Stimme und Geste entscheiden über die Wirkung.
             </p>
           </div>
-          {kinderArtikel.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {kinderArtikel.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-neutral-400 text-sm">Artikel werden geladen…</p>
-          )}
-        </section>
-
-        {/* Für Zauberer */}
-        <section id="zauberer" className="scroll-mt-28">
-          <div className="mb-7">
-            <div className="inline-flex items-center gap-2 mb-3">
-              <Wand2 className="h-5 w-5 text-violet-600" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-violet-600">Für Zauberer</span>
-            </div>
-            <h2 className="text-2xl font-bold tracking-tight text-neutral-800 mb-2">
-              Zaubersprüche im Auftritt: so macht es der Profi
-            </h2>
-            <p className="text-neutral-500 max-w-2xl">
-              Profis nutzen Zaubersprüche nicht zufällig. Sie setzen sie gezielt ein, um Misdirection
-              zu erzeugen und den Moment der „Magie" präzise zu steuern.
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {AUFTRITT_SPRUECHE.map((s) => (
+              <SpruchCard key={s.spruch} spruch={s.spruch} kontext={s.kontext} />
+            ))}
           </div>
-          {auftrittArtikel.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {auftrittArtikel.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-neutral-400 text-sm">Artikel werden geladen…</p>
-          )}
+          <div className="mt-6">
+            <DirektArtikelLink article={tricksArtikel} href="#tricks" label="Zum ganzen Artikel" />
+          </div>
         </section>
 
         {/* Cross-CTA: Zaubertricks */}
         <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-violet-100 flex items-center justify-center text-violet-700">
+            <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
               <Sparkles className="h-6 w-6" />
             </div>
             <div className="flex-1 min-w-0">
@@ -394,9 +465,9 @@ export default function ZauberspruechePage() {
                 Lerne echte Zaubertricks
               </h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-5">
-                Wer Zaubersprüche kennt, braucht auch echte Tricks dahinter. In unserem Zaubertricks-Bereich
-                findest du Schritt-für-Schritt Anleitungen für Mentalmagie und Münzmagie – ohne Karten,
-                ohne spezielle Requisiten.
+                Ein Spruch wird erst mit dem passenden Trick magisch. In unserem Zaubertricks-Bereich
+                findest du Schritt-für-Schritt-Anleitungen für Karten-, Münz- und Mentalmagie –
+                kombinierbar mit jedem Spruch von dieser Seite.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -406,10 +477,10 @@ export default function ZauberspruechePage() {
                   Alle Zaubertricks <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/zaubertricks/shiner-gedankenlesen"
+                  href="/kartentricks"
                   className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
                 >
-                  Gedankenlesen lernen
+                  Kartentricks lernen
                 </Link>
               </div>
             </div>
@@ -424,32 +495,32 @@ export default function ZauberspruechePage() {
           <div className="space-y-4">
             {[
               {
-                q: "Was ist ein Zauberspruch?",
-                a: "Ein Zauberspruch ist eine Formel oder ein Wort, dem magische Wirkung zugeschrieben wird. In der Literatur und im Film – besonders bei Harry Potter – lösen Zaubersprüche konkrete magische Effekte aus. In der echten Zauberkunst dienen sie als Patter, also als begleitende Worte, die den Zuschauer ablenken und die Atmosphäre des Auftritts verstärken.",
+                q: "Was ist der bekannteste Zauberspruch?",
+                a: "Abrakadabra ist der bekannteste Zauberspruch der Welt. Er stammt aus dem 2. Jahrhundert n. Chr. und wurde ursprünglich als Schutzformel gegen Krankheiten auf Amulette geschrieben. Heute ist er das Synonym für jede Form von Magie – dicht gefolgt von Simsalabim und Hokuspokus.",
               },
               {
-                q: "Welche Zaubersprüche gibt es bei Harry Potter?",
-                a: "Die bekanntesten Harry-Potter-Zaubersprüche sind Expecto Patronum, Wingardium Leviosa, Alohomora, Lumos und Avada Kedavra. Insgesamt hat J. K. Rowling über 200 Zaubersprüche erfunden, die meisten basieren auf Latein oder Altgriechisch.",
+                q: "Welche Zaubersprüche gibt es?",
+                a: "Zaubersprüche lassen sich grob in vier Gruppen einteilen: klassische Formeln (Abrakadabra, Simsalabim, Hokuspokus), Harry-Potter-Sprüche, Sprüche für Kinder und Sprüche, die echte Zauberer bei Tricks einsetzen. Zusammen gibt es mehrere hundert bekannte Varianten.",
               },
               {
-                q: "Woher kommt das Wort Abrakadabra?",
-                a: "Abrakadabra stammt wahrscheinlich aus dem Aramäischen und bedeutet 'Ich erschaffe, was ich spreche'. Es taucht erstmals im 2. Jahrhundert n. Chr. auf, wo es als Schutzformel gegen Krankheiten auf Amulette geschrieben wurde.",
+                q: "Was ist der mächtigste Zauberspruch?",
+                a: "Für die Bühnenmagie gilt: Ein einziges, perfekt platziertes Wort wirkt stärker als jede lange Formel. Die Macht eines Zauberspruchs entsteht durch Timing, Stimme und den Moment, in dem er fällt – nicht durch seine Länge oder seinen Klang allein.",
+              },
+              {
+                q: "Was ist ein guter Zauberspruch?",
+                a: "Ein guter Zauberspruch ist kurz, klangvoll und einprägsam. Er sollte reimen oder einen markanten Rhythmus haben, er muss zum Trick passen und darf nicht zu ernst klingen. Für Kinder gilt: je lustiger, desto besser. Für Erwachsene: je mysteriöser und knapper, desto stärker die Wirkung.",
+              },
+              {
+                q: "Wie erfindet man eigene Zaubersprüche?",
+                a: "Die einfachste Formel: zwei Fantasiewörter + ein Reim. Starte mit einem bekannten Wort wie 'Hokuspokus' und hänge etwas Unerwartetes an. Oder kombiniere zwei Dinge aus dem Alltag mit einem Reim ('Krötenei und Schlangendreck'). Wichtig ist der Klang – lies den Spruch laut, bevor du ihn benutzt.",
               },
               {
                 q: "Welche Zaubersprüche eignen sich für Kinder?",
-                a: "Für Kinder eignen sich kurze, klanglich einprägsame Sprüche wie 'Simsalabim', 'Hokuspokus Fidibus' oder 'Bibbidi Bobbidi Boo' aus Aschenputtel. Diese sind einfach zu merken, klingen magisch und machen beim Aussprechen Spaß.",
+                a: "Für Kinder funktionieren kurze, reimende Sprüche am besten: 'Simsalabim', 'Hokuspokus Fidibus, drei Mal schwarzer Kater' oder 'Bibbidi Bobbidi Boo' aus Aschenputtel. Sie sind leicht zu merken, klingen magisch und laden zum Mitsprechen ein.",
               },
               {
-                q: "Was bedeutet Expecto Patronum?",
-                a: "Expecto Patronum ist Latein und bedeutet 'Ich erwarte einen Beschützer'. In der Harry-Potter-Welt beschwört dieser Spruch einen Patronus – ein magisches Schutztier aus positiver Energie. Die Stärke des Patronus hängt von der glücklichsten Erinnerung des Zauberers ab.",
-              },
-              {
-                q: "Gibt es echte Zaubersprüche, die wirken?",
-                a: "Echte 'Magie' im übernatürlichen Sinne gibt es nicht. Was Zaubersprüche in einem Auftritt leisten, ist psychologisch: Sie lenken die Aufmerksamkeit des Zuschauers, erzeugen Spannung und schaffen eine magische Atmosphäre. Ein gut gewählter Spruch ist ein wichtiges Werkzeug zur Misdirection.",
-              },
-              {
-                q: "Wie setze ich Zaubersprüche in einem Zauberauftritt ein?",
-                a: "Profizauberer nutzen Zaubersprüche strategisch: Der Spruch markiert den Moment, in dem die 'Magie passiert', und lenkt die Aufmerksamkeit auf das falsche Objekt. Wichtig ist das Timing – der Spruch sollte genau dann fallen, wenn der geheime Teil ausgeführt wird.",
+                q: "Wie setze ich Zaubersprüche bei einem Zaubertrick ein?",
+                a: "Profis nutzen Zaubersprüche als Misdirection: Der Spruch markiert den Moment, in dem die 'Magie passiert' – in Wirklichkeit ist es der Augenblick, in dem der geheime Teil des Tricks ausgeführt wird. Entscheidend sind Timing, Stimme und Geste.",
               },
             ].map(({ q, a }) => (
               <details
@@ -469,21 +540,21 @@ export default function ZauberspruechePage() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-3xl bg-gradient-to-br from-violet-700 to-violet-900 p-8 md:p-10 text-white text-center">
+        <section className="rounded-3xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] p-8 md:p-10 text-white text-center">
           <Wand2 className="h-8 w-8 mx-auto mb-4 opacity-80" />
           <h2 className="text-2xl font-bold tracking-tight mb-3">
             Bereit, Magie zu machen?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-6">
             Zaubersprüche sind der erste Schritt. Lerne jetzt echte Zaubertricks –
-            von Gedankenlesen bis Münzmagie – und kombiniere sie mit dem richtigen Patter.
+            von Kartentricks bis Mentalmagie – und kombiniere sie mit dem richtigen Spruch.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/zaubersprueche/zauberer-spruche-auftritt"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-violet-800 transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"
             >
-              <Zap className="h-4 w-4" />
+              <Wand2 className="h-4 w-4" />
               Sprüche richtig einsetzen
             </Link>
             <Link

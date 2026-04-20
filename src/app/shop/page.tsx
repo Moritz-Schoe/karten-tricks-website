@@ -61,6 +61,13 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         url: "https://amzn.to/3vUK6zR",
         image: "/images/71fw80m4jL._AC_SL1000_.webp",
       },
+      {
+        name: "SOLOMAGIA Virtuoso P1 Limited Edition",
+        description:
+          "Cardistry-Deck mit modernem Design und sehr gutem Handling für Flourishes und Fächer.",
+        url: "https://amzn.to/4cACiF0",
+        tag: "Cardistry",
+      },
     ],
   },
   {
@@ -72,7 +79,7 @@ const SHOP_CATEGORIES: ProductCategory[] = [
         name: "Bicycle Stripper Deck",
         description:
           "Lässt dich jede frei gewählte Karte sofort im Deck finden. Ganz ohne Pinky Break.",
-        url: "https://amzn.to/4cTIp6I",
+        url: "https://amzn.to/4tZ2hNs",
         tag: "Empfehlung",
       },
       {
@@ -171,6 +178,13 @@ const SHOP_CATEGORIES: ProductCategory[] = [
           "Der perfekte Begleiter zum Einstieg: Grundlagen, Techniken und erste Routinen verständlich erklärt.",
         url: "https://amzn.to/4cjeuD8",
         tag: "Lesetipp",
+      },
+      {
+        name: "Expert Card Technique (Dover Magic Books)",
+        description:
+          "Klassiker der Kartenmagie mit vielen Techniken und Routinen. Ideal, wenn du tiefer in strukturierte und mathematische Kartentricks einsteigen willst.",
+        url: "https://amzn.to/4cD1jPG",
+        tag: "Buchempfehlung",
       },
     ],
   },

@@ -78,11 +78,12 @@ export default function CategoryArticleGrid({ articles }: Props) {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((article) => (
+          {filtered.map((article, idx) => (
             <ArticleCard
               key={article.slug}
               article={article}
               variant="default"
+              imageLoading={idx === 0 ? "eager" : "lazy"}
             />
           ))}
         </div>

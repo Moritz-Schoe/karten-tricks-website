@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const MATHE_SLUGS = ["21-karten", "dreimal-abheben"];
 const KARTENHAUS_SLUGS = ["kartenhaus-bauen"];
 const EINSTIEG_SLUGS = [
-  "10-in-10-minuten",
+  "chicago-opener",
   "three-card-monte",
   "herz-sieben",
   "zuschauer-findet-karte",
@@ -143,11 +143,11 @@ export default function KartentricksLandingPage() {
                                       </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/kartentricks/10-in-10-minuten"
+                href="/kartentricks/anfaenger-guide"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
               >
                 <Zap className="h-4 w-4" />
-                10 Tricks in 10 Minuten
+                Schneller Einstieg
               </Link>
               <Link
                 href="/kartentricks/anfaenger-guide"
@@ -314,13 +314,36 @@ export default function KartentricksLandingPage() {
               <ArticleCard key={article.slug} article={article} />
             ))}
           </div>
-          <div className="mt-6">
-            <Link
-              href="/kartentricks/fingerfertigkeit"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-            >
-              Alle Techniken ansehen <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+        </section>
+
+        {/* Fingerfertigkeit Hinweis */}
+        <section className="rounded-3xl bg-gradient-to-br from-[#EEF4FF] to-white border border-[#C6D6F2] p-7 md:p-9">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#5872A0]">
+              Fingerfertigkeit
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-neutral-800">
+              Fingerfertigkeit: Der schnellste Upgrade-Pfad für deine Kartentricks
+            </h2>
+            <p className="mt-3 text-neutral-600 leading-relaxed">
+              Wenn deine Tricks schon funktionieren, macht saubere Technik den Unterschied:
+              bessere Kontrolle, glaubwürdigere Effekte, stärkere Reaktionen. In unserer
+              Fingerfertigkeit-Seite findest du den klaren Lernpfad mit den wichtigsten Grifffolgen.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/kartentricks/fingerfertigkeit"
+                className="inline-flex items-center gap-2 rounded-full bg-[#5872A0] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4B628A]"
+              >
+                Zu den Fingerfertigkeiten <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/kartentricks/cardistry"
+                className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
+              >
+                Cardistry als Ergänzung
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -367,14 +390,14 @@ export default function KartentricksLandingPage() {
             Bereit für deinen ersten Kartentrick?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-6">
-            Starte mit „10 Tricks in 10 Minuten“ und entscheide danach, ob du Mathe, System oder Profi-Technik als Nächstes willst.
+            Starte mit dem Anfänger-Guide und entscheide danach, ob du Mathe, System oder Profi-Technik als Nächstes willst.
                                 </p>
           <Link
-            href="/kartentricks/10-in-10-minuten"
+            href="/kartentricks/anfaenger-guide"
             className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"
           >
             <Zap className="h-4 w-4" />
-            Jetzt starten
+            Zum Anfänger-Guide
           </Link>
         </section>
       </div>

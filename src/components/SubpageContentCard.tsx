@@ -9,6 +9,8 @@ function shouldRender(pathname: string | null) {
   if (!pathname) return false;
   if (pathname === "/") return false;
   if (pathname === "/shop" || pathname.startsWith("/shop/")) return false;
+  if (pathname === "/zaubersprueche" || pathname === "/zaubersprueche/") return false;
+  if (pathname === "/zaubersprüche" || pathname === "/zaubersprüche/") return false;
   return true;
 }
 
@@ -129,7 +131,7 @@ function contentForPathname(pathname: string): CardContent {
       ],
       footerLinks: [
         { href: "/kartentricks/anfaenger-guide", label: "Anfänger-Guide" },
-        { href: "/kartentricks/10-in-10-minuten", label: "Schneller Einstieg" },
+        { href: "/kartentricks/three-card-monte", label: "Schneller Einstieg" },
       ],
     };
   }

@@ -8,12 +8,13 @@ import { ArrowRight } from "lucide-react";
 interface Props {
   article: Article;
   variant?: "default" | "compact" | "featured";
+  imageLoading?: "lazy" | "eager";
 }
 
 const cardShell =
   "group block overflow-hidden rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] duration-300 hover:shadow-[0_10px_32px_rgba(0,0,0,0.09)] hover:-translate-y-0.5";
 
-export default function ArticleCard({ article, variant = "default" }: Props) {
+export default function ArticleCard({ article, variant = "default", imageLoading = "lazy" }: Props) {
   const cat = CATEGORIES[article.category];
   const readTime = article.readingTime ?? estimateReadingTime(article.content ?? "");
   const href = `/${article.category}/${article.slug}`;
@@ -38,6 +39,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
               fill
               className="object-cover"
               sizes="88px"
+              loading={imageLoading}
             />
           </div>
         ) : (
@@ -69,6 +71,7 @@ export default function ArticleCard({ article, variant = "default" }: Props) {
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading={imageLoading}
           />
         </div>
       ) : (

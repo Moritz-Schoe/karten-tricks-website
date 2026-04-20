@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import CategoryArticleGrid from "@/components/CategoryArticleGrid";
@@ -34,6 +34,9 @@ export async function generateStaticParams() {
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
+  if (category === "spielkarten") {
+    redirect("/spielkarten-vergleich");
+  }
   const cat = CATEGORIES[category as Category];
   if (!cat) notFound();
 

@@ -12,10 +12,46 @@ import { renderArticleMarkdown, articleContainsAffiliateLinks } from "@/lib/arti
 import { getArticle, getAllArticles, getArticlesByCategory } from "@/lib/content";
 import { estimateReadingTime } from "@/lib/reading";
 import { CATEGORIES, DIFFICULTY_COLORS } from "@/lib/types";
-import type { Category } from "@/lib/types";
+import type { Article, Category } from "@/lib/types";
 
 interface Props {
   params: Promise<{ category: string; slug: string }>;
+}
+
+function resolveRelatedArticles(article: Article, category: Category, slug: string): Article[] {
+  const allArticles = getAllArticles();
+  const explicitRelated = (article.related ?? [])
+    .map((rawTarget) => {
+      const target = rawTarget.trim();
+      if (!target) return null;
+
+      if (target.includes("/")) {
+        const [targetCategory, targetSlug] = target.split("/", 2);
+        if (!targetCategory || !targetSlug) return null;
+        return allArticles.find((candidate) => candidate.category === targetCategory && candidate.slug === targetSlug) ?? null;
+      }
+
+      return allArticles.find((candidate) => candidate.category === category && candidate.slug === target)
+        ?? allArticles.find((candidate) => candidate.slug === target)
+        ?? null;
+    })
+    .filter((candidate): candidate is Article => {
+      if (!candidate) return false;
+      return !(candidate.category === category && candidate.slug === slug);
+    });
+
+  const dedupedExplicitRelated = explicitRelated.filter(
+    (candidate, index, arr) =>
+      arr.findIndex((other) => other.category === candidate.category && other.slug === candidate.slug) === index
+  );
+
+  if (dedupedExplicitRelated.length > 0) {
+    return dedupedExplicitRelated.slice(0, 3);
+  }
+
+  return getArticlesByCategory(category)
+    .filter((candidate) => candidate.slug !== slug)
+    .slice(0, 3);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -97,9 +133,7 @@ export default async function ArticlePage({ params }: Props) {
   const showInlineAffiliateNotice =
     articleContainsAffiliateLinks(article.content) && !hasFrontmatterAffiliate;
 
-  const relatedArticles = getArticlesByCategory(category as Category)
-    .filter((a) => a.slug !== slug)
-    .slice(0, 3);
+  const relatedArticles = resolveRelatedArticles(article, category as Category, slug);
 
   const jsonLd = [jsonLdArticle(article), jsonLdBreadcrumb(article, cat, category)].filter(
     (item): item is NonNullable<typeof item> => item !== null

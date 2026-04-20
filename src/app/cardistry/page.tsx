@@ -80,13 +80,13 @@ const CARDISTRY_FAQ_JSON_LD = {
 const AFFILIATE_KARTEN = [
   {
     label: "Bicycle Rider Back – das beste Einsteiger-Deck für Cardistry",
-    url: "https://amzn.to/bicycle-cardistry",
+    url: "https://amzn.to/48Im2QY",
     note: "Robust, günstig, perfekter Einstieg",
   },
   {
-    label: "Fontaine Cards – Premium Cardistry Deck",
-    url: "https://amzn.to/fontaine-cards",
-    note: "Gleichmäßige Textur, saubere Fans & Spreads",
+    label: "SOLOMAGIA Virtuoso P1 Limited Edition Playing Cards",
+    url: "https://amzn.to/4cACiF0",
+    note: "Beliebtes Cardistry-Deck mit starkem Design und sauberem Handling",
   },
 ];
 

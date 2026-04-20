@@ -18,8 +18,14 @@ export const metadata: Metadata = {
 import ArticleCard from "@/components/ArticleCard";
 import CardSpring from "@/components/CardSpring";
 import JsonLd from "@/components/JsonLd";
-import { getRecentArticles, getFeaturedArticles, getAllArticles, getArticlesByCategory } from "@/lib/content";
-import { ArrowRight, Sparkles, Layers, Box, Star, PartyPopper, Hand, Zap, ScrollText } from "lucide-react";
+import { getAllArticles, getArticlesByCategory } from "@/lib/content";
+import { ArrowRight, Sparkles, Layers, Hand, ScrollText, Spade, Wand2, Zap } from "lucide-react";
+
+const HOMEPAGE_KARTENTRICK_SLUGS = [
+  "zaubertricks-auf-partys",
+  "three-card-monte",
+  "anfaenger-guide",
+] as const;
 
 function BentoCard({
   title,
@@ -63,21 +69,20 @@ function BentoCard({
 }
 
 export default function HomePage() {
-  const featured = getFeaturedArticles(3);
-  const recent = getRecentArticles(6);
+  const kartentricks = getArticlesByCategory("kartentricks");
+  const featured = HOMEPAGE_KARTENTRICK_SLUGS.map((slug) =>
+    kartentricks.find((article) => article.slug === slug)
+  ).filter((article): article is (typeof kartentricks)[number] => Boolean(article));
   const totalArticles = getAllArticles().length;
-
-  const partyTricks = getArticlesByCategory("party-tricks");
 
   const counts = {
     kartentricks: getArticlesByCategory("kartentricks").length,
+    zaubertricks: getArticlesByCategory("zaubertricks").length,
     cardistry: getArticlesByCategory("cardistry").length,
     spielkarten: getArticlesByCategory("spielkarten").length,
-    "party-tricks": partyTricks.length,
     fingerfertigkeit: getArticlesByCategory("fingerfertigkeit").length,
+    zaubersprueche: getArticlesByCategory("zaubersprueche").length,
   };
-
-  const kidsTricksCount = partyTricks.filter((a) => a.slug === "kinder").length;
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -397,50 +402,41 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-neutral-600">
               Du hast noch nicht den richtigen Einstieg gefunden? Hier siehst du auf einen Blick, was es auf karten-tricks.de alles gibt. Von{" "}
-              <strong>Kartentricks lernen</strong> über <strong>Fingerfertigkeit</strong> bis zu <strong>Spielkarten</strong> und{" "}
-              <strong>Party Tricks</strong>.
+              <strong>Kartentricks lernen</strong> über <strong>Fingerfertigkeit</strong> bis zu <strong>Spielkarten</strong>.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-[repeat(5,minmax(72px,auto))]">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-[repeat(4,minmax(72px,auto))]">
             <BentoCard
               title="Kartentricks"
               count={`${counts.kartentricks} Artikel`}
               description="Schritt-für-Schritt Anleitungen, um Kartentricks zu lernen. Perfekt für Anfänger, aber auch mit starken Effekten für Fortgeschrittene."
               href="/kartentricks"
-              icon={Sparkles}
-              className="md:col-start-1 md:row-start-1 md:row-end-4"
+              icon={Spade}
+              className="md:col-start-1 md:row-start-1 md:row-end-3"
             />
             <BentoCard
               title="Cardistry"
               count={`${counts.cardistry} Artikel`}
               description="Cardistry lernen: Cuts, Flourishes und Fans für saubere, visuelle Kartenmoves. Ideal als Ergänzung zur Kartenmagie."
               href="/kartentricks/cardistry"
-              icon={Layers}
+              icon={Sparkles}
               className="md:col-start-2 md:row-start-1 md:row-end-3"
             />
             <BentoCard
               title="Spielkarten"
               count={`${counts.spielkarten} Artikel`}
               description="Spielkarten-Guide: Welche Kartendecks eignen sich zum Zaubern oder für Cardistry? Empfehlungen, Unterschiede und Kaufberatung."
-              href="/spielkarten"
-              icon={Box}
+              href="/spielkarten-vergleich"
+              icon={Layers}
               className="md:col-start-3 md:row-start-1 md:row-end-3"
             />
             <BentoCard
-              title="Kartentricks für Kinder"
-              count={`${kidsTricksCount} Artikel`}
-              description="Einfache Kartentricks für Kinder: schnell erklärt, leicht vorzuführen und mit großer Wirkung. Ohne schwierige Griffe."
-              href="/party-tricks/kinder"
-              icon={Star}
-              className="md:col-start-1 md:row-start-4 md:row-end-6"
-            />
-            <BentoCard
-              title="Party Tricks"
-              count={`${counts["party-tricks"]} Artikel`}
-              description="Tricks nach Anlass: Kartentricks für Geburtstag, Firmenfeier oder Freunde, mit Fokus auf Präsentation, Wirkung und Ablauf."
-              href="/party-tricks"
-              icon={PartyPopper}
-              className="md:col-start-2 md:row-start-3 md:row-end-6"
+              title="Zaubertricks"
+              count={`${counts.zaubertricks} Artikel`}
+              description="Zaubertricks ohne Karten: Gedankenlesen, Münzmagie und starke Effekte für den direkten Auftritt."
+              href="/zaubertricks"
+              icon={Wand2}
+              className="md:col-start-1 md:row-start-3 md:row-end-5"
             />
             <BentoCard
               title="Fingerfertigkeit"
@@ -448,15 +444,15 @@ export default function HomePage() {
               description="Techniken für Kartenzauberei: Double Lift, Pinky Break, Forces und Mischtechniken, damit deine Kartentricks wirklich täuschen."
               href="/kartentricks/fingerfertigkeit"
               icon={Hand}
-              className="md:col-start-3 md:row-start-3 md:row-end-5"
+              className="md:col-start-2 md:row-start-3 md:row-end-5"
             />
             <BentoCard
               title="Zaubersprüche"
-              count="10 Artikel"
+              count={`${counts.zaubersprueche} Artikel`}
               description="Harry Potter Zaubersprüche, Abrakadabra, Hocus Pocus: alle bekannten Zauberformeln mit Bedeutung, Herkunft und Aussprache."
               href="/zaubersprueche"
               icon={ScrollText}
-              className="md:col-start-3 md:row-start-5 md:row-end-6"
+              className="md:col-start-3 md:row-start-3 md:row-end-5"
             />
           </div>
         </div>
@@ -500,7 +496,7 @@ export default function HomePage() {
                       <span className="text-sm font-medium text-neutral-700">Techniken lernen</span>
                       <ArrowRight className="h-4 w-4 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
                     </Link>
-                    <Link href="/spielkarten" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-neutral-50">
+                    <Link href="/spielkarten-vergleich" className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-neutral-50">
                       <span className="text-sm font-medium text-neutral-700">Spielkarten-Guide</span>
                       <ArrowRight className="h-4 w-4 text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden />
                     </Link>

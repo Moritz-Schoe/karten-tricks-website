@@ -83,16 +83,16 @@ function EinstiegCard({ href, icon, title, subtitle }: EinstiegCardProps) {
   return (
     <Link
       href={href}
-      className="group flex items-center gap-4 rounded-2xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-5 transition-all duration-200 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] hover:-translate-y-0.5"
+      className="group flex items-start gap-3 rounded-2xl border border-black/[0.04] bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] sm:items-center sm:gap-4 sm:p-5"
     >
-      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-12 sm:w-12">
         {icon}
       </div>
       <div className="min-w-0">
         <p className="font-bold text-neutral-800 tracking-tight leading-snug">{title}</p>
         <p className="text-sm text-neutral-500 mt-0.5">{subtitle}</p>
       </div>
-      <ArrowRight className="ml-auto shrink-0 h-4 w-4 text-neutral-300 transition-colors group-hover:text-primary" />
+      <ArrowRight className="ml-auto mt-1 h-4 w-4 shrink-0 text-neutral-300 transition-colors group-hover:text-primary sm:mt-0" />
     </Link>
   );
 }
@@ -129,17 +129,17 @@ export default function ZaubertricksPage() {
                                         Vorhersagen treffen: hier lernst du die stärksten Tricks jenseits des
                                         Kartendecks. Schritt für Schritt, auf Deutsch, kostenlos.
                                       </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="#mentalmagie"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
+                className="inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
               >
                 <Brain className="h-4 w-4" />
                 Mentalmagie entdecken
               </Link>
               <Link
                 href="#muenzmagie"
-                className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
+                className="inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
               >
                 <Coins className="h-4 w-4" />
                 Münzmagie entdecken
@@ -179,8 +179,32 @@ export default function ZaubertricksPage() {
               href="/kartentricks"
               icon={<Sparkles className="h-6 w-6" />}
               title="Kartentricks"
-              subtitle="Der klassische Einstieg mit einem Deck"
+              subtitle="Zaubertricks mit Karten"
             />
+          </div>
+        </section>
+
+        {/* Zauberkästen CTA */}
+        <section>
+          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-10 rounded-3xl bg-neutral-950 overflow-hidden p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] border border-white/[0.05]">
+            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-primary/30 via-primary/10 to-transparent pointer-events-none" />
+            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-primary/20 blur-[100px] pointer-events-none mix-blend-screen" />
+            <div className="relative z-10 max-w-xl">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
+                Lust auf mehr Anleitungen & Gimmicks?
+              </h2>
+              <p className="text-neutral-300 text-base leading-relaxed mb-8 max-w-lg">
+                Zauberkästen sind der schnellste Weg zu professionellen Effekten, inklusive
+                                              Gimmicks, die du selbst nicht bauen könntest. Such dir einen unserer
+                                              empfohlenen Zauberkästen aus.
+                                            </p>
+              <Link
+                href="/spielkarten/zauberkaesten"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.45)] border border-primary/40"
+              >
+                Zauberkästen Guide <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -296,59 +320,35 @@ export default function ZaubertricksPage() {
         </section>
 
         {/* Auch interessant: Kartentricks */}
-        <section className="rounded-3xl bg-white border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-8 md:p-10">
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+        <section className="rounded-3xl border border-black/[0.04] bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] md:p-10">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-12 sm:w-12">
               <Sparkles className="h-6 w-6" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1">Auch beliebt</p>
               <h2 className="text-xl font-bold tracking-tight text-neutral-800 mb-2">
-                Kartentricks: der klassische Einstieg
+                Zaubertricks mit Karten
                                             </h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-5">
                 Wer mit einem normalen Kartenspiel starten möchte, findet auf kartentricks.de
                                               alles von einfachen Anfänger-Tricks bis zu professionellen Techniken wie dem
                                               Double Lift oder dem Pinky Break.
                                             </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/kartentricks"
-                  className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-800"
+                  className="inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-800"
                 >
                   Alle Kartentricks <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/kartentricks/anfaenger-guide"
-                  className="inline-flex items-center gap-2 rounded-full bg-white border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
+                  className="inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:border-black/20"
                 >
                   Anfänger-Guide
                                                   </Link>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Zauberkästen CTA */}
-        <section>
-          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-10 rounded-3xl bg-neutral-950 overflow-hidden p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] border border-white/[0.05]">
-            <div className="absolute top-0 right-0 bottom-0 w-[80%] sm:w-[60%] bg-gradient-to-l from-primary/30 via-primary/10 to-transparent pointer-events-none" />
-            <div className="absolute top-[-30%] right-[-10%] h-[160%] w-[55%] rounded-full bg-primary/20 blur-[100px] pointer-events-none mix-blend-screen" />
-            <div className="relative z-10 max-w-xl">
-              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
-                Lust auf mehr Anleitungen & Gimmicks?
-              </h2>
-              <p className="text-neutral-300 text-base leading-relaxed mb-8 max-w-lg">
-                Zauberkästen sind der schnellste Weg zu professionellen Effekten, inklusive
-                                              Gimmicks, die du selbst nicht bauen könntest. Such dir einen unserer
-                                              empfohlenen Zauberkästen aus.
-                                            </p>
-              <Link
-                href="/spielkarten/zauberkaesten"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.45)] border border-primary/40"
-              >
-                Zauberkästen Guide <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
           </div>
         </section>
@@ -402,14 +402,14 @@ export default function ZaubertricksPage() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/zaubertricks/shiner-gedankenlesen"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"
+              className="inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[var(--color-primary-dark)] transition-opacity hover:opacity-90"
             >
               <Zap className="h-4 w-4" />
               Shiner-Trick lernen
                                       </Link>
             <Link
               href="/zaubertricks/muenzmagie-french-drop"
-              className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/30 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/25"
+              className="inline-flex w-fit max-w-[calc(100%-0.75rem)] items-center justify-center gap-2 rounded-full border border-white/30 bg-white/15 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/25"
             >
               French Drop lernen
             </Link>
